@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="cadastrese.css">
+    <link rel="stylesheet" href="pojo-a11y.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+</head>
+<body>
+    <!-- ===== BOTÃO VOLTAR - CANTOR SUPERIOR ESQUERDO ===== -->
+    <a href="escolha.html" class="btn-voltar" aria-label="Voltar para página inicial">
+        <i class="fas fa-arrow-left"></i>
+        <span>Voltar</span>
+    </a>
+
+    <div id="alertSuccess" class="custom-alert">
+        <i class="fas fa-check-circle fa-lg"></i>
+        <span>Cadastro realizado com sucesso! Bem-vindo ao AEROFITNESS.</span>
+    </div>
+
+    <div class="main-wrapper">
+
+        <div class="logo">
+            <img src="Protótipo_TCC__3.png" alt="logo">
+        </div>
+        
+        <div id="form-container">
+            <div class="form-box">
+                <div class="form-header">
+                    <h1>Cadastre-se</h1>
+                </div>
+
+                <div class="form-content">
+                    <form id="formAcademico">
+                        
+                        <h2>Dados Pessoais</h2>
+
+                        <div class="campo">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: João Pedro Santos" required>
+                        </div>
+
+                        <div class="linha-dupla">
+                            <div class="campo">
+                                <label for="nascimento">Data de nasc.</label>
+                                <input type="date" id="nascimento" name="nascimento" required>
+                            </div>
+                            <div class="campo">
+                                <label for="genero">Gênero</label>
+                                <select id="genero" name="genero">
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Prefiro não informar">Prefiro não informar</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="linha-dupla">
+                            <div class="campo">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                            </div>
+                            <div class="campo">
+                                <label for="nacionalidade">Nacionalidade</label>
+                                <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Ex: Brasileiro">
+                            </div>
+                        </div>
+
+                        <div class="linha-dupla">
+                            <div class="campo">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                            </div>
+                            <div class="campo">
+                                <label for="email">E-mail pessoal</label>
+                                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="linha-dupla">
+                            <div class="campo">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" placeholder="Sua cidade">
+                            </div>
+                            <div class="campo">
+                                <label for="estado">Estado (UF)</label>
+                                <select id="estado" name="estado">
+                                    <option value="" disabled selected>UF</option>
+                                    <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+                                    <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+                                    <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+                                    <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+                                    <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+                                    <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+                                    <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+                                    <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+                                    <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h3>Aptidão Física & Objetivos</h3>
+                
+                        <div class="campo">
+                            <label for="objetivos">Quais são seus principais objetivos?</label>
+                            <input type="text" id="objetivos" name="objetivos" placeholder="Ex: Ganho de massa, emagrecimento, saúde..." required>
+                        </div>
+
+                        <div class="linha-dupla">
+                            <div class="campo">
+                                <label for="nivel_treino">Seu nível de treino</label>
+                                <select id="nivel_treino" name="nivel_treino">
+                                    <option value="inicio">Iniciante</option>
+                                    <option value="intermediario">Intermediário</option>
+                                    <option value="pre-avançado">Pré-avançado</option>
+                                    <option value="avançado">Avançado</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="frequencia">Frequência Semanal</label>
+                                <select id="frequencia" name="frequencia">
+                                    <option value="sedentario">Nunca pratiquei</option>
+                                    <option value="recente">Comecei recentemente</option>
+                                    <option value="regular">2 a 3 vezes por semana</option>
+                                    <option value="atleta">Todos os dias</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label>Preferências de Treino (Selecione uma ou mais)</label>
+                            <div class="opcoes-grid">
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="musculacao">Força</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="cardio"> Perder gordura</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="funcional">Treinos calestenico</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="crossfit">Melhorar performance</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="yoga">Hipertrofia</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="natacao">Outras modalidades</label>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="restricoes">Restrições físicas ou recomendações médicas?</label>
+                            <textarea id="restricoes" name="restricoes" placeholder="Ex: Lesão no joelho, pressão alta, asma..."></textarea>
+                        </div>
+
+                        <div class="campo">
+                            <label for="esporte_especifico">Pratica algum esporte específico atualmente?</label>
+                            <input type="text" id="esporte_especifico" name="esporte_especifico" placeholder="Ex: Futebol, Tênis, Ciclismo...">
+                        </div>
+
+                         <div class="campo">
+                            <label for="esporte_especifico">Você possui algum tipo de deficiência?</label>
+                            <input type="text" id="esporte_especifico" name="esporte_especifico" placeholder="Ex: Autismo, Auditivo, Múltipla..."> 
+                        </div>
+
+                        <div class="campo">
+                            <label for="feedback">Feedback(opcional)</label>
+                            <textarea id="feedback" name="feedback" placeholder=""></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-salvar">Finalizar Cadastro</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="academia-page">
+            <div class="hero-academia">
+                <h2>BEM-VINDO À AERO FITNESS, <span id="user-name-display">ATLETA</span>!</h2>
+                <p>Seu cadastro foi processado. Prepare-se para transformar seu corpo e mente.</p>
+            </div>
+            
+            <div class="cards-servicos">
+                <div class="card-servico">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h4>Minha Ficha</h4>
+                    <p>Acesse seu plano de treino personalizado baseado nos seus objetivos.</p>
+                </div>
+                <div class="card-servico">
+                    <i class="fas fa-dumbbell"></i>
+                    <h4>Equipamentos</h4>
+                    <p>Conheça nossa estrutura de ponta e as áreas de treino livre.</p>
+                </div>
+                <div class="card-servico">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Acompanhamento</h4>
+                    <p>Agende sua avaliação física mensal com nossos especialistas.</p>
+                </div>
+            </div>
+
+            <!-- BOTÃO IR PARA TIPOS DE TREINO -->
+            <div style="padding: 0 40px 40px; text-align: center;">
+                <button class="btn-salvar" style="max-width: 300px;" onclick="window.location.href='tiposdetreino.html'">
+                    <i class="fas fa-dumbbell" style="margin-right: 10px;"></i> Conhecer Treinos
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ======================================== -->
+    <!-- BARRA DE ACESSIBILIDADE (POJO A11Y) - IGUAL À PÁGINA INICIAL -->
+    <!-- ======================================== -->
+    <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
+        <div class="pojo-a11y-toolbar-toggle">
+            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
+                <span class="pojo-sr-only sr-only">Abrir a barra de ferramentas</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" width="1em">
+                    <title>Ferramentas de Acessibilidade</title>
+                    <path d="M50 .8c5.7 0 10.4 4.7 10.4 10.4S55.7 21.6 50 21.6s-10.4-4.7-10.4-10.4S44.3.8 50 .8zM92.2 32l-21.9 2.3c-2.6.3-4.6 2.5-4.6 5.2V94c0 2.9-2.3 5.2-5.2 5.2H60c-2.7 0-4.9-2.1-5.2-4.7l-2.2-24.7c-.1-1.5-1.4-2.5-2.8-2.4-1.3.1-2.2 1.1-2.4 2.4l-2.2 24.7c-.2 2.7-2.5 4.7-5.2 4.7h-.5c-2.9 0-5.2-2.3-5.2-5.2V39.4c0-2.7-2-4.9-4.6-5.2L7.8 32c-2.6-.3-4.6-2.5-4.6-5.2v-.5c0-2.6 2.1-4.7 4.7-4.7h.5c19.3 1.8 33.2 2.8 41.7 2.8s22.4-.9 41.7-2.8c2.6-.2 4.9 1.6 5.2 4.3v1c-.1 2.6-2.1 4.8-4.8 5.1z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="pojo-a11y-toolbar-overlay">
+            <div class="pojo-a11y-toolbar-inner">
+                <p class="pojo-a11y-toolbar-title">Ferramentas de Acessibilidade</p>
+                <ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Aumentar o Texto</title>
+                                    <path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Aumentar o Texto</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Diminuir o Texto</title>
+                                    <path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Diminuir o Texto</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-narrator" data-action="narrator" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Narrador</title>
+                                    <path fill="currentColor" d="M224 32C135 32 64 103 64 192v160c0 17.7 14.3 32 32 32h32V192c0-53 43-96 96-96s96 43 96 96v192h32c17.7 0 32-14.3 32-32V192c0-89-71-160-160-160zm-80 288c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm160 0c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm-80 96c-53 0-96-43-96-96h192c0 53-43 96-96 96z"/>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text" id="narrator-text">Ouvir Página</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline" data-action="links-underline" data-action-group="toggle" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Links Sublinhados</title>
+                                    <path fill="currentColor" d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Links Sublinhados</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-readable-font" data-action="readable-font" data-action-group="toggle" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Fonte Legível</title>
+                                    <path fill="currentColor" d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Fonte Legível</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Redefinir</title>
+                                    <path fill="currentColor" d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Redefinir</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+        // ========================================
+        // ACESSIBILIDADE (POJO A11Y) - IGUAL À PÁGINA INICIAL
+        // ========================================
+        (function() {
+            'use strict';
+
+            const toolbar = document.getElementById('pojo-a11y-toolbar');
+            const toggleBtn = document.querySelector('.pojo-a11y-toolbar-toggle-link');
+            const resetBtn = document.querySelector('.pojo-a11y-btn-reset');
+            
+            let isSpeaking = false;
+            let currentUtterance = null;
+            const narratorBtn = document.querySelector('.pojo-a11y-btn-narrator');
+            const narratorText = document.getElementById('narrator-text');
+
+            function getMainText() {
+                const formContainer = document.getElementById('form-container');
+                if (!formContainer) return 'Conteúdo não encontrado.';
+                return formContainer.innerText.replace(/\s+/g, ' ').trim() || 'Conteúdo principal não disponível.';
+            }
+
+            function toggleNarrator() {
+                if (!('speechSynthesis' in window)) {
+                    alert('Seu navegador não oferece suporte ao narrador.');
+                    return;
+                }
+                const speechSynthesis = window.speechSynthesis;
+                if (isSpeaking) {
+                    if (speechSynthesis.speaking) speechSynthesis.cancel();
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                    return;
+                }
+                const text = getMainText();
+                if (!text || text.trim().length === 0) {
+                    alert('Nenhum texto disponível para leitura.');
+                    return;
+                }
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                utterance.onstart = function() {
+                    isSpeaking = true;
+                    narratorText.textContent = 'Parar Leitura';
+                    narratorBtn.classList.add('active-tool');
+                };
+                utterance.onend = function() {
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                };
+                utterance.onerror = function() {
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                };
+                currentUtterance = utterance;
+                speechSynthesis.speak(utterance);
+            }
+
+            if (narratorBtn) {
+                narratorBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleNarrator();
+                });
+            }
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toolbar.classList.toggle('pojo-a11y-toolbar-open');
+                });
+            }
+
+            const textElements = document.querySelectorAll(
+                '.form-header h1, .form-content label, .form-content input, .form-content select, .form-content textarea, .form-content button, ' +
+                '.form-content h2, .form-content h3, .opcao-item, .hero-academia h2, .hero-academia p, .card-servico *'
+            );
+
+            textElements.forEach((element) => {
+                if (!element.dataset.a11yBaseFontSize) {
+                    element.dataset.a11yBaseFontSize = parseFloat(getComputedStyle(element).fontSize);
+                }
+            });
+
+            let textScale = parseFloat(localStorage.getItem('pojo-text-scale')) || 1;
+
+            function applyTextScale() {
+                textElements.forEach((element) => {
+                    const originalSize = parseFloat(element.dataset.a11yBaseFontSize);
+                    if (!Number.isNaN(originalSize)) {
+                        element.style.fontSize = `${originalSize * textScale}px`;
+                    }
+                });
+                localStorage.setItem('pojo-text-scale', textScale.toFixed(2));
+            }
+
+            applyTextScale();
+
+            function applyAction(action, element) {
+                const body = document.body;
+                switch (action) {
+                    case 'resize-plus':
+                        textScale = Math.min(textScale + 0.10, 2);
+                        applyTextScale();
+                        element.classList.add('active-tool');
+                        break;
+                    case 'resize-minus':
+                        textScale = Math.max(textScale - 0.10, 0.7);
+                        applyTextScale();
+                        element.classList.add('active-tool');
+                        break;
+                    case 'links-underline':
+                        body.classList.toggle('pojo-links-underline');
+                        element.classList.toggle('active-tool');
+                        break;
+                    case 'readable-font':
+                        body.classList.toggle('pojo-readable-font');
+                        element.classList.toggle('active-tool');
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(tool => {
+                tool.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const action = this.getAttribute('data-action');
+                    if (action === 'narrator') return;
+                    applyAction(action, this);
+                });
+            });
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const body = document.body;
+                    if (isSpeaking && window.speechSynthesis) {
+                        window.speechSynthesis.cancel();
+                        isSpeaking = false;
+                        if (narratorText) narratorText.textContent = 'Ouvir Página';
+                        if (narratorBtn) narratorBtn.classList.remove('active-tool');
+                    }
+                    body.classList.remove('pojo-links-underline', 'pojo-readable-font');
+                    textScale = 1;
+                    localStorage.removeItem('pojo-text-scale');
+                    textElements.forEach(el => el.style.fontSize = '');
+                    document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(t => {
+                        t.classList.remove('active-tool');
+                    });
+                    toolbar.classList.remove('pojo-a11y-toolbar-open');
+                });
+            }
+
+            function loadSavedState() {
+                textScale = parseFloat(localStorage.getItem('pojo-text-scale')) || 1;
+                applyTextScale();
+            }
+            loadSavedState();
+
+        })();
+    </script>
+
+    <script>
+        // ========================================
+        // SCRIPT DO FORMULÁRIO DE CADASTRO
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('formAcademico');
+            const formContainer = document.getElementById('form-container');
+            const academiaPage = document.getElementById('academia-page');
+            const alertSuccess = document.getElementById('alertSuccess');
+
+            function getInitials(name) {
+                if (!name) return 'U';
+                const parts = name.trim().split(' ');
+                if (parts.length === 0) return 'U';
+                if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+                return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const nome = document.getElementById('nome').value.trim();
+
+                alertSuccess.classList.add('show');
+
+                const nameDisplay = document.getElementById('user-name-display');
+                if (nameDisplay && nome) {
+                    nameDisplay.textContent = nome.toUpperCase();
+                }
+
+                formContainer.style.display = 'none';
+                academiaPage.style.display = 'block';
+
+                const userData = {
+                    nome: nome,
+                    email: document.getElementById('email').value.trim(),
+                    loggedIn: true,
+                    initials: getInitials(nome)
+                };
+                localStorage.setItem('loggedInUser', JSON.stringify(userData));
+
+                setTimeout(() => {
+                    alertSuccess.classList.remove('show');
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

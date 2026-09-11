@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="pojo-a11y.css">
+</head>
+<body>
+    <nav>
+        <div class="barra">
+            <ul>
+                <li class="active"><a href="index.html">INÍCIO</a></li>
+                <li class="has-submenu">
+                    <a href="sobrenos.html">SOBRE NÓS</a>
+                </li>
+                <li class="active"><a href="localizacao.html">LUGARES</a></li>
+                <li class="active"><a href="tiposdetreino.html">TIPOS DE TREINO</a></li>
+                <li class="active"><a href="">CONTATO</a></li>
+                <li class="usuario">
+                    <a href="escolha.html" id="userLink"><img src="user.png" alt="Usuário"></a>
+                </li>
+                <li class="tradutor-item">
+                    <div id="google_translate_element"></div>
+                </li>
+                <li class="config">
+                    <img src="tres.png" alt="Configurações">
+                    <div class="sub-conf">
+                        <ul>
+                            <li><a href="">GOOGLE TRADUTOR</a></li>
+                            <li><a href="">LOCALIZAÇÃO</a></li>
+                            <li><a href="">DOCS TCC</a></li>
+                            <li><a href="">CRONOGRAMA</a></li>
+                            <li><a href="">PROTÓTIPO AERO FITNESS</a></li>
+                            <li><a href="">ADICIONAIS</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="content">
+        <div class="contato-grid">
+            <div class="form-box">
+                <h2>Envie uma mensagem</h2>
+                <form id="contatoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(41) 9....-...." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="observacao">Feedback (Opcional)</label>
+                        <textarea id="observacao" name="observacao"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar mensagem</button>
+                    <p id="formStatus"></p>
+                </form>
+                
+                <a href="https://wa.me/554134234131" class="whats-btn" target="_blank">
+                    Fale com a gente no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- BARRA DE ACESSIBILIDADE (POJO A11Y) - IGUAL À PÁGINA INICIAL -->
+    <!-- ======================================== -->
+    <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
+        <div class="pojo-a11y-toolbar-toggle">
+            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
+                <span class="pojo-sr-only sr-only">Abrir a barra de ferramentas</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" width="1em">
+                    <title>Ferramentas de Acessibilidade</title>
+                    <path d="M50 .8c5.7 0 10.4 4.7 10.4 10.4S55.7 21.6 50 21.6s-10.4-4.7-10.4-10.4S44.3.8 50 .8zM92.2 32l-21.9 2.3c-2.6.3-4.6 2.5-4.6 5.2V94c0 2.9-2.3 5.2-5.2 5.2H60c-2.7 0-4.9-2.1-5.2-4.7l-2.2-24.7c-.1-1.5-1.4-2.5-2.8-2.4-1.3.1-2.2 1.1-2.4 2.4l-2.2 24.7c-.2 2.7-2.5 4.7-5.2 4.7h-.5c-2.9 0-5.2-2.3-5.2-5.2V39.4c0-2.7-2-4.9-4.6-5.2L7.8 32c-2.6-.3-4.6-2.5-4.6-5.2v-.5c0-2.6 2.1-4.7 4.7-4.7h.5c19.3 1.8 33.2 2.8 41.7 2.8s22.4-.9 41.7-2.8c2.6-.2 4.9 1.6 5.2 4.3v1c-.1 2.6-2.1 4.8-4.8 5.1z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="pojo-a11y-toolbar-overlay">
+            <div class="pojo-a11y-toolbar-inner">
+                <p class="pojo-a11y-toolbar-title">Ferramentas de Acessibilidade</p>
+                <ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Aumentar o Texto</title>
+                                    <path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Aumentar o Texto</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Diminuir o Texto</title>
+                                    <path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Diminuir o Texto</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-narrator" data-action="narrator" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Narrador</title>
+                                    <path fill="currentColor" d="M224 32C135 32 64 103 64 192v160c0 17.7 14.3 32 32 32h32V192c0-53 43-96 96-96s96 43 96 96v192h32c17.7 0 32-14.3 32-32V192c0-89-71-160-160-160zm-80 288c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm160 0c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm-80 96c-53 0-96-43-96-96h192c0 53-43 96-96 96z"/>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text" id="narrator-text">Ouvir Página</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline" data-action="links-underline" data-action-group="toggle" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Links Sublinhados</title>
+                                    <path fill="currentColor" d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Links Sublinhados</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-readable-font" data-action="readable-font" data-action-group="toggle" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Fonte Legível</title>
+                                    <path fill="currentColor" d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Fonte Legível</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Redefinir</title>
+                                    <path fill="currentColor" d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z"></path>
+                                </svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Redefinir</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== GOOGLE TRADUTOR GRATUITO ===== -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru,ar,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+        // ========================================
+        // USUÁRIO
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            updateUserIcon();
+        });
+
+        function updateUserIcon() {
+            const userLink = document.getElementById('userLink');
+            const savedUser = localStorage.getItem('loggedInUser');
+
+            if (savedUser) {
+                try {
+                    const user = JSON.parse(savedUser);
+                    if (user.loggedIn && user.initials) {
+                        userLink.innerHTML = `<span class="user-initials">${user.initials}</span>`;
+                        userLink.href = '#';
+                        userLink.title = `Olá, ${user.email}`;
+                        userLink.onclick = function(e) {
+                            e.preventDefault();
+                            if (confirm('Deseja fazer logout?')) {
+                                localStorage.removeItem('loggedInUser');
+                                location.reload();
+                            }
+                        };
+                    }
+                } catch (e) {
+                    console.error('Erro ao ler dados do usuário:', e);
+                }
+            }
+        }
+
+        // ========================================
+        // ACESSIBILIDADE (POJO A11Y) - IGUAL À PÁGINA INICIAL
+        // ========================================
+        (function() {
+            'use strict';
+
+            const toolbar = document.getElementById('pojo-a11y-toolbar');
+            const toggleBtn = document.querySelector('.pojo-a11y-toolbar-toggle-link');
+            const resetBtn = document.querySelector('.pojo-a11y-btn-reset');
+            
+            let isSpeaking = false;
+            let currentUtterance = null;
+            const narratorBtn = document.querySelector('.pojo-a11y-btn-narrator');
+            const narratorText = document.getElementById('narrator-text');
+
+            function getMainText() {
+                const content = document.querySelector('.content');
+                if (!content) return 'Conteúdo não encontrado.';
+                return content.innerText.replace(/\s+/g, ' ').trim() || 'Conteúdo principal não disponível.';
+            }
+
+            function toggleNarrator() {
+                if (!('speechSynthesis' in window)) {
+                    alert('Seu navegador não oferece suporte ao narrador.');
+                    return;
+                }
+                const speechSynthesis = window.speechSynthesis;
+                if (isSpeaking) {
+                    if (speechSynthesis.speaking) speechSynthesis.cancel();
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                    return;
+                }
+                const text = getMainText();
+                if (!text || text.trim().length === 0) {
+                    alert('Nenhum texto disponível para leitura.');
+                    return;
+                }
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                utterance.onstart = function() {
+                    isSpeaking = true;
+                    narratorText.textContent = 'Parar Leitura';
+                    narratorBtn.classList.add('active-tool');
+                };
+                utterance.onend = function() {
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                };
+                utterance.onerror = function() {
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                };
+                currentUtterance = utterance;
+                speechSynthesis.speak(utterance);
+            }
+
+            if (narratorBtn) {
+                narratorBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleNarrator();
+                });
+            }
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toolbar.classList.toggle('pojo-a11y-toolbar-open');
+                });
+            }
+
+            const textElements = document.querySelectorAll(
+                '.content h2, .content p, .content label, .content input, .content textarea, .content button, ' +
+                '.barra li, .barra li a, .sub-conf li, .sub-conf li a, .site-footer *'
+            );
+
+            textElements.forEach((element) => {
+                if (!element.dataset.a11yBaseFontSize) {
+                    element.dataset.a11yBaseFontSize = parseFloat(getComputedStyle(element).fontSize);
+                }
+            });
+
+            let textScale = parseFloat(localStorage.getItem('pojo-text-scale')) || 1;
+
+            function applyTextScale() {
+                textElements.forEach((element) => {
+                    const originalSize = parseFloat(element.dataset.a11yBaseFontSize);
+                    if (!Number.isNaN(originalSize)) {
+                        element.style.fontSize = `${originalSize * textScale}px`;
+                    }
+                });
+                localStorage.setItem('pojo-text-scale', textScale.toFixed(2));
+            }
+
+            applyTextScale();
+
+            function applyAction(action, element) {
+                const body = document.body;
+                switch (action) {
+                    case 'resize-plus':
+                        textScale = Math.min(textScale + 0.10, 2);
+                        applyTextScale();
+                        element.classList.add('active-tool');
+                        break;
+                    case 'resize-minus':
+                        textScale = Math.max(textScale - 0.10, 0.7);
+                        applyTextScale();
+                        element.classList.add('active-tool');
+                        break;
+                    case 'links-underline':
+                        body.classList.toggle('pojo-links-underline');
+                        element.classList.toggle('active-tool');
+                        break;
+                    case 'readable-font':
+                        body.classList.toggle('pojo-readable-font');
+                        element.classList.toggle('active-tool');
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(tool => {
+                tool.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const action = this.getAttribute('data-action');
+                    if (action === 'narrator') return;
+                    applyAction(action, this);
+                });
+            });
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const body = document.body;
+                    if (isSpeaking && window.speechSynthesis) {
+                        window.speechSynthesis.cancel();
+                        isSpeaking = false;
+                        if (narratorText) narratorText.textContent = 'Ouvir Página';
+                        if (narratorBtn) narratorBtn.classList.remove('active-tool');
+                    }
+                    body.classList.remove('pojo-links-underline', 'pojo-readable-font');
+                    textScale = 1;
+                    localStorage.removeItem('pojo-text-scale');
+                    textElements.forEach(el => el.style.fontSize = '');
+                    document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(t => {
+                        t.classList.remove('active-tool');
+                    });
+                    toolbar.classList.remove('pojo-a11y-toolbar-open');
+                });
+            }
+
+            function loadSavedState() {
+                textScale = parseFloat(localStorage.getItem('pojo-text-scale')) || 1;
+                applyTextScale();
+            }
+            loadSavedState();
+
+        })();
+    </script>
+
+     <footer>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section contact-section">
+                <h3>CONTATO</h3>
+                <ul class="contact-list">
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E" alt="email"> pngjosebonifacio@seed.pr.gov.b</li>
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E" alt="telefone"> (41) 3423-4131</li>
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E" alt="maps"> Alameda Cel. Elizio Pereira, Sn - 0 - Estradinha, Paranaguá - PR, 83206-000</li>
+                </ul>
+            </div>
+            <div class="footer-section partnerships-section">
+                <h3>PARCERIAS</h3>
+                <div class="logos-wrapper">
+                    <img src="1.png" alt="estadual">                   
+                    <img src="img.pr.colegio.integral.png" alt="integral">   
+                    <img src="icone.CECM.02.png" alt="integral">              
+                </div>
+            </div>  
+            <div class="footer-section social-section">
+                <h3>REDES SOCIAIS</h3>
+                <div class="social-icons-footer">
+                    <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico Militar | Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

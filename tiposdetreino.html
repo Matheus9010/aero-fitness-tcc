@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de exercícios com modalidades de cardio, musculação, ciclismo e treino adaptado.">
+    <title>Tipos de Treino</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tiposdetreino.css">
+    <link rel="stylesheet" href="pojo-a11y.css">
+</head>
+<body>
+
+    <header>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="variedade.avif" alt="Academia 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="volei.webp" alt="Academia 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="natacao.jpg" alt="Academia 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="especial.jpg" alt="Academia 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="emocao.jpg" alt="Academia 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="tenis.jpg" alt="Academia 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="trilha.jpg" alt="Academia 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="idosos.jpg" alt="Academia 8">
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="barra">
+            <ul>
+                <li class="active"><a href="index.html">INÍCIO</a></li>
+                <li class="has-submenu">
+                    <a href="sobrenos.html">SOBRE NÓS</a>
+                </li>
+                <li class="active"><a href="localizacao.html">LUGARES</a></li>
+                <li class="active"><a href="">TIPOS DE TREINO</a></li>
+                <li class="active"><a href="contato.html">CONTATO</a></li>
+                <li class="usuario">
+                    <a href="escolha.html" id="userLink"><img src="user.png" alt="Usuário"></a>
+                </li>
+                <li class="tradutor-item">
+                    <div id="google_translate_element"></div>
+                </li>
+                <li class="config">
+                    <img src="tres.png" alt="Configurações">
+                    <div class="sub-conf">
+                        <ul>
+                            <li><a href="">GOOGLE TRADUTOR</a></li>
+                            <li><a href="">LOCALIZAÇÃO</a></li>
+                            <li><a href="">DOCS TCC</a></li>
+                            <li><a href="">CRONOGRAMA</a></li>
+                            <li><a href="">PROTÓTIPO AERO FITNESS</a></li>
+                            <li><a href="">ADICIONAIS</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="section" id="modalidades">
+            <div class="section__heading">
+                <span class="eyebrow">Escolha sua modalidade</span>
+                <h2>Um treino para cada objetivo</h2>
+                <p>Todas as modalidades possuem 20 exercícios e orientações detalhadas do Personal IA.</p>
+            </div>
+
+            <div class="modality-grid">
+                <article class="modality-card modality-card--cardio">
+                    <div class="modality-card__number">01</div>
+                    <span class="modality-card__icon"><img src="icone-corrida.png" alt="Cardio"></span>
+                    <h3>Cardio</h3>
+                    <p>Exercícios para melhorar o condicionamento, a resistência e a saúde cardiovascular.</p>
+                    <ul>
+                        <li>20 exercícios</li>
+                        <li>Baixo, médio e alto impacto</li>
+                        <li>Treinos progressivos</li>
+                    </ul>
+                    <button type="button" class="card-button" data-filter-button="cardio">
+                        Ver exercícios <span>→</span>
+                    </button>
+                </article>
+
+                <article class="modality-card modality-card--strength">
+                    <div class="modality-card__number">02</div>
+                    <span class="modality-card__icon"><img src="icone-peso.png" alt="Musculação"></span>
+                    <h3>Musculação e Calistenia</h3>
+                    <p>Treinos para academia ou casa, utilizando máquinas, pesos ou o próprio corpo.</p>
+                    <ul>
+                        <li>20 exercícios</li>
+                        <li>Força e hipertrofia</li>
+                        <li>Opções com e sem equipamentos</li>
+                    </ul>
+                    <button type="button" class="card-button" data-filter-button="forca">
+                        Ver exercícios <span>→</span>
+                    </button>
+                </article>
+
+                <article class="modality-card modality-card--cycling">
+                    <div class="modality-card__number">03</div>
+                    <span class="modality-card__icon"><img src="icone-ciclismo.png" alt="Esportes Variados"></span>
+                    <h3>Esportes Variados</h3>
+                    <p>Outras modalidades esportivas para variar o treino e desenvolver novas habilidades.</p>
+                    <ul>
+                        <li>20 esportes</li>
+                        <li>Esportes coletivos e individuais</li>
+                        <li>Opções para todas as idades</li>
+                    </ul>
+                    <button type="button" class="card-button" data-filter-button="ciclismo">
+                        Ver esportes <span>→</span>
+                    </button>
+                </article>
+
+                <article class="modality-card modality-card--adaptive">
+                    <div class="modality-card__number">04</div>
+                    <span class="modality-card__icon"><img src="icone-cardio.png" alt="Treino Adaptado"></span>
+                    <h3>Treino Adaptado</h3>
+                    <p>Modalidade 100% inclusiva para PCD, idosos, pessoas com autismo, cegueira, surdez, cadeirantes, lesões ou restrições.</p>
+                    <ul>
+                        <li>40 exercícios adaptados</li>
+                        <li>Para todos os públicos</li>
+                        <li>Foco em autonomia e segurança</li>
+                    </ul>
+                    <button type="button" class="card-button" data-filter-button="adaptado">
+                        Ver exercícios <span>→</span>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section--soft" id="exercicios" style="display: none;">
+            <div class="section__heading">
+                <span class="eyebrow">Biblioteca de movimentos</span>
+                <h2 id="exerciseTitle">Exercícios</h2>
+                <p id="exerciseSubtitle">Clique em um exercício para receber instruções do Personal IA.</p>
+            </div>
+
+            <div class="exercise-grid" id="exerciseGrid"></div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button type="button" class="filter" id="closeExercises" style="background: rgba(255, 100, 100, 0.2); border-color: rgba(255, 100, 100, 0.4); color: #ff6b6b;">
+                    ✕ Fechar exercícios
+                </button>
+            </div>
+        </section>
+
+        <section class="ai-section" id="personal-ia">
+            <div class="ai-section__content">
+                <span class="eyebrow eyebrow--light">Orientação personalizada</span>
+                <h2>Conheça o Personal AEROFITNESS</h2>
+                <p>Seu personal trainer virtual que monta planilhas de treino, dietas, metas e tira dúvidas 24 horas e 7 dias na semana.</p>
+
+                <div class="ai-features">
+                    <article>
+                        <span>✓</span>
+                        <div>
+                            <h3>Planilhas de treino</h3>
+                            <p>Treinos personalizados de acordo com seu objetivo.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <span>✓</span>
+                        <div>
+                            <h3>Controle alimentar</h3>
+                            <p>Sugestões de dieta e acompanhamento nutricional.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <span>✓</span>
+                        <div>
+                            <h3>Metas e alertas</h3>
+                            <p>Defina objetivos e receba avisos de segurança.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="pro-chat" id="proChat">
+                <header class="pro-header">
+                    <div class="pro-logo">
+                        <span>P</span>
+                    </div>
+                    <div class="pro-brand">
+                        <p class="pro-brand-name">Personal AEROFITNESS</p>
+                        <p class="pro-brand-status">online · personal ia</p>
+                    </div>
+                    <button id="proNewChat" class="pro-btn-accent" type="button">Nova conversa</button>
+                </header>
+
+                <main id="proTranscript" class="pro-transcript">
+                    <div id="proEmpty" class="pro-empty">
+                        <div class="pro-empty-badge">P</div>
+                        <h1>Personal Trainer IA</h1>
+                        <p>Peça uma planilha de treino, monte sua dieta, defina metas ou tire dúvidas. Eu te acompanho 24 horas e 7 dias na semana.</p>
+                    </div>
+                </main>
+
+                <footer class="pro-composer">
+                    <div class="pro-composer-inner">
+                        <div class="pro-quick" id="proQuick"></div>
+                        <form id="proForm" class="pro-prompt">
+                            <textarea id="proInput" rows="1" placeholder="Escreva sua mensagem…"></textarea>
+                            <div class="pro-prompt-footer">
+                                <button id="proSend" type="submit" class="pro-send" aria-label="Enviar">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 19V5M5 12l7-7 7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                        <p id="proNote" style="font-size:11px; color:#66716d; margin-top:8px; text-align:center;"></p>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <dialog class="exercise-modal" id="exerciseModal">
+        <button class="exercise-modal__close" id="closeModal" aria-label="Fechar" type="button">×</button>
+        <span class="exercise-modal__category" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+
+        <div class="instruction">
+            <h3>Orientação</h3>
+            <p id="modalInstruction"></p>
+        </div>
+
+        <div class="modal-details">
+            <div>
+                <strong>Nível</strong>
+                <span id="modalLevel"></span>
+            </div>
+            <div>
+                <strong>Sugestão</strong>
+                <span id="modalVolume"></span>
+            </div>
+        </div>
+
+        <div class="warning">
+            Faça apenas movimentos confortáveis. Pare caso sinta dor, tontura ou desconforto incomum.
+        </div>
+    </dialog>
+
+    <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
+        <div class="pojo-a11y-toolbar-toggle">
+            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
+                <span class="pojo-sr-only sr-only">Abrir a barra de ferramentas</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" width="1em">
+                    <title>Ferramentas de Acessibilidade</title>
+                    <path d="M50 .8c5.7 0 10.4 4.7 10.4 10.4S55.7 21.6 50 21.6s-10.4-4.7-10.4-10.4S44.3.8 50 .8zM92.2 32l-21.9 2.3c-2.6.3-4.6 2.5-4.6 5.2V94c0 2.9-2.3 5.2-5.2 5.2H60c-2.7 0-4.9-2.1-5.2-4.7l-2.2-24.7c-.1-1.5-1.4-2.5-2.8-2.4-1.3.1-2.2 1.1-2.4 2.4l-2.2 24.7c-.2 2.7-2.5 4.7-5.2 4.7h-.5c-2.9 0-5.2-2.3-5.2-5.2V39.4c0-2.7-2-4.9-4.6-5.2L7.8 32c-2.6-.3-4.6-2.5-4.6-5.2v-.5c0-2.6 2.1-4.7 4.7-4.7h.5c19.3 1.8 33.2 2.8 41.7 2.8s22.4-.9 41.7-2.8c2.6-.2 4.9 1.6 5.2 4.3v1c-.1 2.6-2.1 4.8-4.8 5.1z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="pojo-a11y-toolbar-overlay">
+            <div class="pojo-a11y-toolbar-inner">
+                <p class="pojo-a11y-toolbar-title">Ferramentas de Acessibilidade</p>
+                <ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Aumentar o Texto</title><path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path></svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Aumentar o Texto</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Diminuir o Texto</title><path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path></svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Diminuir o Texto</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-narrator" data-action="narrator" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Narrador</title><path fill="currentColor" d="M224 32C135 32 64 103 64 192v160c0 17.7 14.3 32 32 32h32V192c0-53 43-96 96-96s96 43 96 96v192h32c17.7 0 32-14.3 32-32V192c0-89-71-160-160-160zm-80 288c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm160 0c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm-80 96c-53 0-96-43-96-96h192c0 53-43 96-96 96z"/></svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text" id="narrator-text">Ouvir Página</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline" data-action="links-underline" data-action-group="toggle" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Links Sublinhados</title><path fill="currentColor" d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z"></path></svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Links Sublinhados</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-readable-font" data-action="readable-font" data-action-group="toggle" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Fonte Legível</title><path fill="currentColor" d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z"></path></svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Fonte Legível</span>
+                        </a>
+                    </li>
+                    <li class="pojo-a11y-toolbar-item">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" tabindex="0" role="link">
+                            <span class="pojo-a11y-toolbar-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Redefinir</title><path fill="currentColor" d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z"></path></svg>
+                            </span>
+                            <span class="pojo-a11y-toolbar-text">Redefinir</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== GOOGLE TRADUTOR ===== -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru,ar,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <script>
+        // ========================================
+        // CARROSSEL
+        // ========================================
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function moveSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => moveSlide(1), 5000);
+
+        // ========================================
+        // USUÁRIO
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            updateUserIcon();
+        });
+
+        function updateUserIcon() {
+            const userLink = document.getElementById('userLink');
+            const savedUser = localStorage.getItem('loggedInUser');
+
+            if (savedUser) {
+                try {
+                    const user = JSON.parse(savedUser);
+                    if (user.loggedIn && user.initials) {
+                        userLink.innerHTML = `<span class="user-initials">${user.initials}</span>`;
+                        userLink.href = '#';
+                        userLink.title = `Olá, ${user.email}`;
+                        userLink.onclick = function(e) {
+                            e.preventDefault();
+                            if (confirm('Deseja fazer logout?')) {
+                                localStorage.removeItem('loggedInUser');
+                                location.reload();
+                            }
+                        };
+                    }
+                } catch (e) {
+                    console.error('Erro ao ler dados do usuário:', e);
+                }
+            }
+        }
+
+        // ========================================
+        // DADOS DOS EXERCÍCIOS
+        // ========================================
+        const categories = {
+            cardio: {
+                label: "Cardio", icon: "🏃",
+                iconImg: "icone-corrida.png",
+                description: "Condicionamento, resistência e saúde cardiovascular.",
+                defaultLevel: "Iniciante", defaultVolume: "30 segundos",
+                exercises: ["Caminhada estacionária","Polichinelo","Corrida estacionária","Elevação alternada de joelhos","Calcanhar no glúteo","Passo lateral","Mountain climber","Burpee adaptado","Salto de corda sem corda","Skater lateral","Marcha acelerada","Step-up","Boxe no ar","Agachamento com alcance","Corrida lateral","Salto baixo","Toque nos pés alternado","Deslocamento frente e trás","Dança aeróbica","Intervalo de caminhada e corrida"]
+            },
+            forca: {
+                label: "Musculação e Calistenia", icon: "🏋️",
+                iconImg: "icone-peso.png",
+                description: "Fortalecimento para casa, academia ou calistenia.",
+                defaultLevel: "Intermediário", defaultVolume: "2 a 3 séries",
+                exercises: ["Agachamento livre","Flexão de braços","Prancha frontal","Afundo alternado","Ponte de glúteos","Remada com elástico","Desenvolvimento de ombros","Rosca direta","Tríceps no banco","Elevação lateral","Levantamento terra romeno","Panturrilha em pé","Abdominal curto","Prancha lateral","Superman","Puxada na frente","Supino com halteres","Leg press","Barra fixa assistida","Elevação de quadril unilateral"]
+            },
+            ciclismo: {
+                label: "Esportes Variados", icon: "🏅",
+                iconImg: "icone-ciclismo.png",
+                description: "Outras modalidades esportivas para variar o treino.",
+                defaultLevel: "Todos os níveis", defaultVolume: "20 a 40 minutos",
+                exercises: ["Futebol recreativo","Vôlei","Basquete","Handebol","Natação","Corrida ao ar livre","Caminhada em trilha","Tênis","Beach tennis","Badminton","Ping-pong","Boxe recreativo","Muay thai iniciante","Judô adaptado","Dança esportiva","Pular corda","Escalada indoor","Patins","Skate recreativo","Circuito funcional esportivo"]
+            },
+            adaptado: {
+                label: "Treino Adaptado", icon: "♿",
+                iconImg: "icone-cardio.png",
+                description: "Movimentos inclusivos para todos os públicos: PCD, idosos, pessoas com lesões ou restrições.",
+                defaultLevel: "Adaptável", defaultVolume: "8 a 12 repetições leves",
+                exercises: [
+                    "Marcha sentada com apoio","Elevação frontal sentada","Remada com elástico sentada","Extensão de joelho sentada","Elevação alternada dos braços","Rotação leve do tronco","Inclinação lateral assistida","Abertura de braços com bastão","Flexão de cotovelos com halteres leves","Extensão de tríceps adaptada","Pressão de mãos contra a parede","Adução de pernas com bola","Flexão de tornozelo sentado","Elevação de calcanhares sentada","Transferência de peso com apoio","Agachamento assistido na cadeira","Flexão na parede (adaptada)","Equilíbrio com apoio unipodal","Alongamento ativo dos braços","Respiração diafragmática guiada","Caminhada guiada com apoio","Coordenação motora com cones","Alongamento de cadeia posterior sentado","Fortalecimento de punhos com bola","Rotação de ombros controlada","Elevação de pernas alternada sentado","Marcha estacionária com apoio","Exercício de pinça e preensão","Alongamento cervical suave","Postura e alinhamento sentado","Circuito sensorial com texturas","Trabalho de core sentado","Mobilidade de quadril assistida","Fortalecimento de panturrilha sentado","Exercício de respiração com contagem","Relaxamento muscular progressivo","Adaptação de AVDs (atividades do dia a dia)","Treino de marcha assistida com andador","Fortalecimento de mãos com massa de modelar","Circuito lúdico para autismo"
+                ]
+            }
+        };
+
+        const categoryInstructions = {
+            cardio: "Comece em ritmo leve e aumente gradualmente. Mantenha o tronco estável, apoie os pés com controle e evite prender a respiração. Você deve conseguir falar frases curtas durante um esforço moderado.",
+            forca: "Posicione o corpo de forma estável e mantenha a coluna neutra. Execute o movimento devagar, sem usar impulso. Inspire na fase mais fácil e expire durante o esforço. Reduza a carga se perder o controle da postura.",
+            ciclismo: "Escolha um esporte que você goste e comece em ritmo leve. Aqueça antes de começar, mantenha a postura correta e respeite seus limites. Hidrate-se durante a prática e aumente a intensidade gradualmente conforme for se sentindo mais confortável.",
+            adaptado: "Cada pessoa é única. Use cadeira firme, apoio seguro ou auxílio profissional quando necessário. Faça o movimento apenas na amplitude confortável, sem forçar articulações. Para autismo, use rotinas visuais e repetições previsíveis. Para cegos, use comandos verbais claros e apoio tátil. Para surdos, use demonstrações visuais e feedback por toque. Para cadeirantes, priorize exercícios sentados e transferências seguras. Para idosos e pessoas com lesões, respeite os limites do corpo e aumente a intensidade devagar. Priorize sempre respiração contínua, estabilidade e controle."
+        };
+
+        // ========================================
+        // RENDERIZAÇÃO DOS EXERCÍCIOS
+        // ========================================
+        const exerciseGrid = document.querySelector("#exerciseGrid");
+        const exerciseSection = document.querySelector("#exercicios");
+        const exerciseTitle = document.querySelector("#exerciseTitle");
+        const exerciseSubtitle = document.querySelector("#exerciseSubtitle");
+
+        const modal = document.querySelector("#exerciseModal");
+        const closeModalButton = document.querySelector("#closeModal");
+        const modalCategory = document.querySelector("#modalCategory");
+        const modalTitle = document.querySelector("#modalTitle");
+        const modalDescription = document.querySelector("#modalDescription");
+        const modalInstruction = document.querySelector("#modalInstruction");
+        const modalLevel = document.querySelector("#modalLevel");
+        const modalVolume = document.querySelector("#modalVolume");
+
+        function buildExerciseList() {
+            const items = [];
+            Object.entries(categories).forEach(([categoryKey, category]) => {
+                category.exercises.forEach((name, index) => {
+                    items.push({
+                        id: `${categoryKey}-${index}`,
+                        category: categoryKey,
+                        categoryLabel: category.label,
+                        icon: category.icon,
+                        iconImg: category.iconImg,
+                        name,
+                        description: category.description,
+                        level: category.defaultLevel,
+                        volume: category.defaultVolume,
+                        instruction: categoryInstructions[categoryKey]
+                    });
+                });
+            });
+            return items;
+        }
+
+        const exercises = buildExerciseList();
+
+        function renderExercises(filter) {
+            const filteredExercises = exercises.filter(ex => ex.category === filter);
+
+            if (filteredExercises.length === 0) {
+                exerciseGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: #c4d3ce; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                        <p>Nenhum exercício encontrado para esta categoria.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const categoryLabel = categories[filter]?.label || "Exercícios";
+            exerciseTitle.textContent = `${filteredExercises.length} exercícios de ${categoryLabel}`;
+            exerciseSubtitle.textContent = "Clique em um exercício para conversar com o Personal IA.";
+
+            exerciseGrid.innerHTML = filteredExercises.map(ex => `
+                <article class="exercise-card">
+                    <div class="exercise-card__top">
+                        <span class="exercise-card__icon"><img src="${ex.iconImg}" alt="${ex.name}"></span>
+                        <span class="exercise-card__level">${ex.level}</span>
+                    </div>
+                    <h3>${ex.name}</h3>
+                    <p>${ex.description}</p>
+                    <button type="button" data-exercise-id="${ex.id}" aria-label="Conversar com o Personal IA sobre ${ex.name}">
+                        Ver com Personal IA <span>→</span>
+                    </button>
+                </article>
+            `).join("");
+        }
+
+        function openExercise(exerciseId) {
+            const exercise = exercises.find(item => item.id === exerciseId);
+            if (!exercise) return;
+
+            const mensagem = `Quero saber mais sobre o exercício "${exercise.name}" (${exercise.categoryLabel}). Nível: ${exercise.level}. Pode me dar orientações detalhadas sobre execução, postura e erros comuns?`;
+
+            proSend(mensagem);
+
+            document.querySelector("#personal-ia").scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.addEventListener('click', function(e) {
+            const modalityBtn = e.target.closest('[data-filter-button]');
+            if (modalityBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                const filter = modalityBtn.getAttribute('data-filter-button');
+                renderExercises(filter);
+                exerciseSection.style.display = 'block';
+                exerciseSection.scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            const exerciseBtn = e.target.closest('[data-exercise-id]');
+            if (exerciseBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                openExercise(exerciseBtn.getAttribute('data-exercise-id'));
+                return;
+            }
+
+            const closeEx = e.target.closest('#closeExercises');
+            if (closeEx) {
+                e.preventDefault();
+                exerciseSection.style.display = 'none';
+                document.querySelector('#modalidades').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            const closeMo = e.target.closest('#closeModal');
+            if (closeMo) {
+                modal.close();
+                return;
+            }
+        }, true);
+
+        modal.addEventListener("click", (event) => {
+            const box = modal.getBoundingClientRect();
+            if (event.clientX < box.left || event.clientX > box.right ||
+                event.clientY < box.top || event.clientY > box.bottom) {
+                modal.close();
+            }
+        });
+
+        // ========================================
+        // PERSONAL IA — APONTA PARA O WORKER DO CLOUDFLARE
+        // A chave da Groq vive como Secret no Cloudflare (GROQ_API_KEY)
+        // ========================================
+        const PRO_API_URL = "https://aero-chat.matheus-martins-oliveira09.workers.dev";
+
+        const PRO_STORAGE_KEY = "aero_chat_history_v1";
+
+        const PRO_QUICK_ACTIONS = [
+            { label: "Criar planilha de treino", prompt: "Quero uma planilha de treino. Me pergunte o que precisar." },
+            { label: "Montar dieta", prompt: "Quero montar um plano alimentar. Me pergunte o que precisar." },
+            { label: "Definir meta", prompt: "Quero definir uma meta de treino. Pode me ajudar?" },
+            { label: "Dicas de treino", prompt: "Me dá dicas de treino para evoluir com segurança." },
+        ];
+
+        const proEl = {
+            transcript: document.getElementById("proTranscript"),
+            empty: document.getElementById("proEmpty"),
+            quick: document.getElementById("proQuick"),
+            form: document.getElementById("proForm"),
+            input: document.getElementById("proInput"),
+            send: document.getElementById("proSend"),
+            note: document.getElementById("proNote"),
+            newChat: document.getElementById("proNewChat"),
+        };
+
+        let proMessages = proLoad();
+        let proBusy = false;
+
+        function proLoad() {
+            try {
+                const raw = localStorage.getItem(PRO_STORAGE_KEY);
+                const parsed = raw ? JSON.parse(raw) : [];
+                return Array.isArray(parsed) ? parsed : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function proSave() {
+            try {
+                localStorage.setItem(PRO_STORAGE_KEY, JSON.stringify(proMessages));
+            } catch {}
+        }
+
+        function proEsc(s) {
+            return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+        }
+
+        function proInline(s) {
+            return proEsc(s)
+                .replace(/`([^`]+)`/g, "<code>$1</code>")
+                .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+                .replace(/(^|\W)\*([^*\n]+)\*/g, "$1<em>$2</em>");
+        }
+
+        function proMarkdown(src) {
+            const lines = src.replace(/\r/g, "").split("\n");
+            let html = "";
+            let list = null;
+            let table = null;
+
+            const closeList = () => { if (list) { html += `</${list}>`; list = null; } };
+            const closeTable = () => { if (table) { html += "</tbody></table>"; table = null; } };
+
+            for (const line of lines) {
+                const t = line.trim();
+
+                if (/^\|.*\|$/.test(t)) {
+                    const cells = t.slice(1, -1).split("|").map((c) => c.trim());
+                    if (/^\|[\s:|-]+\|$/.test(t)) continue;
+                    closeList();
+                    if (!table) {
+                        html += "<table><thead><tr>" + cells.map((c) => `<th>${proInline(c)}</th>`).join("") + "</tr></thead><tbody>";
+                        table = true;
+                    } else {
+                        html += "<tr>" + cells.map((c) => `<td>${proInline(c)}</td>`).join("") + "</tr>";
+                    }
+                    continue;
+                }
+                closeTable();
+
+                if (!t) { closeList(); continue; }
+
+                const h = t.match(/^(#{1,3})\s+(.*)$/);
+                if (h) { closeList(); html += `<h${h[1].length}>${proInline(h[2])}</h${h[1].length}>`; continue; }
+
+                const ul = t.match(/^[-*]\s+(.*)$/);
+                if (ul) {
+                    if (list !== "ul") { closeList(); html += "<ul>"; list = "ul"; }
+                    html += `<li>${proInline(ul[1])}</li>`;
+                    continue;
+                }
+                const ol = t.match(/^\d+[.)]\s+(.*)$/);
+                if (ol) {
+                    if (list !== "ol") { closeList(); html += "<ol>"; list = "ol"; }
+                    html += `<li>${proInline(ol[1])}</li>`;
+                    continue;
+                }
+
+                closeList();
+                html += `<p>${proInline(t)}</p>`;
+            }
+            closeList();
+            closeTable();
+            return html;
+        }
+
+        function proScrollDown() {
+            proEl.transcript.scrollTop = proEl.transcript.scrollHeight;
+        }
+
+        function proRender() {
+            proEl.transcript.innerHTML = "";
+            if (!proMessages.length) {
+                proEl.transcript.appendChild(proEl.empty);
+                return;
+            }
+            for (const m of proMessages) {
+                const row = document.createElement("div");
+                row.className = "pro-msg " + m.role;
+                if (m.role === "user") {
+                    const b = document.createElement("div");
+                    b.className = "pro-bubble-user";
+                    b.textContent = m.content;
+                    row.appendChild(b);
+                } else {
+                    row.innerHTML = `<div class="pro-avatar">PR</div><div class="pro-bubble-ai">${proMarkdown(m.content)}</div>`;
+                }
+                proEl.transcript.appendChild(row);
+            }
+            proScrollDown();
+        }
+
+        function proShowTyping() {
+            const row = document.createElement("div");
+            row.className = "pro-msg assistant";
+            row.id = "proTyping";
+            row.innerHTML =
+                '<div class="pro-avatar">PR</div><div class="pro-typing"><span class="pro-dots"><i></i><i></i><i></i></span>preparando resposta</div>';
+            proEl.transcript.appendChild(row);
+            proScrollDown();
+        }
+
+        function proHideTyping() {
+            document.getElementById("proTyping")?.remove();
+        }
+
+        function proSetBusy(v) {
+            proBusy = v;
+            proEl.send.disabled = v;
+            proEl.quick.querySelectorAll("button").forEach((b) => (b.disabled = v));
+            if (!v) proEl.input.focus();
+        }
+
+        async function proSend(text) {
+            const content = text.trim();
+            if (!content || proBusy) return;
+
+            proMessages.push({ role: "user", content });
+            proRender();
+            proSave();
+            proSetBusy(true);
+            proShowTyping();
+
+            try {
+                const res = await fetch(PRO_API_URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                        // Sem Authorization: a chave fica no Worker do Cloudflare
+                    },
+                    body: JSON.stringify({
+                        model: "openai/gpt-oss-120b",
+                        stream: true,
+                        temperature: 0.7,
+                        max_tokens: 2048,
+                        messages: [
+                            {
+                                role: "system",
+                                content: "Você é o PRÓ, um personal trainer IA da academia Aero Fitness. Você ajuda com planilhas de treino (cardio, musculação, esportes variados, treino adaptado para PCD/idosos/lesões), controle alimentar, metas e dicas de execução. Seja direto, motivador e profissional. Use português do Brasil. Quando fizer sentido, use listas, tabelas e negrito. Se o usuário pedir uma planilha, pergunte objetivo, nível e frequência antes. NUNCA recomende anabolizantes. Em caso de dor ou lesão, oriente procurar um profissional. Ao sugerir treinos adaptados, considere sempre as necessidades específicas (autismo, cegueira, surdez, cadeirantes, idosos, lesões). Se a pergunta não tiver relação com treino/saúde, responda educadamente e volte ao tema."
+                            },
+                            ...proMessages.map((m) => ({
+                                role: m.role === "assistant" ? "assistant" : "user",
+                                content: m.content
+                            }))
+                        ]
+                    })
+                });
+
+                if (!res.ok || !res.body) throw new Error("HTTP " + res.status);
+
+                proHideTyping();
+                const reply = { role: "assistant", content: "" };
+                proMessages.push(reply);
+                proRender();
+                const bubble = proEl.transcript.querySelector(".pro-msg:last-child .pro-bubble-ai");
+
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = "";
+
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split("\n");
+                    buffer = lines.pop() ?? "";
+                    for (const line of lines) {
+                        const trimmed = line.trim();
+                        if (!trimmed.startsWith("data:")) continue;
+                        const payload = trimmed.slice(5).trim();
+                        if (!payload || payload === "[DONE]") continue;
+                        let evt;
+                        try { evt = JSON.parse(payload); } catch { continue; }
+                        const chunk = evt.choices?.[0]?.delta?.content;
+                        if (chunk) {
+                            reply.content += chunk;
+                            bubble.innerHTML = proMarkdown(reply.content);
+                            proScrollDown();
+                        }
+                    }
+                }
+
+                if (!reply.content) reply.content = "_Sem resposta agora. Tente enviar de novo._";
+                proRender();
+                proSave();
+            } catch (err) {
+                proHideTyping();
+                if (proEl.note) {
+                    proEl.note.textContent = "Não consegui falar com o Personal AEROFITNESS agora (" + err.message + ") · envie de novo";
+                }
+            } finally {
+                proSetBusy(false);
+            }
+        }
+
+        PRO_QUICK_ACTIONS.forEach((a) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.textContent = a.label;
+            b.onclick = () => proSend(a.prompt);
+            proEl.quick.appendChild(b);
+        });
+
+        proEl.form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const v = proEl.input.value;
+            proEl.input.value = "";
+            proEl.input.style.height = "auto";
+            proSend(v);
+        });
+
+        proEl.input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                proEl.form.requestSubmit();
+            }
+        });
+
+        proEl.input.addEventListener("input", () => {
+            proEl.input.style.height = "auto";
+            proEl.input.style.height = Math.min(proEl.input.scrollHeight, 180) + "px";
+        });
+
+        proEl.newChat.addEventListener("click", () => {
+            proMessages = [];
+            try { localStorage.removeItem(PRO_STORAGE_KEY); } catch {}
+            if (proEl.note) {
+                proEl.note.textContent =
+                    "Personal AEROFITNESS treina com você 24/7 · salvamos sua conversa neste navegador";
+            }
+            proRender();
+            proEl.input.focus();
+        });
+
+        proRender();
+
+        // ========================================
+        // ACESSIBILIDADE (POJO A11Y)
+        // ========================================
+        (function() {
+            'use strict';
+
+            const toolbar = document.getElementById('pojo-a11y-toolbar');
+            const toggleBtn = document.querySelector('.pojo-a11y-toolbar-toggle-link');
+            const resetBtn = document.querySelector('.pojo-a11y-btn-reset');
+
+            let isSpeaking = false;
+            const narratorBtn = document.querySelector('.pojo-a11y-btn-narrator');
+            const narratorText = document.getElementById('narrator-text');
+
+            function getMainText() {
+                const modalidades = document.querySelector('#modalidades');
+                const textos = [];
+                if (modalidades) textos.push(modalidades.innerText);
+                return textos.join(' ').replace(/\s+/g, ' ').trim() || 'Conteúdo principal não disponível.';
+            }
+
+            function toggleNarrator() {
+                if (!('speechSynthesis' in window)) {
+                    alert('Seu navegador não oferece suporte ao narrador.');
+                    return;
+                }
+                const speechSynthesis = window.speechSynthesis;
+                if (isSpeaking) {
+                    if (speechSynthesis.speaking) speechSynthesis.cancel();
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                    return;
+                }
+                const text = getMainText();
+                if (!text || text.trim().length === 0) {
+                    alert('Nenhum texto disponível para leitura.');
+                    return;
+                }
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                utterance.onstart = function() {
+                    isSpeaking = true;
+                    narratorText.textContent = 'Parar Leitura';
+                    narratorBtn.classList.add('active-tool');
+                };
+                utterance.onend = function() {
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                };
+                utterance.onerror = function() {
+                    isSpeaking = false;
+                    narratorText.textContent = 'Ouvir Página';
+                    narratorBtn.classList.remove('active-tool');
+                };
+                speechSynthesis.speak(utterance);
+            }
+
+            if (narratorBtn) {
+                narratorBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleNarrator();
+                });
+            }
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toolbar.classList.toggle('pojo-a11y-toolbar-open');
+                });
+            }
+
+            const textElements = document.querySelectorAll(
+                '.section__heading h2, .section__heading p, ' +
+                '.modality-card h3, .modality-card p, .modality-card li, .ai-section h2, .ai-section p, ' +
+                '.ai-features h3, .ai-features p, .site-footer *'
+            );
+
+            textElements.forEach(el => {
+                if (!el.dataset.a11yBaseFontSize) {
+                    el.dataset.a11yBaseFontSize = parseFloat(getComputedStyle(el).fontSize);
+                }
+            });
+
+            let textScale = parseFloat(localStorage.getItem('pojo-text-scale')) || 1;
+
+            function applyTextScale() {
+                textElements.forEach(el => {
+                    const original = parseFloat(el.dataset.a11yBaseFontSize);
+                    if (!isNaN(original)) {
+                        el.style.fontSize = `${original * textScale}px`;
+                    }
+                });
+                localStorage.setItem('pojo-text-scale', textScale.toFixed(2));
+            }
+
+            applyTextScale();
+
+            function applyAction(action, element) {
+                const body = document.body;
+                switch (action) {
+                    case 'resize-plus':
+                        textScale = Math.min(textScale + 0.10, 2);
+                        applyTextScale();
+                        element.classList.add('active-tool');
+                        break;
+                    case 'resize-minus':
+                        textScale = Math.max(textScale - 0.10, 0.7);
+                        applyTextScale();
+                        element.classList.add('active-tool');
+                        break;
+                    case 'links-underline':
+                        body.classList.toggle('pojo-links-underline');
+                        element.classList.toggle('active-tool');
+                        break;
+                    case 'readable-font':
+                        body.classList.toggle('pojo-readable-font');
+                        element.classList.toggle('active-tool');
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(tool => {
+                tool.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const action = this.getAttribute('data-action');
+                    if (action === 'narrator') return;
+                    applyAction(action, this);
+                });
+            });
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const body = document.body;
+                    if (isSpeaking && window.speechSynthesis) {
+                        window.speechSynthesis.cancel();
+                        isSpeaking = false;
+                        if (narratorText) narratorText.textContent = 'Ouvir Página';
+                        if (narratorBtn) narratorBtn.classList.remove('active-tool');
+                    }
+                    body.classList.remove('pojo-links-underline', 'pojo-readable-font');
+                    textScale = 1;
+                    localStorage.removeItem('pojo-text-scale');
+                    textElements.forEach(el => el.style.fontSize = '');
+                    document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(t => {
+                        t.classList.remove('active-tool');
+                    });
+                    toolbar.classList.remove('pojo-a11y-toolbar-open');
+                });
+            }
+
+            function loadSavedState() {
+                textScale = parseFloat(localStorage.getItem('pojo-text-scale')) || 1;
+                applyTextScale();
+            }
+            loadSavedState();
+
+        })();
+
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+ <footer>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section contact-section">
+                <h3>CONTATO</h3>
+                <ul class="contact-list">
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E" alt="email"> pngjosebonifacio@seed.pr.gov.b</li>
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E" alt="telefone"> (41) 3423-4131</li>
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E" alt="maps"> Alameda Cel. Elizio Pereira, Sn - 0 - Estradinha, Paranaguá - PR, 83206-000</li>
+                </ul>
+            </div>
+            <div class="footer-section partnerships-section">
+                <h3>PARCERIAS</h3>
+                <div class="logos-wrapper">
+                    <img src="1.png" alt="estadual">                   
+                    <img src="img.pr.colegio.integral.png" alt="integral">   
+                    <img src="icone.CECM.02.png" alt="integral">              
+                </div>
+            </div>
+            <div class="footer-section social-section">
+                <h3>REDES SOCIAIS</h3>
+                <div class="social-icons-footer">
+                    <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico Militar | Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

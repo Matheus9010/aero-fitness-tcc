@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Fit - Login</title>
+    <style>
+        /* --- Reset Básico --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- FUNDO CARROSSEL --- */
+        .slider-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .slide-radio { display: none; }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide-1 { background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop'); }
+        .slide-2 { background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop'); }
+        .slide-3 { background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop'); }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        /* Lógica Carrossel */
+        #slide1:checked ~ .slides .slide-1 { opacity: 1; }
+        #slide2:checked ~ .slides .slide-2 { opacity: 1; }
+        #slide3:checked ~ .slides .slide-3 { opacity: 1; }
+
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-label {
+            width: 15px;
+            height: 15px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-label:hover {
+        background-color: #fff; 
+        transform: scale(1.2);
+        }
+
+        /* --- FORMULÁRIOS (Estilo Glassmorphism) --- */
+        .form-box {
+            position: relative;
+            z-index: 1;
+            width: 380px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur 5px;
+            -webkit-backdrop-filter: blur 10px ;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            color: #fff;
+            display: none; /* Esconde todas as telas inicialmente */
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-box h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+            transition: 0.3s;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #ff4d4d;
+            font-size: 12px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff3333;
+            box-shadow: 0 0 10px #ff4d4d;
+        }
+
+        .links {
+            margin-top: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+            color: #ff4d4d;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        
+        .back-link:hover { 
+            color: #fff;
+        }
+
+        /* --- LÓGICA DE TROCA DE TELAS (Radio Hack) --- */
+        /* Controls internos para navegar entre formulários */
+        .nav-radio { display: none; }
+
+        /* Mostra a tela conforme radio checado */
+        #tela-login:checked ~ .login-box { display: block; }
+        #tela-esquecer:checked ~ .esqueci-box { display: block; }
+        #tela-cadastrar:checked ~ .cadastro-box { display: block; }
+
+        /* Labels invisíveis para controlar a troca (não precisaremos delas visíveis) */
+        
+        .alternativas {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .alternativas label {
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .alternativas label:hover {
+            text-decoration: underline;
+            color: #ff4d4d;
+        }
+
+        /* Estilo específico para botão Voltar */
+        .voltar-btn {
+            background: transparent;
+            border: 1px solid #fff;
+            margin-top: 10px;
+        }
+        
+        .voltar-btn:hover {
+            background: rgba(255,255,255,0.1);
+            box-shadow: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- --- CONTROLE DO FUNDO CARROSSEL --- -->
+    <div class="slider-container">
+        <input type="radio" name="slider" id="slide1" checked class="slide-radio">
+        <input type="radio" name="slider" id="slide2" class="slide-radio">
+        <input type="radio" name="slider" id="slide3" class="slide-radio">
+
+        <div class="slides">
+            <div class="slide slide-1"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="controls">
+            <label for="slide1" class="btn-label"></label>
+            <label for="slide2" class="btn-label"></label>
+            <label for="slide3" class="btn-label"></label>
+        </div>
+    </div>
+
+    <!-- --- CONTROLE DE NAVEGAÇÃO DAS TELAS (Escondido) --- -->
+    <input type="radio" name="navegacao" id="tela-login" checked class="nav-radio">
+    <input type="radio" name="navegacao" id="tela-esquecer" class="nav-radio">
+    <input type="radio" name="navegacao" id="tela-cadastrar" class="nav-radio">
+
+    <!-- ==================== TELA 1: LOGIN ==================== -->
+    <div class="form-box login-box">
+        <h2>AERO FITNESS Login</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" required>
+                <label>Usuário ou Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label>Senha</label>
+            </div>
+            <button type="submit" class="submit-btn">Entrar</button><a href="index.html"></a>
+            
+            <div class="alternativas">
+                <!-- Labels que funcionam como links para trocar de tela -->
+                <label for="tela-cadastrar">Esqueceu a senha?</label>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="form-box cadastro-box">
+        <h2>Redefenir a senha</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" required>
+                <label>Nome Completo</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label>Criar Senha</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label>Confirmar Senha</label>
+            </div>
+            <button type="submit" class="submit-btn"><a href="Início.html">Redefenir</a></button>
+            
+            <label for="tela-login" class="back-link">← Voltar para o Login</label><a href="inicio"></a>
+        </form>
+    </div>
+
+    
+    <script>
+        // Criar partículas de fundo
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = particle.style.height = (Math.random() * 10 + 5) + 'px';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Simular login real
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const loginBtn = document.getElementById('loginBtn');
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simular validação
+            if (!email || !password) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            // Mostrar loading
+            loginBtn.textContent = '';
+            loginBtn.classList.add('loading');
+
+            // Simular delay de autenticação
+            setTimeout(() => {
+                // Simular sucesso de login (você pode adicionar validação real aqui)
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('userEmail', email);
+                
+                // Redirecionar para página inicial
+                window.location.href = 'dashboard.html';
+            }, 2000);
+        });
+
+        // Auto-login para teste (remova em produção)
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Preencher campos para teste
+            document.getElementById('email').value = 'usuario@exemplo.com';
+            document.getElementById('password').value = '123456';
+        });
+
+        // Enter para login
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+
+</body>
+</html>

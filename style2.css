@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4776E6, #1e0998);
+    position: relative;
+}
+
+/* ======================================== */
+/* BOTÃO VOLTAR - CANTOR SUPERIOR ESQUERDO */
+/* ======================================== */
+.btn-voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    padding: 10px 18px;
+    
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    
+    transition: all 0.3s ease;
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-voltar:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transform: translateX(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-voltar i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-voltar:hover i {
+    transform: translateX(-3px);
+}
+
+.btn-voltar span {
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+}
+
+/* ======================================== */
+/* FORMULÁRIO */
+/* ======================================== */
+#form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 60px;
+    width: min-content;
+    align-items: center;
+    color: #2b344b;
+    animation: iniciar 1.6s ease-out;
+    pointer-events: all;
+}
+
+.title {
+    font-size: 1.8em;
+    margin-bottom: 10%;
+}
+
+.input {
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+}
+
+.input input {
+    width: 80%;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(-10%);
+    color: #2b344b;
+    font-size: 11pt;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #2b344b;
+}
+
+#btn {
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+#btn button {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to left, #3f6aa7, #5370ff, #537dbc);
+    width: 100%;
+    height: 40px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn button:hover {
+    background: linear-gradient(to right, #3f6aa7, #5370ff, #537dbc);
+}
+
+#btn button a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes iniciar {
+    0% {
+        top: -20%;
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        top: 50%;
+        opacity: 100%;
+        pointer-events: all;
+    }
+}
+
+/* ======================================== */
+/* FOCO VISUAL PARA ACESSIBILIDADE */
+/* ======================================== */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #ffd700;
+    outline-offset: 3px;
+}
+
+/* ======================================== */
+/* POSICIONAMENTO DO BONECO DE ACESSIBILIDADE - IGUAL ÀS OUTRAS PÁGINAS */
+/* ======================================== */
+#pojo-a11y-toolbar {
+    position: fixed !important;
+    left: 20px !important;
+    bottom: 130px !important;
+    top: auto !important;
+    right: auto !important;
+    z-index: 1001 !important;
+}
+
+body.pojo-links-underline a,
+body.pojo-links-underline a:visited {
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 2px !important;
+}
+
+body.pojo-readable-font,
+body.pojo-readable-font * {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body.pojo-readable-font p,
+body.pojo-readable-font li,
+body.pojo-readable-font a,
+body.pojo-readable-font button,
+body.pojo-readable-font h1,
+body.pojo-readable-font h2,
+body.pojo-readable-font h3 {
+    letter-spacing: 0.03em !important;
+    line-height: 1.6 !important;
+}
+
+html body #pojo-a11y-toolbar {
+    position: fixed !important;
+    left: 0 !important;
+    bottom: 10px !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 2147483647 !important;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle-link,
+#pojo-a11y-toolbar.pojo-a11y-toolbar-open .pojo-a11y-toolbar-toggle-link {
+    background: inherit !important;
+    color: inherit !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* ======================================== */
+/* RESPONSIVIDADE */
+/* ======================================== */
+@media (max-width: 768px) {
+    .btn-voltar {
+        top: 15px;
+        left: 15px;
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+    
+    .btn-voltar span {
+        font-size: 0.7rem;
+    }
+    
+    .btn-voltar i {
+        font-size: 0.8rem;
+    }
+    
+    #form {
+        padding: 40px 30px;
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .input {
+        min-width: 200px;
+    }
+    
+    .title {
+        font-size: 1.4em;
+    }
+
+    html body #pojo-a11y-toolbar {
+        left: 0 !important;
+        bottom: 120px !important;
+        top: auto !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-voltar {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        gap: 5px;
+    }
+    
+    .btn-voltar span {
+        font-size: 0.65rem;
+    }
+    
+    .btn-voltar i {
+        font-size: 0.7rem;
+    }
+    
+    #form {
+        padding: 30px 20px;
+        width: 95%;
+        max-width: 350px;
+    }
+    
+    .input {
+        min-width: 160px;
+        padding: 4px 8px;
+    }
+    
+    .input input {
+        font-size: 10pt;
+    }
+    
+    .title {
+        font-size: 1.2em;
+        margin-bottom: 8%;
+    }
+    
+    #btn button {
+        font-size: 1em;
+        height: 35px;
+    }
+
+    html body #pojo-a11y-toolbar {
+        bottom: 100px !important;
+    }
+}

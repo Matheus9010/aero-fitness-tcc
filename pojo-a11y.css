@@ -1,0 +1,278 @@
+/* ===== BARRA DE ACESSIBILIDADE - POJO A11Y ===== */
+.pojo-a11y-toolbar {
+    position: fixed;
+    z-index: 999999;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.pojo-a11y-toolbar-right {
+    right: 0;
+}
+
+.pojo-a11y-toolbar-open {
+    transform: translateX(0) !important;
+}
+
+/* ===== BOTÃO TOGGLE (BONECO) ===== */
+.pojo-a11y-toolbar-toggle {
+    background: #0073aa;
+    border-radius: 6px 0 0 6px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.pojo-a11y-toolbar-toggle-link {
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.pojo-a11y-toolbar-toggle-link svg {
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
+}
+
+.pojo-a11y-toolbar-toggle-link:hover,
+.pojo-a11y-toolbar-toggle-link:focus {
+    color: #fff;
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+.sr-only,
+.pojo-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== OVERLAY DA BARRA ===== */
+.pojo-a11y-toolbar-overlay {
+    background: #fff;
+    border-radius: 6px 0 0 6px;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
+    max-width: 320px;
+    padding: 20px 15px;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.pojo-a11y-toolbar-open .pojo-a11y-toolbar-overlay {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.pojo-a11y-toolbar-inner {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.pojo-a11y-toolbar-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: center;
+}
+
+/* ===== LISTA DE ITENS ===== */
+.pojo-a11y-toolbar-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pojo-a11y-toolbar-item {
+    display: block;
+}
+
+.pojo-a11y-toolbar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.pojo-a11y-toolbar-link:hover {
+    background: #e9ecef;
+    color: #0073aa;
+    text-decoration: none;
+    border-color: #dee2e6;
+}
+
+.pojo-a11y-toolbar-link:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+.pojo-a11y-toolbar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.pojo-a11y-toolbar-icon svg {
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
+}
+
+.pojo-a11y-toolbar-text {
+    flex: 1;
+}
+
+/* ===== BOTÃO RESET ===== */
+.pojo-a11y-btn-reset {
+    border-top: 2px solid #e9ecef;
+    margin-top: 8px;
+    padding-top: 12px;
+    color: #dc3545;
+}
+
+.pojo-a11y-btn-reset:hover {
+    background: #f8d7da;
+    color: #dc3545;
+    border-color: #f5c6cb;
+}
+
+/* ===== ESTADOS ATIVOS ===== */
+.pojo-a11y-toolbar-link.active-tool {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+.pojo-a11y-toolbar-link.active-tool:hover {
+    background: #005a87;
+    color: #fff;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .pojo-a11y-toolbar-overlay {
+        max-width: 280px;
+        padding: 15px 12px;
+    }
+
+    .pojo-a11y-toolbar-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .pojo-a11y-toolbar-toggle-link {
+        font-size: 22px;
+    }
+
+    .pojo-a11y-toolbar-link {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .pojo-a11y-toolbar-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pojo-a11y-toolbar-overlay {
+        max-width: 250px;
+        padding: 12px 10px;
+    }
+
+    .pojo-a11y-toolbar-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .pojo-a11y-toolbar-toggle-link {
+        font-size: 18px;
+    }
+
+    .pojo-a11y-toolbar-link {
+        font-size: 12px;
+        padding: 6px 10px;
+        gap: 8px;
+    }
+
+    .pojo-a11y-toolbar-title {
+        font-size: 13px;
+    }
+}
+
+/* ===== SCROLL PERSONALIZADO ===== */
+.pojo-a11y-toolbar-inner::-webkit-scrollbar {
+    width: 4px;
+}
+
+.pojo-a11y-toolbar-inner::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.pojo-a11y-toolbar-inner::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.pojo-a11y-toolbar-inner::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ===== ANIMAÇÃO DE ABERTURA ===== */
+.pojo-a11y-toolbar {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pojo-a11y-toolbar-overlay {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CORRIGE SOBREPOSIÇÃO EM SITES COM HEADER FIXO ===== */
+.pojo-a11y-toolbar {
+    z-index: 999999;
+}
