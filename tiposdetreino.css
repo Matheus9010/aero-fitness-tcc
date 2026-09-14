@@ -75,11 +75,13 @@ iframe.goog-te-banner-frame {
 /* ======================================== */
 header {
     width: 100%;
-    height: 360px;
+    height: 420px;
     overflow: hidden;
     position: relative;
     background: #000;
     z-index: 1;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel,
@@ -102,6 +104,8 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
+    display: block;
 }
 
 .prev,
@@ -126,10 +130,6 @@ header {
     background: rgba(0, 0, 0, 0.8);
 }
 
-/* ======================================== */
-/* NAV — CORRIGIDO (z-index normal, sem isolation) */
-/* Isso faz o dropdown do tradutor funcionar */
-/* ======================================== */
 nav {
     position: relative;
     z-index: 1000;
@@ -159,7 +159,7 @@ nav {
 
 .barra ul li {
     color: black;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     cursor: pointer;
@@ -311,7 +311,6 @@ nav {
 #google_translate_element {
     display: flex !important;
     align-items: center !important;
-    /* Garante que o dropdown possa "escapar" visualmente */
     overflow: visible !important;
 }
 
@@ -1473,17 +1472,16 @@ main {
     .barra ul li { font-size: 11px; padding: 2px 4px; }
     .usuario img, .config img { width: 25px; height: 25px; }
     .user-initials { width: 28px; height: 28px; font-size: 11px; }
-    header { height: 200px; }
+    header { height: 260px; }
 }
 
 @media (max-width: 400px) {
-    header { height: 150px; }
+    header { height: 220px; }
     .prev, .next { padding: 8px; font-size: 14px; }
 }
 
 /* ======================================== */
 /* ACESSIBILIDADE — POSIÇÃO E APARÊNCIA DO BONECO */
-/* (MANTIDO COMO VOCÊ PEDIU — VERSÃO ORIGINAL) */
 /* ======================================== */
 #pojo-a11y-toolbar {
     position: fixed !important;

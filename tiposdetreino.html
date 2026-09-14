@@ -67,12 +67,9 @@
                     <img src="tres.png" alt="Configurações">
                     <div class="sub-conf">
                         <ul>
-                            <li><a href="">GOOGLE TRADUTOR</a></li>
-                            <li><a href="">LOCALIZAÇÃO</a></li>
-                            <li><a href="">DOCS TCC</a></li>
-                            <li><a href="">CRONOGRAMA</a></li>
-                            <li><a href="">PROTÓTIPO AERO FITNESS</a></li>
-                            <li><a href="">ADICIONAIS</a></li>
+                            <li><a href="https://docs.google.com/document/d/1PD6Y0QL3gowv31_g5Vb6kIAoV6rIKhTdSsrQmaEiGf0/edit?usp=sharing">DOCS TCC</a></li>
+                            <li><a href="https://docs.google.com/spreadsheets/d/1QhTQDWZTRaVbUBLRb6qJSl4oTR2jjS21C1pIS6TOrAs/edit?usp=sharing">CRONOGRAMA</a></li>
+                            <li><a href="https://canva.link/prototipo-tcc">PROTÓTIPO AERO FITNESS</a></li>
                         </ul>
                     </div>
                 </li>
@@ -86,7 +83,7 @@
             <div class="section__heading">
                 <span class="eyebrow">Escolha sua modalidade</span>
                 <h2>Um treino para cada objetivo</h2>
-                <p>Todas as modalidades possuem 20 exercícios e orientações detalhadas do Personal IA.</p>
+                <p id="nivelInfo"></p>
             </div>
 
             <div class="modality-grid">
@@ -334,7 +331,6 @@
         </div>
     </nav>
 
-    <!-- ===== GOOGLE TRADUTOR ===== -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -369,6 +365,7 @@
         // ========================================
         document.addEventListener('DOMContentLoaded', function() {
             updateUserIcon();
+            updateNivelInfo();
         });
 
         function updateUserIcon() {
@@ -381,7 +378,7 @@
                     if (user.loggedIn && user.initials) {
                         userLink.innerHTML = `<span class="user-initials">${user.initials}</span>`;
                         userLink.href = '#';
-                        userLink.title = `Olá, ${user.email}`;
+                        userLink.title = `Olá, ${user.nome || user.email}`;
                         userLink.onclick = function(e) {
                             e.preventDefault();
                             if (confirm('Deseja fazer logout?')) {
@@ -397,7 +394,49 @@
         }
 
         // ========================================
-        // DADOS DOS EXERCÍCIOS
+        // MAPEAMENTO DE NÍVEIS
+        // ========================================
+        const NIVEL_LABELS = {
+            "inicio": "Iniciante",
+            "intermediario": "Intermediário",
+            "pre-avançado": "Pré-avançado",
+            "avançado": "Avançado"
+        };
+
+        function getNivelUsuario() {
+            try {
+                const savedUser = localStorage.getItem('loggedInUser');
+                if (savedUser) {
+                    const user = JSON.parse(savedUser);
+                    if (user.loggedIn && user.nivelTreino && NIVEL_LABELS[user.nivelTreino]) {
+                        return user.nivelTreino;
+                    }
+                }
+            } catch (e) {
+                console.error('Erro ao ler nível do usuário:', e);
+            }
+            return null;
+        }
+
+        function getNivelLabel(nivel) {
+            return NIVEL_LABELS[nivel] || "";
+        }
+
+        function updateNivelInfo() {
+            const nivelInfo = document.getElementById('nivelInfo');
+            if (!nivelInfo) return;
+
+            const nivel = getNivelUsuario();
+
+            if (nivel) {
+                nivelInfo.innerHTML = `Seu nível: <strong style="color: #ffd700;">${getNivelLabel(nivel)}</strong> — os exercícios de Cardio e Musculação serão filtrados conforme seu nível.`;
+            } else {
+                nivelInfo.innerHTML = `Você está navegando sem cadastro. Os exercícios de <strong style="color: #ffd700;">Cardio</strong> e <strong style="color: #ffd700;">Musculação</strong> serão mostrados em <strong style="color: #ffd700;">nível livre</strong> (mix de todos os níveis). <a href="cadastrese.html" style="color:#ffd700; text-decoration: underline;">Cadastre-se</a> ou <a href="login02.html" style="color:#ffd700; text-decoration: underline;">faça login</a> para personalizar.`;
+            }
+        }
+
+        // ========================================
+        // DADOS DOS EXERCÍCIOS (COM NÍVEIS)
         // ========================================
         const categories = {
             cardio: {
@@ -405,14 +444,98 @@
                 iconImg: "icone-corrida.png",
                 description: "Condicionamento, resistência e saúde cardiovascular.",
                 defaultLevel: "Iniciante", defaultVolume: "30 segundos",
-                exercises: ["Caminhada estacionária","Polichinelo","Corrida estacionária","Elevação alternada de joelhos","Calcanhar no glúteo","Passo lateral","Mountain climber","Burpee adaptado","Salto de corda sem corda","Skater lateral","Marcha acelerada","Step-up","Boxe no ar","Agachamento com alcance","Corrida lateral","Salto baixo","Toque nos pés alternado","Deslocamento frente e trás","Dança aeróbica","Intervalo de caminhada e corrida"]
+                exercisesByLevel: {
+                    "inicio": [
+                        "Caminhada estacionária","Polichinelo","Elevação alternada de joelhos",
+                        "Calcanhar no glúteo","Passo lateral","Marcha acelerada",
+                        "Toque nos pés alternado","Dança aeróbica","Caminhada com elevação de braços",
+                        "Agachamento com alcance","Corrida lateral leve","Step-up baixo",
+                        "Alongamento dinâmico","Respiração guiada em movimento","Caminhada em círculos",
+                        "Movimento de braços sincronizado","Elevação de calcanhares","Rotação de tronco leve",
+                        "Caminhada com paradas","Marcha lenta e controlada"
+                    ],
+                    "intermediario": [
+                        "Corrida estacionária","Mountain climber","Burpee adaptado",
+                        "Skater lateral","Boxe no ar","Salto baixo",
+                        "Deslocamento frente e trás","Intervalo de caminhada e corrida",
+                        "Polichinelo com agachamento","Corrida com elevação de joelhos",
+                        "Passo lateral com toque","Mountain climber lento",
+                        "Burpee sem salto","Skater com pausa","Boxe com deslocamento",
+                        "Corrida em zigue-zague","Salto de corda sem corda","Step-up alternado",
+                        "Agachamento com salto leve","Prancha com toque nos ombros"
+                    ],
+                    "pre-avançado": [
+                        "Corrida estacionária rápida","Burpee completo","Mountain climber rápido",
+                        "Skater lateral com salto","Boxe rápido","Salto de corda sem corda rápido",
+                        "Agachamento com salto","Prancha com elevação de pernas",
+                        "Corrida com obstáculos imaginários","Polichinelo rápido",
+                        "Burpee com flexão","Mountain climber cruzado","Skater com agachamento",
+                        "Boxe com agachamento","Corrida com sprint curto",
+                        "Salto vertical","Prancha dinâmica","Agachamento com salto e giro",
+                        "Corrida lateral rápida","Intervalo de alta intensidade"
+                    ],
+                    "avançado": [
+                        "Burpee completo com flexão e salto","Mountain climber velocidade máxima",
+                        "Skater lateral com salto e agachamento","Boxe em alta intensidade",
+                        "Corrida estacionária em sprint","Salto de corda sem corda em velocidade",
+                        "Agachamento com salto e giro 180°","Prancha com elevação de pernas e toque",
+                        "Corrida com obstáculos e desvios","Polichinelo em alta velocidade",
+                        "Burpee com flexão e salto","Mountain climber cruzado rápido",
+                        "Skater com salto e agachamento profundo","Boxe com deslocamento e agachamento",
+                        "Corrida com sprint e recuperação ativa","Salto vertical com agachamento",
+                        "Prancha dinâmica com rotação","Agachamento com salto e giro 360°",
+                        "Corrida lateral em alta velocidade","Circuito HIIT completo"
+                    ]
+                }
             },
             forca: {
                 label: "Musculação e Calistenia", icon: "🏋️",
                 iconImg: "icone-peso.png",
                 description: "Fortalecimento para casa, academia ou calistenia.",
                 defaultLevel: "Intermediário", defaultVolume: "2 a 3 séries",
-                exercises: ["Agachamento livre","Flexão de braços","Prancha frontal","Afundo alternado","Ponte de glúteos","Remada com elástico","Desenvolvimento de ombros","Rosca direta","Tríceps no banco","Elevação lateral","Levantamento terra romeno","Panturrilha em pé","Abdominal curto","Prancha lateral","Superman","Puxada na frente","Supino com halteres","Leg press","Barra fixa assistida","Elevação de quadril unilateral"]
+                exercisesByLevel: {
+                    "inicio": [
+                        "Agachamento livre (sem peso)","Flexão de braços na parede","Prancha frontal (joelhos apoiados)",
+                        "Afundo alternado assistido","Ponte de glúteos","Remada com elástico leve",
+                        "Desenvolvimento de ombros sem peso","Rosca direta com elástico leve",
+                        "Tríceps no banco assistido","Elevação lateral sem peso",
+                        "Panturrilha em pé assistida","Abdominal curto",
+                        "Prancha lateral com joelho apoiado","Superman","Elevação de quadril",
+                        "Agachamento na cadeira","Flexão de braços inclinada","Remada com toalha",
+                        "Extensão de joelho sentado","Elevação de pernas sentado"
+                    ],
+                    "intermediario": [
+                        "Agachamento livre","Flexão de braços","Prancha frontal",
+                        "Afundo alternado","Ponte de glúteos com elevação","Remada com elástico",
+                        "Desenvolvimento de ombros com halteres leves","Rosca direta com halteres",
+                        "Tríceps no banco","Elevação lateral com halteres leves",
+                        "Levantamento terra romeno leve","Panturrilha em pé",
+                        "Abdominal curto com elevação","Prancha lateral","Superman com pausa",
+                        "Puxada na frente com elástico","Supino com halteres leves","Leg press leve",
+                        "Barra fixa assistida","Elevação de quadril unilateral"
+                    ],
+                    "pre-avançado": [
+                        "Agachamento livre profundo","Flexão de braços declinada","Prancha frontal com elevação",
+                        "Afundo com salto","Ponte de glúteos unilateral","Remada com barra",
+                        "Desenvolvimento de ombros com barra","Rosca direta com barra",
+                        "Tríceps testa","Elevação lateral com barra",
+                        "Levantamento terra romeno","Panturrilha em pé com peso",
+                        "Abdominal com peso","Prancha lateral com elevação","Superman com halteres",
+                        "Puxada na frente com barra","Supino com barra","Leg press",
+                        "Barra fixa","Elevação de quadril unilateral com peso"
+                    ],
+                    "avançado": [
+                        "Agachamento livre com barra","Flexão de braços explosiva","Prancha frontal com peso",
+                        "Afundo com salto e peso","Ponte de glúteos unilateral com barra",
+                        "Remada curvada com barra","Desenvolvimento militar","Rosca direta com barra pesada",
+                        "Tríceps testa com barra","Elevação lateral com barra pesada",
+                        "Levantamento terra","Panturrilha em pé com barra",
+                        "Abdominal com peso e rotação","Prancha lateral com elevação e peso",
+                        "Superman com barra","Puxada na frente com barra pesada",
+                        "Supino reto com barra","Leg press pesado","Barra fixa com peso",
+                        "Elevação de quadril unilateral com barra pesada"
+                    ]
+                }
             },
             ciclismo: {
                 label: "Esportes Variados", icon: "🏅",
@@ -449,37 +572,75 @@
 
         const modal = document.querySelector("#exerciseModal");
         const closeModalButton = document.querySelector("#closeModal");
-        const modalCategory = document.querySelector("#modalCategory");
-        const modalTitle = document.querySelector("#modalTitle");
-        const modalDescription = document.querySelector("#modalDescription");
-        const modalInstruction = document.querySelector("#modalInstruction");
-        const modalLevel = document.querySelector("#modalLevel");
-        const modalVolume = document.querySelector("#modalVolume");
 
+        // Se tiver nível → filtra. Se não tiver → 5 de cada nível (20 no total)
         function buildExerciseList() {
             const items = [];
+            const nivelUsuario = getNivelUsuario();
+
             Object.entries(categories).forEach(([categoryKey, category]) => {
-                category.exercises.forEach((name, index) => {
-                    items.push({
-                        id: `${categoryKey}-${index}`,
-                        category: categoryKey,
-                        categoryLabel: category.label,
-                        icon: category.icon,
-                        iconImg: category.iconImg,
-                        name,
-                        description: category.description,
-                        level: category.defaultLevel,
-                        volume: category.defaultVolume,
-                        instruction: categoryInstructions[categoryKey]
+                if (category.exercisesByLevel) {
+                    let exerciciosComNivel = [];
+
+                    if (nivelUsuario) {
+                        // Nível específico do usuário
+                        const lista = category.exercisesByLevel[nivelUsuario] || [];
+                        exerciciosComNivel = lista.map(nome => ({
+                            nome,
+                            nivelLabel: getNivelLabel(nivelUsuario)
+                        }));
+                    } else {
+                        // Modo livre: 5 exercícios de cada nível (total 20)
+                        const ordem = ["inicio", "intermediario", "pre-avançado", "avançado"];
+                        ordem.forEach(nv => {
+                            const lista = category.exercisesByLevel[nv] || [];
+                            const amostra = lista.slice(0, 5);
+                            amostra.forEach(nome => {
+                                exerciciosComNivel.push({
+                                    nome,
+                                    nivelLabel: getNivelLabel(nv)
+                                });
+                            });
+                        });
+                    }
+
+                    exerciciosComNivel.forEach((ex, index) => {
+                        items.push({
+                            id: `${categoryKey}-${index}`,
+                            category: categoryKey,
+                            categoryLabel: category.label,
+                            icon: category.icon,
+                            iconImg: category.iconImg,
+                            name: ex.nome,
+                            description: category.description,
+                            level: ex.nivelLabel,
+                            volume: category.defaultVolume,
+                            instruction: categoryInstructions[categoryKey]
+                        });
                     });
-                });
+                } else {
+                    category.exercises.forEach((name, index) => {
+                        items.push({
+                            id: `${categoryKey}-${index}`,
+                            category: categoryKey,
+                            categoryLabel: category.label,
+                            icon: category.icon,
+                            iconImg: category.iconImg,
+                            name,
+                            description: category.description,
+                            level: category.defaultLevel,
+                            volume: category.defaultVolume,
+                            instruction: categoryInstructions[categoryKey]
+                        });
+                    });
+                }
             });
+
             return items;
         }
 
-        const exercises = buildExerciseList();
-
         function renderExercises(filter) {
+            const exercises = buildExerciseList();
             const filteredExercises = exercises.filter(ex => ex.category === filter);
 
             if (filteredExercises.length === 0) {
@@ -492,7 +653,16 @@
             }
 
             const categoryLabel = categories[filter]?.label || "Exercícios";
-            exerciseTitle.textContent = `${filteredExercises.length} exercícios de ${categoryLabel}`;
+            const nivelUsuario = getNivelUsuario();
+
+            if (filter === "ciclismo" || filter === "adaptado") {
+                exerciseTitle.textContent = `${filteredExercises.length} ${filter === "ciclismo" ? "esportes" : "exercícios"} de ${categoryLabel}`;
+            } else if (nivelUsuario) {
+                exerciseTitle.textContent = `${filteredExercises.length} exercícios de ${categoryLabel} — Nível ${getNivelLabel(nivelUsuario)}`;
+            } else {
+                exerciseTitle.textContent = `${filteredExercises.length} exercícios de ${categoryLabel} — Livre (todos os níveis)`;
+            }
+
             exerciseSubtitle.textContent = "Clique em um exercício para conversar com o Personal IA.";
 
             exerciseGrid.innerHTML = filteredExercises.map(ex => `
@@ -511,10 +681,11 @@
         }
 
         function openExercise(exerciseId) {
+            const exercises = buildExerciseList();
             const exercise = exercises.find(item => item.id === exerciseId);
             if (!exercise) return;
 
-            const mensagem = `Quero saber mais sobre o exercício "${exercise.name}" (${exercise.categoryLabel}). Nível: ${exercise.level}. Pode me dar orientações detalhadas sobre execução, postura e erros comuns?`;
+            const mensagem = `Quero saber mais sobre o exercício "${exercise.name}" (${exercise.categoryLabel}). Nível sugerido: ${exercise.level}. Pode me dar orientações detalhadas sobre execução, postura e erros comuns?`;
 
             proSend(mensagem);
 
@@ -565,8 +736,7 @@
         });
 
         // ========================================
-        // PERSONAL IA — APONTA PARA O WORKER DO CLOUDFLARE
-        // A chave da Groq vive como Secret no Cloudflare (GROQ_API_KEY)
+        // PERSONAL IA
         // ========================================
         const PRO_API_URL = "https://aero-chat.matheus-martins-oliveira09.workers.dev";
 
@@ -734,7 +904,6 @@
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
-                        // Sem Authorization: a chave fica no Worker do Cloudflare
                     },
                     body: JSON.stringify({
                         model: "openai/gpt-oss-120b",

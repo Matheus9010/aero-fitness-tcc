@@ -17,10 +17,12 @@ body {
 
 header {
     width: 100%;
-    height: 360px;
+    height: 420px;
     overflow: hidden;
     position: relative;
     background: #000;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel,
@@ -43,6 +45,8 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
+    display: block;
 }
 
 .prev,
@@ -105,7 +109,7 @@ header {
     color: inherit;
 }
 
-.sub-menu {
+.has-submenu .sub-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -114,17 +118,16 @@ header {
     min-width: 160px;
     border-radius: 0 0 5px 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    z-index: 1001;
 }
 
-.barra ul li:hover .sub-menu {
+.has-submenu:hover .sub-menu {
     display: block;
 }
 
 .sub-menu ul {
     display: flex;
     flex-direction: column;
-    margin-right: 0;
     padding: 0;
 }
 
@@ -136,7 +139,7 @@ header {
 }
 
 .sub-menu ul li:hover {
-    background-color: orange;
+    background-color: #e69500;
 }
 
 .sub-menu ul li a {
@@ -161,7 +164,7 @@ header {
     min-width: 200px;
     border-radius: 0 0 5px 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .barra ul li:hover .sub-conf {
@@ -171,16 +174,18 @@ header {
 .sub-conf ul {
     display: flex;
     flex-direction: column;
-    margin-right: 0;
     padding: 0;
 }
 
 .sub-conf ul li {
-    text-align: center;
     width: 100%;
     margin: 0;
     padding: 10px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sub-conf ul li:hover {
@@ -188,10 +193,11 @@ header {
 }
 
 .sub-conf ul li a {
-    text-align: center;
     color: white;
     font-size: 14px;
     display: block;
+    text-align: center;
+    width: 100%;
 }
 
 /* ===== GOOGLE TRADUTOR NA BARRA - VISUAL MELHORADO ===== */
@@ -257,7 +263,6 @@ header {
     background: #f0f2ff !important;
 }
 
-/* Ícone de globo preto e maior antes do select */
 #google_translate_element::before {
     content: "🌐" !important;
     font-size: 20px !important;
@@ -288,7 +293,6 @@ body {
     margin: 0 !important;
 }
 
-/* Animação sutil ao carregar */
 @keyframes fadeTranslate {
     from {
         opacity: 0;
@@ -304,7 +308,6 @@ body {
     animation: fadeTranslate 0.4s ease-out !important;
 }
 
-/* Responsividade do tradutor */
 @media (max-width: 992px) {
     #google_translate_element select {
         min-width: 120px !important;
@@ -504,7 +507,6 @@ html body #pojo-a11y-toolbar {
     }
 }
 
-/* ===== MANTER A APARÊNCIA DO BOTÃO DE ACESSIBILIDADE ===== */
 #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle-link,
 #pojo-a11y-toolbar.pojo-a11y-toolbar-open .pojo-a11y-toolbar-toggle-link {
     background: inherit !important;
@@ -626,4 +628,21 @@ html body #pojo-a11y-toolbar {
 
 .footer-bottom p {
     margin: 0;
+}
+
+@media (max-width: 992px) {
+    header { height: 380px; }
+}
+
+@media (max-width: 768px) {
+    header { height: 320px; }
+}
+
+@media (max-width: 600px) {
+    header { height: 260px; }
+}
+
+@media (max-width: 400px) {
+    header { height: 220px; }
+    .prev, .next { padding: 8px; font-size: 14px; }
 }

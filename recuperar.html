@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,27 +17,56 @@
     </a>
 
     <div id="form">
-        <form action="">
+        <form id="formRecuperar">
             <h2 class="title">Recuperar Senha</h2>
+
             <label for="email">Email</label>
             <div class="input">
                 <i class="fa-solid fa-envelope"></i>
-                <input id="email" name="email" placeholder="Email" type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/">
+                <input
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    type="email"
+                    required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                >
             </div>
-            <label for="senha">Senha</label>
+
+            <label for="novaSenha">Nova Senha</label>
             <div class="input">
                 <i class="fa-solid fa-lock"></i>
-                <input id="senha" name="senha" placeholder="Password" type="password" required>
+                <input
+                    id="novaSenha"
+                    name="novaSenha"
+                    placeholder="Nova senha"
+                    type="password"
+                    minlength="4"
+                    required
+                >
+                <i class="fas fa-eye toggle-senha" data-target="novaSenha" aria-label="Mostrar senha"></i>
             </div>
+
+            <label for="confirmaSenha">Confirmar Nova Senha</label>
+            <div class="input">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                    id="confirmaSenha"
+                    name="confirmaSenha"
+                    placeholder="Confirme a nova senha"
+                    type="password"
+                    minlength="4"
+                    required
+                >
+                <i class="fas fa-eye toggle-senha" data-target="confirmaSenha" aria-label="Mostrar senha"></i>
+            </div>
+
             <div id="btn">
-                <button type="submit"><a href="login02.html">Registrar Nova Senha</a></button>
+                <button type="submit">Registrar Nova Senha</button>
             </div>
         </form>
     </div>
 
-    <!-- ======================================== -->
-    <!-- BARRA DE ACESSIBILIDADE (POJO A11Y) - IGUAL À PÁGINA INICIAL -->
-    <!-- ======================================== -->
     <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
         <div class="pojo-a11y-toolbar-toggle">
             <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
@@ -127,9 +156,6 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
 
-        // ========================================
-        // ACESSIBILIDADE (POJO A11Y) - IGUAL À PÁGINA INICIAL
-        // ========================================
         (function() {
             'use strict';
 
@@ -205,7 +231,7 @@
             }
 
             const textElements = document.querySelectorAll(
-                '.title, label, input, #btn, #btn button, #btn a'
+                '.title, label, input, #btn, #btn button'
             );
 
             textElements.forEach((element) => {
@@ -294,51 +320,74 @@
     </script>
 
     <script>
+        // ========================================
+        // RECUPERAR SENHA + OLHINHO
+        // ========================================
         document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('formRecuperar');
 
-            const togglePassword = document.querySelector('.toggle-password');
-            const passwordInput = document.querySelector('#password');
-            
-            togglePassword.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                
-                this.classList.toggle('fa-eye');
-                this.classList.toggle('fa-eye-slash');
+            // Olhinho de mostrar/esconder senha
+            document.querySelectorAll('.toggle-senha').forEach(function(icone) {
+                icone.addEventListener('click', function() {
+                    const inputId = this.getAttribute('data-target');
+                    const input = document.getElementById(inputId);
+                    if (!input) return;
+
+                    const ehSenha = input.getAttribute('type') === 'password';
+                    input.setAttribute('type', ehSenha ? 'text' : 'password');
+
+                    this.classList.toggle('fa-eye');
+                    this.classList.toggle('fa-eye-slash');
+                });
             });
 
-            const emailInput = document.getElementById('email');
-            const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-            
-            emailInput.addEventListener('input', function() {
-                if (this.value && !emailPattern.test(this.value)) {
-                    this.setCustomValidity('Digite um email válido (ex: usuario@gmail.com)');
-                } else {
-                    this.setCustomValidity('');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value.trim();
+                const novaSenha = document.getElementById('novaSenha').value;
+                const confirmaSenha = document.getElementById('confirmaSenha').value;
+
+                if (!email || !novaSenha || !confirmaSenha) {
+                    alert('Preencha todos os campos!');
+                    return;
                 }
+
+                if (novaSenha !== confirmaSenha) {
+                    alert('As senhas não coincidem! Digite novamente.');
+                    document.getElementById('novaSenha').value = '';
+                    document.getElementById('confirmaSenha').value = '';
+                    document.getElementById('novaSenha').focus();
+                    return;
+                }
+
+                if (novaSenha.length < 4) {
+                    alert('A senha precisa ter pelo menos 4 caracteres.');
+                    return;
+                }
+
+                let usuariosCadastrados = {};
+                try {
+                    usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+                } catch (err) {
+                    usuariosCadastrados = {};
+                }
+
+                const usuario = usuariosCadastrados[email];
+
+                if (!usuario) {
+                    alert('E-mail não encontrado. Verifique ou faça o cadastro.');
+                    return;
+                }
+
+                usuario.senha = novaSenha;
+                usuariosCadastrados[email] = usuario;
+                localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados));
+
+                alert('Senha atualizada com sucesso! Faça login com a nova senha.');
+                window.location.href = 'login02.html';
             });
         });
-
-        function handleLogin(event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-        }
-
-        function getInitialsFromEmail(email) {
-            const namePart = email.split('@')[0].toUpperCase();
-            const parts = namePart.split('.');
-            let initials = parts[0][0];
-            
-            if (parts.length > 1) {
-                initials += parts[1][0];
-            } else {
-                initials += namePart[1] || '';
-            }
-            
-        }
     </script>
 
 </body>

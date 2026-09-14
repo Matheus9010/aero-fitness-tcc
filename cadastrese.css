@@ -31,34 +31,27 @@ body {
 }
 
 /* ======================================== */
-/* BOTÃO VOLTAR - CANTOR SUPERIOR ESQUERDO */
+/* BOTÃO VOLTAR */
 /* ======================================== */
 .btn-voltar {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1000;
-    
     display: flex;
     align-items: center;
     gap: 8px;
-    
     padding: 10px 18px;
-    
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 400;
-    
     transition: all 0.3s ease;
-    
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -174,6 +167,7 @@ body {
 .campo input[type="date"],
 .campo input[type="tel"],
 .campo input[type="email"],
+.campo input[type="password"],
 .campo select,
 .campo textarea {
     width: 100%;
@@ -360,6 +354,33 @@ body {
 
 .custom-alert.show { 
     transform: translateX(0); 
+}
+
+/* ===== CAMPO DE SENHA COM OLHINHO ===== */
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding-right: 45px !important;
+}
+
+.campo-senha .toggle-senha {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #4a5568;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+    z-index: 5;
+}
+
+.campo-senha .toggle-senha:hover {
+    color: #18467f;
 }
 
 /* ===== FOCO VISUAL PARA ACESSIBILIDADE ===== */

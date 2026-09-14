@@ -10,39 +10,34 @@ body {
     width: 100%;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #4776E6, #1e0998);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('natacao2.jpg') center/cover no-repeat;
+    background-attachment: fixed;
     position: relative;
 }
 
 /* ======================================== */
-/* BOTÃO VOLTAR - CANTOR SUPERIOR ESQUERDO */
+/* BOTÃO VOLTAR */
 /* ======================================== */
 .btn-voltar {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1000;
-    
     display: flex;
     align-items: center;
     gap: 8px;
-    
     padding: 10px 18px;
-    
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 400;
-    
     transition: all 0.3s ease;
-    
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -83,29 +78,13 @@ body {
     color: #2b344b;
     animation: iniciar 1.6s ease-out;
     pointer-events: all;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .title {
     font-size: 1.8em;
     margin-bottom: 10%;
-}
-
-.input {
-    min-width: 280px;
-    border-radius: 22px;
-    border: 2px #6f7e8a solid;
-    padding: 5px;
-    margin: 0px 0px 12px -5px;
-}
-
-.input input {
-    width: 80%;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
-    transform: translateY(-10%);
-    color: #2b344b;
-    font-size: 11pt;
+    text-align: center;
 }
 
 label {
@@ -113,6 +92,54 @@ label {
     font-size: 0.9rem;
     margin-bottom: 4px;
     color: #2b344b;
+}
+
+.input {
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px 10px;
+    margin: 0px 0px 12px 0px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s ease;
+}
+
+.input:focus-within {
+    border-color: #18467f;
+    box-shadow: 0 0 0 3px rgba(24, 70, 127, 0.15);
+}
+
+.input i {
+    color: #6f7e8a;
+    font-size: 0.9rem;
+}
+
+.input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    color: #2b344b;
+    font-size: 11pt;
+    background: transparent;
+    padding: 6px 0;
+}
+
+/* ===== OLHINHO DE MOSTRAR SENHA ===== */
+.input .toggle-senha {
+    cursor: pointer;
+    color: #6f7e8a;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 4px;
+}
+
+.input .toggle-senha:hover {
+    color: #18467f;
 }
 
 #btn {
@@ -123,7 +150,7 @@ label {
 
 #btn button {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to left, #3f6aa7, #5370ff, #537dbc);
+    background: #18467f;
     width: 100%;
     height: 40px;
     border: none;
@@ -132,18 +159,17 @@ label {
     border-radius: 20px;
     outline: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #btn button:hover {
-    background: linear-gradient(to right, #3f6aa7, #5370ff, #537dbc);
+    background: #1a3450;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(11, 26, 44, 0.3);
 }
 
-#btn button a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    width: 100%;
-    height: 100%;
+#btn button:active {
+    transform: scale(0.98);
 }
 
 @keyframes iniciar {
@@ -169,7 +195,7 @@ button:focus-visible {
 }
 
 /* ======================================== */
-/* POSICIONAMENTO DO BONECO DE ACESSIBILIDADE - IGUAL ÀS OUTRAS PÁGINAS */
+/* POSICIONAMENTO DO BONECO DE ACESSIBILIDADE */
 /* ======================================== */
 #pojo-a11y-toolbar {
     position: fixed !important;
