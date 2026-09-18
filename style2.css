@@ -335,3 +335,160 @@ html body #pojo-a11y-toolbar {
         bottom: 100px !important;
     }
 }
+
+/* ======================================== */
+/* REPOSICIONAMENTO DO BOTÃO VLIBRAS */
+/* ======================================== */
+div[vw].enabled {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 9998 !important;
+}
+
+div[vw].enabled .vw-access-button {
+    width: 55px !important;
+    height: 55px !important;
+}
+
+@media (max-width: 768px) {
+    div[vw].enabled {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    
+    div[vw].enabled .vw-access-button {
+        width: 48px !important;
+        height: 48px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    div[vw].enabled {
+        bottom: 12px !important;
+        right: 12px !important;
+    }
+    
+    div[vw].enabled .vw-access-button {
+        width: 42px !important;
+        height: 42px !important;
+    }
+}
+
+/* ======================================== */
+/* GOOGLE TRADUTOR - CANTO SUPERIOR DIREITO */
+/* ======================================== */
+.tradutor-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.tradutor-wrapper #google_translate_element {
+    display: flex;
+    align-items: center;
+}
+
+.tradutor-wrapper #google_translate_element select {
+    padding: 8px 40px 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #333 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%) !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    outline: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 14px center !important;
+    background-size: 10px !important;
+    min-width: 150px !important;
+    height: 40px !important;
+    letter-spacing: 0.3px !important;
+}
+
+.tradutor-wrapper #google_translate_element select:hover {
+    border-color: #4D6BFE !important;
+    box-shadow: 0 4px 16px rgba(77, 107, 254, 0.15) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f2ff 100%) !important;
+    transform: translateY(-1px) !important;
+}
+
+.tradutor-wrapper #google_translate_element select:focus {
+    border-color: #4D6BFE !important;
+    box-shadow: 0 0 0 4px rgba(77, 107, 254, 0.12) !important;
+    background: #ffffff !important;
+}
+
+.tradutor-wrapper #google_translate_element::before {
+    content: "🌐" !important;
+    font-size: 20px !important;
+    margin-right: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    filter: brightness(0) !important;
+    line-height: 1 !important;
+}
+
+.goog-te-gadget {
+    font-family: 'Poppins', sans-serif !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 0 !important;
+}
+
+.goog-te-gadget img {
+    display: none !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .tradutor-wrapper {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .tradutor-wrapper #google_translate_element select {
+        min-width: 120px !important;
+        padding: 6px 35px 6px 12px !important;
+        font-size: 12px !important;
+        height: 36px !important;
+    }
+    
+    .tradutor-wrapper #google_translate_element::before {
+        font-size: 17px !important;
+        margin-right: 6px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tradutor-wrapper {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .tradutor-wrapper #google_translate_element select {
+        min-width: 95px !important;
+        padding: 5px 28px 5px 10px !important;
+        font-size: 10px !important;
+        height: 32px !important;
+        border-radius: 6px !important;
+    }
+    
+    .tradutor-wrapper #google_translate_element::before {
+        font-size: 14px !important;
+        margin-right: 4px !important;
+    }
+}

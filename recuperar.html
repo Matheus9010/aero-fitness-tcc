@@ -16,6 +16,10 @@
         <span>Voltar</span>
     </a>
 
+    <div class="tradutor-wrapper">
+        <div id="google_translate_element"></div>
+    </div>
+
     <div id="form">
         <form id="formRecuperar">
             <h2 class="title">Recuperar Senha</h2>
@@ -320,13 +324,9 @@
     </script>
 
     <script>
-        // ========================================
-        // RECUPERAR SENHA + OLHINHO
-        // ========================================
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('formRecuperar');
 
-            // Olhinho de mostrar/esconder senha
             document.querySelectorAll('.toggle-senha').forEach(function(icone) {
                 icone.addEventListener('click', function() {
                     const inputId = this.getAttribute('data-target');
@@ -389,6 +389,28 @@
             });
         });
     </script>
+
+    <!-- ======================================== -->
+    <!-- GOOGLE TRADUTOR -->
+    <!-- ======================================== -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru,ar,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- BOTÃO VLIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
 
 </body>
 </html>

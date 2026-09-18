@@ -16,6 +16,10 @@
         <span>Voltar</span>
     </a>
 
+    <div class="tradutor-wrapper">
+        <div id="google_translate_element"></div>
+    </div>
+
     <div id="alertSuccess" class="custom-alert">
         <i class="fas fa-check-circle fa-lg"></i>
         <span>Cadastro realizado com sucesso! Bem-vindo ao AEROFITNESS.</span>
@@ -157,7 +161,8 @@
                                 <label class="opcao-item"><input type="checkbox" name="preferencia" value="funcional">Treinos calestenico</label>
                                 <label class="opcao-item"><input type="checkbox" name="preferencia" value="crossfit">Melhorar performance</label>
                                 <label class="opcao-item"><input type="checkbox" name="preferencia" value="yoga">Hipertrofia</label>
-                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="natacao">Outras modalidades</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="natacao">Treinos Adaptados</label>
+                                <label class="opcao-item"><input type="checkbox" name="preferencia" value="natacao">Esportes</label>
                             </div>
                         </div>
 
@@ -474,9 +479,6 @@
     </script>
 
     <script>
-        // ========================================
-        // CADASTRO - SALVA USUÁRIO + BANCO + MÁSCARAS + OLHINHO
-        // ========================================
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('formAcademico');
             const formContainer = document.getElementById('form-container');
@@ -491,9 +493,6 @@
                 return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
             }
 
-            // ========================================
-            // MÁSCARAS AUTOMÁTICAS (CPF E TELEFONE)
-            // ========================================
             function mascaraCPF(input) {
                 let valor = input.value.replace(/\D/g, '');
                 valor = valor.substring(0, 11);
@@ -526,7 +525,6 @@
                 input.value = valor;
             }
 
-            // Aplica máscara no CPF
             const inputCPF = document.getElementById('cpf');
             if (inputCPF) {
                 inputCPF.addEventListener('input', function() {
@@ -534,7 +532,6 @@
                 });
             }
 
-            // Aplica máscara no Telefone
             const inputTelefone = document.getElementById('telefone');
             if (inputTelefone) {
                 inputTelefone.addEventListener('input', function() {
@@ -542,9 +539,6 @@
                 });
             }
 
-            // ========================================
-            // OLHINHO DE MOSTRAR / ESCONDER SENHA
-            // ========================================
             document.querySelectorAll('.toggle-senha').forEach(function(icone) {
                 icone.addEventListener('click', function() {
                     const inputId = this.getAttribute('data-target');
@@ -559,9 +553,6 @@
                 });
             });
 
-            // ========================================
-            // ENVIO DO FORMULÁRIO
-            // ========================================
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
 
@@ -626,5 +617,28 @@
             });
         });
     </script>
+
+    <!-- ======================================== -->
+    <!-- GOOGLE TRADUTOR -->
+    <!-- ======================================== -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru,ar,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- BOTÃO VLIBRAS (independente da barra POJO A11Y) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
 </body>
 </html>
