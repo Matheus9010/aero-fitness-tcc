@@ -332,7 +332,7 @@
                     </li>
                     <li class="pojo-a11y-toolbar-item">
                         <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus"
-                            data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
+                            data-action="resize-minus" data-action="resize-group" data-action-group="resize" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
                                     <title>Diminuir o Texto</title>
@@ -446,11 +446,20 @@
                     if (user.loggedIn && user.initials) {
                         userLink.innerHTML = `<span class="user-initials">${user.initials}</span>`;
                         userLink.href = '#';
-                        userLink.title = `Olá, ${user.nome || user.email}`;
+                        userLink.title = `Olá, ${user.nome || user.name || user.email}`;
                         userLink.onclick = function (e) {
                             e.preventDefault();
                             if (confirm('Deseja fazer logout?')) {
+                                const token = localStorage.getItem('aero_token');
+                                if (token) {
+                                    fetch('https://aero-chat.matheus-martins-oliveira09.workers.dev/logout', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({ token })
+                                    }).catch(() => { });
+                                }
                                 localStorage.removeItem('loggedInUser');
+                                localStorage.removeItem('aero_token');
                                 location.reload();
                             }
                         };
@@ -799,6 +808,10 @@
                 if (raw) {
                     const u = JSON.parse(raw);
                     if (u.loggedIn && u.email) return 'u_' + u.email.toLowerCase();
+                    if (u.loggedIn && (u.nome || u.name)) {
+                        const n = (u.nome || u.name).toLowerCase().replace(/\s+/g, '_');
+                        return 'u_' + n;
+                    }
                 }
             } catch { }
             return 'guest';
@@ -857,6 +870,58 @@
             if (diff < 604800) return Math.floor(diff / 86400) + 'd';
             const d = new Date(ts);
             return d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+        }
+
+        function proUserContext() {
+            try {
+                const raw = localStorage.getItem('loggedInUser');
+                if (!raw) return '';
+                const u = JSON.parse(raw);
+                if (!u.loggedIn) return '';
+
+                const NIVEL = {
+                    "inicio": "Iniciante",
+                    "intermediario": "Intermediário",
+                    "pre-avançado": "Pré-avançado",
+                    "avançado": "Avançado"
+                };
+
+                const nome = u.nome || u.name || '';
+                const email = u.email || '';
+
+                const linhas = [];
+                if (nome) linhas.push(`Nome: ${nome}`);
+                if (email) linhas.push(`E-mail: ${email}`);
+                if (u.nivelTreino && NIVEL[u.nivelTreino]) {
+                    linhas.push(`Nível de treino: ${NIVEL[u.nivelTreino]}`);
+                }
+                if (u.objetivos) linhas.push(`Objetivos: ${u.objetivos}`);
+                if (u.frequencia) linhas.push(`Frequência semanal: ${u.frequencia}`);
+                if (u.genero) linhas.push(`Gênero: ${u.genero}`);
+                if (u.nascimento) {
+                    const nasc = new Date(u.nascimento);
+                    const hoje = new Date();
+                    let idade = hoje.getFullYear() - nasc.getFullYear();
+                    const m = hoje.getMonth() - nasc.getMonth();
+                    if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
+                    if (!isNaN(idade)) linhas.push(`Idade: ${idade} anos`);
+                }
+                if (u.cidade && u.estado) linhas.push(`Cidade/Estado: ${u.cidade} - ${u.estado}`);
+                else if (u.cidade) linhas.push(`Cidade: ${u.cidade}`);
+                if (u.restricoes) linhas.push(`Restrições físicas/médicas: ${u.restricoes}`);
+                if (u.esporte_especifico) linhas.push(`Esporte que pratica: ${u.esporte_especifico}`);
+                if (u.deficiencia) linhas.push(`Deficiência: ${u.deficiencia}`);
+                if (u.preferencias && u.preferencias.length) {
+                    linhas.push(`Preferências de treino: ${u.preferencias.join(', ')}`);
+                }
+                if (u.feedback) linhas.push(`Feedback: ${u.feedback}`);
+
+                if (linhas.length === 0) return '';
+
+                return `\n\n=== DADOS DO ALUNO LOGADO ===\n${linhas.join('\n')}\n\nUse SEMPRE esses dados para personalizar suas respostas. Se o aluno pedir uma planilha, dieta ou meta, considere o nível, objetivos, restrições e preferências acima. Não pergunte de novo o que já está aqui.`;
+            } catch {
+                return '';
+            }
         }
 
         let proStore = proLoadStore();
@@ -1118,7 +1183,7 @@
                         messages: [
                             {
                                 role: "system",
-                                content: "Você é o PRÓ, um personal trainer IA da academia Aero Fitness. Você ajuda com planilhas de treino (cardio, musculação, esportes variados, treino adaptado para PCD/idosos/lesões), controle alimentar, metas e dicas de execução. Seja direto, motivador e profissional. Use português do Brasil. Quando fizer sentido, use listas, tabelas e negrito. Se o usuário pedir uma planilha, pergunte objetivo, nível e frequência antes. NUNCA recomende anabolizantes. Em caso de dor ou lesão, oriente procurar um profissional. Ao sugerir treinos adaptados, considere sempre as necessidades específicas (autismo, cegueira, surdez, cadeirantes, idosos, lesões). Se a pergunta não tiver relação com treino/saúde, responda educadamente e volte ao tema."
+                                content: "Você é o PRÓ, um personal trainer IA da academia Aero Fitness. Você ajuda com planilhas de treino (cardio, musculação, esportes variados, treino adaptado para PCD/idosos/lesões), controle alimentar, metas e dicas de execução. Seja direto, motivador e profissional. Use português do Brasil. Quando fizer sentido, use listas, tabelas e negrito. NUNCA recomende anabolizantes. Em caso de dor ou lesão, oriente procurar um profissional. Ao sugerir treinos adaptados, considere sempre as necessidades específicas (autismo, cegueira, surdez, cadeirantes, idosos, lesões). Se a pergunta não tiver relação com treino/saúde, responda educadamente e volte ao tema." + proUserContext()
                             },
                             ...proCurrentChat.messages.map((m) => ({
                                 role: m.role === "assistant" ? "assistant" : "user",
@@ -1242,6 +1307,7 @@
                 proCurrentChat = proStore.chats.find(c => c.id === proStore.currentId);
                 proRender();
                 proRenderHistory();
+                updateUserIcon();
             }
         });
 
