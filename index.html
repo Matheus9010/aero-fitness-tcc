@@ -90,7 +90,6 @@
         </div>
     </section>
 
-    <!-- ===== BARRA DE ACESSIBILIDADE (BONECO) ===== -->
     <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
         <div class="pojo-a11y-toolbar-toggle">
             <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
@@ -175,7 +174,7 @@
             </div>
         </div>
     </nav>   
-    <!-- ===== GOOGLE TRADUTOR GRATUITO ===== -->
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -191,7 +190,6 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
 
-        // ===== CAROUSEL PRINCIPAL =====
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
         const totalSlides = slides.length;
@@ -206,7 +204,6 @@
             moveSlide(1);
         }, 5000);
 
-        // ===== USUÁRIO LOGADO =====
         document.addEventListener('DOMContentLoaded', function() {
             updateUserIcon();
         });
@@ -226,7 +223,6 @@
                         userLink.onclick = function(e) {
                             e.preventDefault();
                             if (confirm('Deseja fazer logout?')) {
-                                // Tenta avisar o servidor (não bloqueia o logout se falhar)
                                 const token = localStorage.getItem('aero_token');
                                 if (token) {
                                     fetch('https://aero-chat.matheus-martins-oliveira09.workers.dev/logout', {
@@ -247,7 +243,6 @@
             }
         }
 
-        // ===== HIDRATAÇÃO: se tem token mas não tem user, busca do servidor =====
         (async function hidratarSessao() {
             const token = localStorage.getItem('aero_token');
             const usuario = localStorage.getItem('loggedInUser');
@@ -275,7 +270,6 @@
             }
         })();
 
-        // ===== BARRA DE ACESSIBILIDADE (POJO A11Y) =====
         (function() {
             'use strict';
 

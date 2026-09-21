@@ -1,4 +1,3 @@
-/* ===== BARRA DE ACESSIBILIDADE - POJO A11Y ===== */
 .pojo-a11y-toolbar {
     position: fixed;
     z-index: 999999;
@@ -17,7 +16,6 @@
     transform: translateX(0) !important;
 }
 
-/* ===== BOTÃO TOGGLE (BONECO) ===== */
 .pojo-a11y-toolbar-toggle {
     background: #0073aa;
     border-radius: 6px 0 0 6px;
@@ -70,7 +68,6 @@
     border: 0;
 }
 
-/* ===== OVERLAY DA BARRA ===== */
 .pojo-a11y-toolbar-overlay {
     background: #fff;
     border-radius: 6px 0 0 6px;
@@ -106,7 +103,6 @@
     text-align: center;
 }
 
-/* ===== LISTA DE ITENS ===== */
 .pojo-a11y-toolbar-items {
     list-style: none;
     padding: 0;
@@ -166,7 +162,6 @@
     flex: 1;
 }
 
-/* ===== BOTÃO RESET ===== */
 .pojo-a11y-btn-reset {
     border-top: 2px solid #e9ecef;
     margin-top: 8px;
@@ -180,7 +175,6 @@
     border-color: #f5c6cb;
 }
 
-/* ===== ESTADOS ATIVOS ===== */
 .pojo-a11y-toolbar-link.active-tool {
     background: #0073aa;
     color: #fff;
@@ -192,7 +186,6 @@
     color: #fff;
 }
 
-/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
     .pojo-a11y-toolbar-overlay {
         max-width: 280px;
@@ -244,7 +237,6 @@
     }
 }
 
-/* ===== SCROLL PERSONALIZADO ===== */
 .pojo-a11y-toolbar-inner::-webkit-scrollbar {
     width: 4px;
 }
@@ -263,7 +255,6 @@
     background: #a8a8a8;
 }
 
-/* ===== ANIMAÇÃO DE ABERTURA ===== */
 .pojo-a11y-toolbar {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -272,7 +263,6 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== CORRIGE SOBREPOSIÇÃO EM SITES COM HEADER FIXO ===== */
 .pojo-a11y-toolbar {
     z-index: 999999;
 }

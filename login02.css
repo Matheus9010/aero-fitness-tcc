@@ -21,9 +21,6 @@ body {
     position: relative;
 }
 
-/* ======================================== */
-/* BOTÃO VOLTAR */
-/* ======================================== */
 .btn-voltar {
     position: fixed;
     top: 20px;
@@ -74,9 +71,6 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* ======================================== */
-/* GOOGLE TRADUTOR - CANTO SUPERIOR DIREITO */
-/* ======================================== */
 .tradutor-wrapper {
     position: fixed;
     top: 20px;
@@ -190,9 +184,6 @@ body {
     }
 }
 
-/* ======================================== */
-/* MAIN - LOGO */
-/* ======================================== */
 .main {
     position: absolute;
     top: 5%;
@@ -364,18 +355,12 @@ form input[type="submit"]:hover {
     background: linear-gradient(to right, #4776E6, #1e0998);
 }
 
-/* ======================================== */
-/* FOCO VISUAL PARA ACESSIBILIDADE */
-/* ======================================== */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid #ffd700;
     outline-offset: 3px;
 }
 
-/* ======================================== */
-/* POSICIONAMENTO DO BONECO DE ACESSIBILIDADE */
-/* ======================================== */
 #pojo-a11y-toolbar {
     position: fixed !important;
     left: 20px !important;
@@ -427,9 +412,6 @@ html body #pojo-a11y-toolbar {
     transform: none !important;
 }
 
-/* ======================================== */
-/* RESPONSIVIDADE */
-/* ======================================== */
 @media (max-width: 768px) {
     .btn-voltar {
         top: 15px;
@@ -498,9 +480,6 @@ html body #pojo-a11y-toolbar {
     }
 }
 
-/* ======================================== */
-/* REPOSICIONAMENTO DO BOTÃO VLIBRAS */
-/* ======================================== */
 div[vw].enabled {
     position: fixed !important;
     bottom: 20px !important;

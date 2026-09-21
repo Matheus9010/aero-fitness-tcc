@@ -324,6 +324,8 @@
     </script>
 
     <script>
+        const API_BASE = 'https://aero-chat.matheus-martins-oliveira09.workers.dev';
+
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('formRecuperar');
 
@@ -341,7 +343,7 @@
                 });
             });
 
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
                 const email = document.getElementById('email').value.trim();
@@ -366,33 +368,40 @@
                     return;
                 }
 
-                let usuariosCadastrados = {};
+                const submitBtn = form.querySelector('#btn button');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+
                 try {
-                    usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+                    const res = await fetch(API_BASE + '/reset-password', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, novaSenha })
+                    });
+
+                    const data = await res.json();
+
+                    if (!res.ok) {
+                        alert(data.error || 'Erro ao alterar a senha.');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+
+                    console.log('[RESET] Senha atualizada para:', email);
+                    alert('Senha atualizada com sucesso! Faça login com a nova senha.');
+                    window.location.href = 'login02.html';
+
                 } catch (err) {
-                    usuariosCadastrados = {};
+                    alert('Erro de conexão: ' + err.message);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
                 }
-
-                const usuario = usuariosCadastrados[email];
-
-                if (!usuario) {
-                    alert('E-mail não encontrado. Verifique ou faça o cadastro.');
-                    return;
-                }
-
-                usuario.senha = novaSenha;
-                usuariosCadastrados[email] = usuario;
-                localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados));
-
-                alert('Senha atualizada com sucesso! Faça login com a nova senha.');
-                window.location.href = 'login02.html';
             });
         });
     </script>
 
-    <!-- ======================================== -->
-    <!-- GOOGLE TRADUTOR -->
-    <!-- ======================================== -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -404,7 +413,6 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- BOTÃO VLIBRAS -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>

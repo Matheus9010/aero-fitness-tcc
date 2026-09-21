@@ -67,9 +67,6 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* ======================================== */
-/* GOOGLE TRADUTOR - AO LADO DO BOTÃO VOLTAR */
-/* ======================================== */
 .tradutor-wrapper {
     display: flex;
     align-items: center;
@@ -142,9 +139,6 @@ body {
     margin: 0 !important;
 }
 
-/* ======================================== */
-/* LOGO - CANTO DIREITO */
-/* ======================================== */
 .main {
     display: flex;
     justify-content: flex-end;
@@ -202,9 +196,6 @@ button:hover {
     transition: 200ms;
 }
 
-/* ======================================== */
-/* CONTEÚDO */
-/* ======================================== */
 section.content {
     max-width: 1100px;
     margin: 0 auto;
@@ -241,7 +232,6 @@ section.content {
     margin: 0 auto;
 }
 
-/* ===== LISTA DE PROJETOS ===== */
 .projetos-lista {
     display: flex;
     flex-direction: column;
@@ -271,7 +261,6 @@ section.content {
     font-weight: bold;
 }
 
-/* ===== IMAGEM NO LUGAR DO NÚMERO ===== */
 .projeto-numero-img {
     display: flex;
     align-items: center;
@@ -310,7 +299,6 @@ section.content {
     margin: 0;
 }
 
-/* ===== POSICIONAMENTO DO BONECO DE ACESSIBILIDADE ===== */
 #pojo-a11y-toolbar {
     position: fixed !important;
     left: 20px !important;
@@ -368,9 +356,6 @@ html body #pojo-a11y-toolbar {
     transform: none !important;
 }
 
-/* ======================================== */
-/* RESPONSIVIDADE */
-/* ======================================== */
 @media (max-width: 768px) {
     .topo-esquerdo {
         top: 15px;
@@ -539,9 +524,6 @@ html body #pojo-a11y-toolbar {
     }
 }
 
-/* ======================================== */
-/* REPOSICIONAMENTO DO BOTÃO VLIBRAS */
-/* ======================================== */
 div[vw].enabled {
     position: fixed !important;
     bottom: 20px !important;

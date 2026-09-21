@@ -535,9 +535,6 @@
         })();
     </script>
 
-    <!-- ======================================== -->
-    <!-- CADASTRO VIA API (Cloudflare Worker + KV) -->
-    <!-- ======================================== -->
     <script>
         const API_BASE = 'https://aero-chat.matheus-martins-oliveira09.workers.dev';
 
@@ -687,9 +684,6 @@
                         return;
                     }
 
-                    // Guarda o token e o usuário no localStorage
-                    // - aero_token: identifica a sessão no servidor
-                    // - loggedInUser: mantém compatibilidade com o resto do site
                     try {
                         localStorage.setItem('aero_token', data.token);
                         localStorage.setItem('loggedInUser', JSON.stringify({
@@ -724,9 +718,6 @@
         });
     </script>
 
-    <!-- ======================================== -->
-    <!-- GOOGLE TRADUTOR -->
-    <!-- ======================================== -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -739,7 +730,6 @@
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- BOTÃO VLIBRAS (independente da barra POJO A11Y) -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>

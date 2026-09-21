@@ -200,7 +200,6 @@ header {
     width: 100%;
 }
 
-/* ===== GOOGLE TRADUTOR NA BARRA - VISUAL MELHORADO ===== */
 .tradutor-item {
     display: flex !important;
     align-items: center !important;
@@ -447,14 +446,12 @@ body {
     filter: brightness(0) invert(1);
 }
 
-/* ===== FOCO VISUAL PARA ACESSIBILIDADE ===== */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid #ffd700;
     outline-offset: 3px;
 }
 
-/* ===== POSICIONAMENTO DO BONECO DE ACESSIBILIDADE ===== */
 #pojo-a11y-toolbar {
     position: fixed !important;
     left: 20px !important;
@@ -464,7 +461,6 @@ button:focus-visible {
     z-index: 1001 !important;
 }
 
-/* ===== REGRAS VISUAIS DOS CONTROLES DE ACESSIBILIDADE ===== */
 body.pojo-links-underline a,
 body.pojo-links-underline a:visited {
     text-decoration-line: underline !important;

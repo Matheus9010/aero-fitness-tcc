@@ -419,9 +419,6 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
     <script>
-        // ========================================
-        // CARROSSEL
-        // ========================================
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
         const totalSlides = slides.length;
@@ -434,9 +431,6 @@
 
         setInterval(() => moveSlide(1), 5000);
 
-        // ========================================
-        // USUÁRIO
-        // ========================================
         document.addEventListener('DOMContentLoaded', function () {
             updateUserIcon();
             updateNivelInfo();
@@ -467,9 +461,6 @@
             }
         }
 
-        // ========================================
-        // MAPEAMENTO DE NÍVEIS
-        // ========================================
         const NIVEL_LABELS = {
             "inicio": "Iniciante",
             "intermediario": "Intermediário",
@@ -509,9 +500,6 @@
             }
         }
 
-        // ========================================
-        // DADOS DOS EXERCÍCIOS (COM NÍVEIS)
-        // ========================================
         const categories = {
             cardio: {
                 label: "Cardio", icon: "🏃",
@@ -636,9 +624,6 @@
             adaptado: "Cada pessoa é única. Use cadeira firme, apoio seguro ou auxílio profissional quando necessário. Faça o movimento apenas na amplitude confortável, sem forçar articulações. Para autismo, use rotinas visuais e repetições previsíveis. Para cegos, use comandos verbais claros e apoio tátil. Para surdos, use demonstrações visuais e feedback por toque. Para cadeirantes, priorize exercícios sentados e transferências seguras. Para idosos e pessoas com lesões, respeite os limites do corpo e aumente a intensidade devagar. Priorize sempre respiração contínua, estabilidade e controle."
         };
 
-        // ========================================
-        // RENDERIZAÇÃO DOS EXERCÍCIOS
-        // ========================================
         const exerciseGrid = document.querySelector("#exerciseGrid");
         const exerciseSection = document.querySelector("#exercicios");
         const exerciseTitle = document.querySelector("#exerciseTitle");
@@ -806,9 +791,6 @@
             }
         });
 
-        // ========================================
-        // PERSONAL IA — com histórico por usuário
-        // ========================================
         const PRO_API_URL = "https://aero-chat.matheus-martins-oliveira09.workers.dev";
 
         function proUserKey() {
@@ -1266,9 +1248,6 @@
         proRender();
         proRenderHistory();
 
-        // ========================================
-        // ACESSIBILIDADE (POJO A11Y)
-        // ========================================
         (function () {
             'use strict';
 
@@ -1478,7 +1457,6 @@
         </footer>
     </footer>
 
-    <!-- BOTÃO VLIBRAS -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>

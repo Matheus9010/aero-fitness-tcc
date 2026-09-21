@@ -159,7 +159,6 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* ===== GOOGLE TRADUTOR NA BARRA - VISUAL MELHORADO ===== */
 .tradutor-item {
     display: flex !important;
     align-items: center !important;
@@ -442,14 +441,12 @@ section.content {
     }
 }
 
-/* ===== FOCO VISUAL PARA ACESSIBILIDADE ===== */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid #ffd700;
     outline-offset: 3px;
 }
 
-/* ===== POSICIONAMENTO DO BONECO DE ACESSIBILIDADE ===== */
 #pojo-a11y-toolbar {
     position: fixed !important;
     left: 20px !important;
@@ -459,7 +456,6 @@ button:focus-visible {
     z-index: 1001 !important;
 }
 
-/* ===== REGRAS VISUAIS DOS CONTROLES DE ACESSIBILIDADE ===== */
 body.pojo-links-underline a,
 body.pojo-links-underline a:visited {
     text-decoration-line: underline !important;
@@ -502,9 +498,6 @@ html body #pojo-a11y-toolbar {
     transform: none !important;
 }
 
-/* ======================================== */
-/* FOOTER */
-/* ======================================== */
 .site-footer {
     background-color: #c9a53b;
     color: #2c2a1e;
@@ -619,9 +612,6 @@ html body #pojo-a11y-toolbar {
     margin: 0;
 }
 
-/* ======================================== */
-/* RESPONSIVIDADE */
-/* ======================================== */
 @media (max-width: 768px) {
     .barra ul li {
         font-size: 14px;

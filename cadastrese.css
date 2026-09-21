@@ -30,9 +30,6 @@ body {
     position: relative;
 }
 
-/* ======================================== */
-/* BOTÃO VOLTAR */
-/* ======================================== */
 .btn-voltar {
     position: fixed;
     top: 20px;
@@ -76,9 +73,6 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* ======================================== */
-/* MAIN WRAPPER */
-/* ======================================== */
 .main-wrapper {
     width: 100%;
     max-width: 800px;
@@ -364,7 +358,6 @@ body {
     transform: translateX(0);
 }
 
-/* ===== CAMPO DE SENHA COM OLHINHO ===== */
 .campo-senha {
     position: relative;
     width: 100%;
@@ -391,14 +384,12 @@ body {
     color: #18467f;
 }
 
-/* ===== FOCO VISUAL PARA ACESSIBILIDADE ===== */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid #ffd700;
     outline-offset: 3px;
 }
 
-/* ===== POSICIONAMENTO DO BONECO DE ACESSIBILIDADE ===== */
 #pojo-a11y-toolbar {
     position: fixed !important;
     left: 20px !important;
@@ -408,7 +399,6 @@ button:focus-visible {
     z-index: 1001 !important;
 }
 
-/* ===== REGRAS VISUAIS DOS CONTROLES DE ACESSIBILIDADE ===== */
 body.pojo-links-underline a,
 body.pojo-links-underline a:visited {
     text-decoration-line: underline !important;
@@ -451,9 +441,6 @@ html body #pojo-a11y-toolbar {
     transform: none !important;
 }
 
-/* ======================================== */
-/* RESPONSIVIDADE */
-/* ======================================== */
 @media (max-width: 768px) {
     .btn-voltar {
         top: 15px;
@@ -535,9 +522,6 @@ html body #pojo-a11y-toolbar {
     }
 }
 
-/* ======================================== */
-/* REPOSICIONAMENTO DO BOTÃO VLIBRAS */
-/* ======================================== */
 div[vw].enabled {
     position: fixed !important;
     bottom: 20px !important;
@@ -576,9 +560,6 @@ div[vw].enabled .vw-access-button {
     }
 }
 
-/* ======================================== */
-/* GOOGLE TRADUTOR - CANTO SUPERIOR DIREITO */
-/* ======================================== */
 .tradutor-wrapper {
     position: fixed;
     top: 20px;

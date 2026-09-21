@@ -47,9 +47,6 @@ ul {
     list-style: none;
 }
 
-/* ======================================== */
-/* ANTI-BLOQUEIO: Google Translate + VLibras */
-/* ======================================== */
 .goog-te-banner-frame,
 .skiptranslate iframe,
 iframe.goog-te-banner-frame {
@@ -70,9 +67,6 @@ iframe.goog-te-banner-frame {
     box-shadow: none !important;
 }
 
-/* ======================================== */
-/* HEADER / CARROSSEL */
-/* ======================================== */
 header {
     width: 100%;
     height: 420px;
@@ -306,7 +300,6 @@ nav {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== GOOGLE TRADUTOR NA BARRA ===== */
 .tradutor-item {
     display: flex !important;
     align-items: center !important;
@@ -452,9 +445,6 @@ nav {
     }
 }
 
-/* ======================================== */
-/* ACESSIBILIDADE — regras visuais */
-/* ======================================== */
 body.pojo-links-underline a,
 body.pojo-links-underline a:visited {
     text-decoration-line: underline !important;
@@ -484,9 +474,6 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/* ======================================== */
-/* CONTEÚDO */
-/* ======================================== */
 main {
     position: static;
 }
@@ -531,9 +518,6 @@ main {
     margin-top: 18px;
 }
 
-/* ======================================== */
-/* MODALIDADES */
-/* ======================================== */
 .modality-grid {
     display: grid;
     gap: 55px;
@@ -636,7 +620,6 @@ main {
     position: absolute;
 }
 
-/* ===== BOTÃO DAS MODALIDADES ===== */
 .card-button {
     align-items: center;
     background: #ffd700;
@@ -674,9 +657,6 @@ main {
     transform: translate(2px, 2px);
 }
 
-/* ======================================== */
-/* EXERCÍCIOS */
-/* ======================================== */
 .exercise-grid {
     display: grid;
     gap: 45px;
@@ -834,9 +814,6 @@ main {
     color: black;
 }
 
-/* ======================================== */
-/* PERSONAL IA */
-/* ======================================== */
 .ai-section {
     background: transparent;
     color: white;
@@ -906,9 +883,6 @@ main {
     font-size: 0.82rem;
 }
 
-/* ======================================== */
-/* PRÓ · CHAT */
-/* ======================================== */
 .pro-chat {
     display: flex;
     flex-direction: column;
@@ -1317,9 +1291,6 @@ main {
     }
 }
 
-/* ======================================== */
-/* HISTÓRICO DE CONVERSAS */
-/* ======================================== */
 .pro-btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -1518,9 +1489,6 @@ main {
     }
 }
 
-/* ======================================== */
-/* MODAL */
-/* ======================================== */
 .exercise-modal {
     border: 0;
     border-radius: 24px;
@@ -1639,9 +1607,6 @@ main {
     clip: rect(0, 0, 0, 0);
 }
 
-/* ======================================== */
-/* FOOTER */
-/* ======================================== */
 .site-footer {
     background-color: #c9a53b;
     color: #2c2a1e;
@@ -1748,9 +1713,6 @@ main {
     margin: 0;
 }
 
-/* ======================================== */
-/* RESPONSIVIDADE */
-/* ======================================== */
 @media (max-width: 1100px) {
     .modality-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1846,9 +1808,6 @@ main {
     }
 }
 
-/* ======================================== */
-/* ACESSIBILIDADE — POSIÇÃO E APARÊNCIA DO BONECO */
-/* ======================================== */
 #pojo-a11y-toolbar {
     position: fixed !important;
     left: 0 !important;
@@ -1883,9 +1842,6 @@ main {
     }
 }
 
-/* ======================================== */
-/* REPOSICIONAMENTO DO BOTÃO VLIBRAS */
-/* ======================================== */
 div[vw].enabled {
     position: fixed !important;
     bottom: 20px !important;
