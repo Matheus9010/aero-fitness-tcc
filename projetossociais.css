@@ -11,9 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ======================================== */
-/* TOPO ESQUERDO - BOTÃO VOLTAR + TRADUTOR */
-/* ======================================== */
 .topo-esquerdo {
     position: fixed;
     top: 20px;

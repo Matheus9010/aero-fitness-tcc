@@ -85,7 +85,7 @@ body {
 }
 
 .logo {
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
     margin-left: 15%;
 }
 
@@ -122,7 +122,7 @@ body {
     padding: 40px;
 }
 
-.form-content h2, 
+.form-content h2,
 .form-content h3 {
     font-size: 20px;
     color: white;
@@ -145,7 +145,7 @@ body {
     display: block;
     font-size: 13px;
     font-weight: 700;
-    color: white; 
+    color: white;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -238,6 +238,7 @@ body {
         grid-template-columns: 1fr;
         gap: 0;
     }
+
     .form-content {
         padding: 25px;
     }
@@ -278,8 +279,15 @@ body {
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-academia {
@@ -291,15 +299,15 @@ body {
     text-align: center;
 }
 
-.hero-academia h2 { 
-    font-size: 32px; 
-    margin-bottom: 10px; 
-    text-transform: uppercase; 
+.hero-academia h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.hero-academia p { 
-    font-size: 16px; 
-    opacity: 0.9; 
+.hero-academia p {
+    font-size: 16px;
+    opacity: 0.9;
 }
 
 .cards-servicos {
@@ -318,21 +326,21 @@ body {
     border: 1px solid #edf2f7;
 }
 
-.card-servico i { 
-    font-size: 40px; 
-    color: #3182ce; 
-    margin-bottom: 15px; 
+.card-servico i {
+    font-size: 40px;
+    color: #3182ce;
+    margin-bottom: 15px;
 }
 
-.card-servico h4 { 
-    color: #0b1a2c; 
-    margin-bottom: 10px; 
+.card-servico h4 {
+    color: #0b1a2c;
+    margin-bottom: 10px;
 }
 
-.card-servico p { 
-    font-size: 14px; 
-    color: #4a5568; 
-    line-height: 1.5; 
+.card-servico p {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.5;
 }
 
 .custom-alert {
@@ -343,7 +351,7 @@ body {
     color: white;
     padding: 16px 24px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -352,8 +360,8 @@ body {
     z-index: 9999;
 }
 
-.custom-alert.show { 
-    transform: translateX(0); 
+.custom-alert.show {
+    transform: translateX(0);
 }
 
 /* ===== CAMPO DE SENHA COM OLHINHO ===== */
@@ -444,7 +452,7 @@ html body #pojo-a11y-toolbar {
 }
 
 /* ======================================== */
-/* RESPONSIVIDADE DA ACESSIBILIDADE E BOTÃO VOLTAR */
+/* RESPONSIVIDADE */
 /* ======================================== */
 @media (max-width: 768px) {
     .btn-voltar {
@@ -453,26 +461,26 @@ html body #pojo-a11y-toolbar {
         padding: 8px 14px;
         font-size: 0.75rem;
     }
-    
+
     .btn-voltar span {
         font-size: 0.7rem;
     }
-    
+
     .btn-voltar i {
         font-size: 0.8rem;
     }
-    
+
     html body #pojo-a11y-toolbar {
         bottom: 120px !important;
     }
-    
+
     #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
         width: 40px;
         height: 40px;
         font-size: 22px;
         padding: 4px 6px;
     }
-    
+
     #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a svg {
         width: 26px;
         height: 26px;
@@ -487,41 +495,41 @@ html body #pojo-a11y-toolbar {
         font-size: 0.7rem;
         gap: 5px;
     }
-    
+
     .btn-voltar span {
         font-size: 0.65rem;
     }
-    
+
     .btn-voltar i {
         font-size: 0.7rem;
     }
-    
+
     html body #pojo-a11y-toolbar {
         bottom: 100px !important;
     }
-    
+
     #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
         width: 36px;
         height: 36px;
         font-size: 18px;
         padding: 3px 5px;
     }
-    
+
     #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a svg {
         width: 22px;
         height: 22px;
     }
-    
+
     .pojo-a11y-toolbar-overlay {
         min-width: 160px;
         padding: 8px 6px;
     }
-    
+
     .pojo-a11y-toolbar-item a {
         font-size: 11px;
         padding: 4px 8px;
     }
-    
+
     .pojo-a11y-toolbar-item a .pojo-a11y-toolbar-text {
         font-size: 10px;
     }
@@ -549,7 +557,7 @@ div[vw].enabled .vw-access-button {
         bottom: 15px !important;
         right: 15px !important;
     }
-    
+
     div[vw].enabled .vw-access-button {
         width: 48px !important;
         height: 48px !important;
@@ -561,7 +569,7 @@ div[vw].enabled .vw-access-button {
         bottom: 12px !important;
         right: 12px !important;
     }
-    
+
     div[vw].enabled .vw-access-button {
         width: 42px !important;
         height: 42px !important;
@@ -650,14 +658,14 @@ div[vw].enabled .vw-access-button {
         top: 15px;
         right: 15px;
     }
-    
+
     .tradutor-wrapper #google_translate_element select {
         min-width: 120px !important;
         padding: 6px 35px 6px 12px !important;
         font-size: 12px !important;
         height: 36px !important;
     }
-    
+
     .tradutor-wrapper #google_translate_element::before {
         font-size: 17px !important;
         margin-right: 6px !important;
@@ -669,7 +677,7 @@ div[vw].enabled .vw-access-button {
         top: 10px;
         right: 10px;
     }
-    
+
     .tradutor-wrapper #google_translate_element select {
         min-width: 95px !important;
         padding: 5px 28px 5px 10px !important;
@@ -677,7 +685,7 @@ div[vw].enabled .vw-access-button {
         height: 32px !important;
         border-radius: 6px !important;
     }
-    
+
     .tradutor-wrapper #google_translate_element::before {
         font-size: 14px !important;
         margin-right: 4px !important;

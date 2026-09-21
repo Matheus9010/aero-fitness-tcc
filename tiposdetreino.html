@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plataforma de exercícios com modalidades de cardio, musculação, ciclismo e treino adaptado.">
+    <meta name="description"
+        content="Plataforma de exercícios com modalidades de cardio, musculação, ciclismo e treino adaptado.">
     <title>Tipos de Treino</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="tiposdetreino.css">
     <link rel="stylesheet" href="pojo-a11y.css">
 </head>
+
 <body>
 
     <header>
@@ -68,8 +73,12 @@
                     <div class="sub-conf">
                         <ul>
                             <li><a href="projetossociais.html">PROJETOS SOCIAIS</a></li>
-                            <li><a href="https://docs.google.com/document/d/1PD6Y0QL3gowv31_g5Vb6kIAoV6rIKhTdSsrQmaEiGf0/edit?usp=sharing">DOCS TCC</a></li>
-                            <li><a href="https://docs.google.com/spreadsheets/d/1QhTQDWZTRaVbUBLRb6qJSl4oTR2jjS21C1pIS6TOrAs/edit?usp=sharing">CRONOGRAMA</a></li>
+                            <li><a
+                                    href="https://docs.google.com/document/d/1PD6Y0QL3gowv31_g5Vb6kIAoV6rIKhTdSsrQmaEiGf0/edit?usp=sharing">DOCS
+                                    TCC</a></li>
+                            <li><a
+                                    href="https://docs.google.com/spreadsheets/d/1QhTQDWZTRaVbUBLRb6qJSl4oTR2jjS21C1pIS6TOrAs/edit?usp=sharing">CRONOGRAMA</a>
+                            </li>
                             <li><a href="https://canva.link/prototipo-tcc">PROTÓTIPO AERO FITNESS</a></li>
                         </ul>
                     </div>
@@ -137,7 +146,8 @@
                     <div class="modality-card__number">04</div>
                     <span class="modality-card__icon"><img src="icone-cardio.png" alt="Treino Adaptado"></span>
                     <h3>Treino Adaptado</h3>
-                    <p>Modalidade 100% inclusiva para PCD, idosos, pessoas com autismo, cegueira, surdez, cadeirantes, lesões ou restrições.</p>
+                    <p>Modalidade 100% inclusiva para PCD, idosos, pessoas com autismo, cegueira, surdez, cadeirantes,
+                        lesões ou restrições.</p>
                     <ul>
                         <li>40 exercícios adaptados</li>
                         <li>Para todos os públicos</li>
@@ -160,7 +170,8 @@
             <div class="exercise-grid" id="exerciseGrid"></div>
 
             <div style="text-align: center; margin-top: 30px;">
-                <button type="button" class="filter" id="closeExercises" style="background: rgba(255, 100, 100, 0.2); border-color: rgba(255, 100, 100, 0.4); color: #ff6b6b;">
+                <button type="button" class="filter" id="closeExercises"
+                    style="background: rgba(255, 100, 100, 0.2); border-color: rgba(255, 100, 100, 0.4); color: #ff6b6b;">
                     ✕ Fechar exercícios
                 </button>
             </div>
@@ -170,7 +181,8 @@
             <div class="ai-section__content">
                 <span class="eyebrow eyebrow--light">Orientação personalizada</span>
                 <h2>Conheça o Personal AEROFITNESS</h2>
-                <p>Seu personal trainer virtual que monta planilhas de treino, dietas, metas e tira dúvidas 24 horas e 7 dias na semana.</p>
+                <p>Seu personal trainer virtual que monta planilhas de treino, dietas, metas e tira dúvidas 24 horas e 7
+                    dias na semana.</p>
 
                 <div class="ai-features">
                     <article>
@@ -204,8 +216,16 @@
                     </div>
                     <div class="pro-brand">
                         <p class="pro-brand-name">Personal AEROFITNESS</p>
-                        <p class="pro-brand-status">online · personal ia</p>
                     </div>
+                    <button id="proHistory" class="pro-btn-ghost" type="button" title="Histórico de conversas">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+                            <path d="M3 3v5h5" />
+                            <path d="M12 7v5l3 2" />
+                        </svg>
+                        <span>Histórico</span>
+                    </button>
                     <button id="proNewChat" class="pro-btn-accent" type="button">Nova conversa</button>
                 </header>
 
@@ -213,9 +233,22 @@
                     <div id="proEmpty" class="pro-empty">
                         <div class="pro-empty-badge">P</div>
                         <h1>Personal Trainer IA</h1>
-                        <p>Peça uma planilha de treino, monte sua dieta, defina metas ou tire dúvidas. Eu te acompanho 24 horas e 7 dias na semana.</p>
+                        <p>Peça uma planilha de treino, monte sua dieta, defina metas ou tire dúvidas. Eu te acompanho
+                            24 horas e 7 dias na semana.</p>
                     </div>
                 </main>
+
+                <aside class="pro-history-drawer" id="proHistoryDrawer" aria-hidden="true">
+                    <div class="pro-history-header">
+                        <h3>Conversas</h3>
+                        <button type="button" id="proHistoryClose" class="pro-history-close"
+                            aria-label="Fechar">×</button>
+                    </div>
+                    <div class="pro-history-list" id="proHistoryList"></div>
+                    <button type="button" id="proHistoryNew" class="pro-history-new">+ Nova conversa</button>
+                </aside>
+
+                <div class="pro-history-backdrop" id="proHistoryBackdrop"></div>
 
                 <footer class="pro-composer">
                     <div class="pro-composer-inner">
@@ -224,7 +257,8 @@
                             <textarea id="proInput" rows="1" placeholder="Escreva sua mensagem…"></textarea>
                             <div class="pro-prompt-footer">
                                 <button id="proSend" type="submit" class="pro-send" aria-label="Enviar">
-                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M12 19V5M5 12l7-7 7 7" />
                                     </svg>
                                 </button>
@@ -267,11 +301,14 @@
 
     <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
         <div class="pojo-a11y-toolbar-toggle">
-            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
+            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);"
+                title="Ferramentas de Acessibilidade" role="link" tabindex="0">
                 <span class="pojo-sr-only sr-only">Abrir a barra de ferramentas</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" width="1em">
                     <title>Ferramentas de Acessibilidade</title>
-                    <path d="M50 .8c5.7 0 10.4 4.7 10.4 10.4S55.7 21.6 50 21.6s-10.4-4.7-10.4-10.4S44.3.8 50 .8zM92.2 32l-21.9 2.3c-2.6.3-4.6 2.5-4.6 5.2V94c0 2.9-2.3 5.2-5.2 5.2H60c-2.7 0-4.9-2.1-5.2-4.7l-2.2-24.7c-.1-1.5-1.4-2.5-2.8-2.4-1.3.1-2.2 1.1-2.4 2.4l-2.2 24.7c-.2 2.7-2.5 4.7-5.2 4.7h-.5c-2.9 0-5.2-2.3-5.2-5.2V39.4c0-2.7-2-4.9-4.6-5.2L7.8 32c-2.6-.3-4.6-2.5-4.6-5.2v-.5c0-2.6 2.1-4.7 4.7-4.7h.5c19.3 1.8 33.2 2.8 41.7 2.8s22.4-.9 41.7-2.8c2.6-.2 4.9 1.6 5.2 4.3v1c-.1 2.6-2.1 4.8-4.8 5.1z"></path>
+                    <path
+                        d="M50 .8c5.7 0 10.4 4.7 10.4 10.4S55.7 21.6 50 21.6s-10.4-4.7-10.4-10.4S44.3.8 50 .8zM92.2 32l-21.9 2.3c-2.6.3-4.6 2.5-4.6 5.2V94c0 2.9-2.3 5.2-5.2 5.2H60c-2.7 0-4.9-2.1-5.2-4.7l-2.2-24.7c-.1-1.5-1.4-2.5-2.8-2.4-1.3.1-2.2 1.1-2.4 2.4l-2.2 24.7c-.2 2.7-2.5 4.7-5.2 4.7h-.5c-2.9 0-5.2-2.3-5.2-5.2V39.4c0-2.7-2-4.9-4.6-5.2L7.8 32c-2.6-.3-4.6-2.5-4.6-5.2v-.5c0-2.6 2.1-4.7 4.7-4.7h.5c19.3 1.8 33.2 2.8 41.7 2.8s22.4-.9 41.7-2.8c2.6-.2 4.9 1.6 5.2 4.3v1c-.1 2.6-2.1 4.8-4.8 5.1z">
+                    </path>
                 </svg>
             </a>
         </div>
@@ -280,49 +317,84 @@
                 <p class="pojo-a11y-toolbar-title">Ferramentas de Acessibilidade</p>
                 <ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus"
+                            data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Aumentar o Texto</title><path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path></svg>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Aumentar o Texto</title>
+                                    <path fill="currentColor"
+                                        d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z">
+                                    </path>
+                                </svg>
                             </span>
                             <span class="pojo-a11y-toolbar-text">Aumentar o Texto</span>
                         </a>
                     </li>
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus"
+                            data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Diminuir o Texto</title><path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path></svg>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Diminuir o Texto</title>
+                                    <path fill="currentColor"
+                                        d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z">
+                                    </path>
+                                </svg>
                             </span>
                             <span class="pojo-a11y-toolbar-text">Diminuir o Texto</span>
                         </a>
                     </li>
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-narrator" data-action="narrator" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-narrator" data-action="narrator"
+                            tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Narrador</title><path fill="currentColor" d="M224 32C135 32 64 103 64 192v160c0 17.7 14.3 32 32 32h32V192c0-53 43-96 96-96s96 43 96 96v192h32c17.7 0 32-14.3 32-32V192c0-89-71-160-160-160zm-80 288c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm160 0c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm-80 96c-53 0-96-43-96-96h192c0 53-43 96-96 96z"/></svg>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Narrador</title>
+                                    <path fill="currentColor"
+                                        d="M224 32C135 32 64 103 64 192v160c0 17.7 14.3 32 32 32h32V192c0-53 43-96 96-96s96 43 96 96v192h32c17.7 0 32-14.3 32-32V192c0-89-71-160-160-160zm-80 288c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm160 0c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32c0 8.8-7.2 16-16 16zm-80 96c-53 0-96-43-96-96h192c0 53-43 96-96 96z" />
+                                </svg>
                             </span>
                             <span class="pojo-a11y-toolbar-text" id="narrator-text">Ouvir Página</span>
                         </a>
                     </li>
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline" data-action="links-underline" data-action-group="toggle" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline"
+                            data-action="links-underline" data-action-group="toggle" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Links Sublinhados</title><path fill="currentColor" d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z"></path></svg>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Links Sublinhados</title>
+                                    <path fill="currentColor"
+                                        d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z">
+                                    </path>
+                                </svg>
                             </span>
                             <span class="pojo-a11y-toolbar-text">Links Sublinhados</span>
                         </a>
                     </li>
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-readable-font" data-action="readable-font" data-action-group="toggle" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-readable-font"
+                            data-action="readable-font" data-action-group="toggle" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Fonte Legível</title><path fill="currentColor" d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z"></path></svg>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Fonte Legível</title>
+                                    <path fill="currentColor"
+                                        d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z">
+                                    </path>
+                                </svg>
                             </span>
                             <span class="pojo-a11y-toolbar-text">Fonte Legível</span>
                         </a>
                     </li>
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" tabindex="0"
+                            role="link">
                             <span class="pojo-a11y-toolbar-icon">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><title>Redefinir</title><path fill="currentColor" d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z"></path></svg>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+                                    <title>Redefinir</title>
+                                    <path fill="currentColor"
+                                        d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z">
+                                    </path>
+                                </svg>
                             </span>
                             <span class="pojo-a11y-toolbar-text">Redefinir</span>
                         </a>
@@ -341,7 +413,8 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
@@ -364,7 +437,7 @@
         // ========================================
         // USUÁRIO
         // ========================================
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             updateUserIcon();
             updateNivelInfo();
         });
@@ -380,7 +453,7 @@
                         userLink.innerHTML = `<span class="user-initials">${user.initials}</span>`;
                         userLink.href = '#';
                         userLink.title = `Olá, ${user.nome || user.email}`;
-                        userLink.onclick = function(e) {
+                        userLink.onclick = function (e) {
                             e.preventDefault();
                             if (confirm('Deseja fazer logout?')) {
                                 localStorage.removeItem('loggedInUser');
@@ -447,45 +520,45 @@
                 defaultLevel: "Iniciante", defaultVolume: "30 segundos",
                 exercisesByLevel: {
                     "inicio": [
-                        "Caminhada estacionária","Polichinelo","Elevação alternada de joelhos",
-                        "Calcanhar no glúteo","Passo lateral","Marcha acelerada",
-                        "Toque nos pés alternado","Dança aeróbica","Caminhada com elevação de braços",
-                        "Agachamento com alcance","Corrida lateral leve","Step-up baixo",
-                        "Alongamento dinâmico","Respiração guiada em movimento","Caminhada em círculos",
-                        "Movimento de braços sincronizado","Elevação de calcanhares","Rotação de tronco leve",
-                        "Caminhada com paradas","Marcha lenta e controlada"
+                        "Caminhada estacionária", "Polichinelo", "Elevação alternada de joelhos",
+                        "Calcanhar no glúteo", "Passo lateral", "Marcha acelerada",
+                        "Toque nos pés alternado", "Dança aeróbica", "Caminhada com elevação de braços",
+                        "Agachamento com alcance", "Corrida lateral leve", "Step-up baixo",
+                        "Alongamento dinâmico", "Respiração guiada em movimento", "Caminhada em círculos",
+                        "Movimento de braços sincronizado", "Elevação de calcanhares", "Rotação de tronco leve",
+                        "Caminhada com paradas", "Marcha lenta e controlada"
                     ],
                     "intermediario": [
-                        "Corrida estacionária","Mountain climber","Burpee adaptado",
-                        "Skater lateral","Boxe no ar","Salto baixo",
-                        "Deslocamento frente e trás","Intervalo de caminhada e corrida",
-                        "Polichinelo com agachamento","Corrida com elevação de joelhos",
-                        "Passo lateral com toque","Mountain climber lento",
-                        "Burpee sem salto","Skater com pausa","Boxe com deslocamento",
-                        "Corrida em zigue-zague","Salto de corda sem corda","Step-up alternado",
-                        "Agachamento com salto leve","Prancha com toque nos ombros"
+                        "Corrida estacionária", "Mountain climber", "Burpee adaptado",
+                        "Skater lateral", "Boxe no ar", "Salto baixo",
+                        "Deslocamento frente e trás", "Intervalo de caminhada e corrida",
+                        "Polichinelo com agachamento", "Corrida com elevação de joelhos",
+                        "Passo lateral com toque", "Mountain climber lento",
+                        "Burpee sem salto", "Skater com pausa", "Boxe com deslocamento",
+                        "Corrida em zigue-zague", "Salto de corda sem corda", "Step-up alternado",
+                        "Agachamento com salto leve", "Prancha com toque nos ombros"
                     ],
                     "pre-avançado": [
-                        "Corrida estacionária rápida","Burpee completo","Mountain climber rápido",
-                        "Skater lateral com salto","Boxe rápido","Salto de corda sem corda rápido",
-                        "Agachamento com salto","Prancha com elevação de pernas",
-                        "Corrida com obstáculos imaginários","Polichinelo rápido",
-                        "Burpee com flexão","Mountain climber cruzado","Skater com agachamento",
-                        "Boxe com agachamento","Corrida com sprint curto",
-                        "Salto vertical","Prancha dinâmica","Agachamento com salto e giro",
-                        "Corrida lateral rápida","Intervalo de alta intensidade"
+                        "Corrida estacionária rápida", "Burpee completo", "Mountain climber rápido",
+                        "Skater lateral com salto", "Boxe rápido", "Salto de corda sem corda rápido",
+                        "Agachamento com salto", "Prancha com elevação de pernas",
+                        "Corrida com obstáculos imaginários", "Polichinelo rápido",
+                        "Burpee com flexão", "Mountain climber cruzado", "Skater com agachamento",
+                        "Boxe com agachamento", "Corrida com sprint curto",
+                        "Salto vertical", "Prancha dinâmica", "Agachamento com salto e giro",
+                        "Corrida lateral rápida", "Intervalo de alta intensidade"
                     ],
                     "avançado": [
-                        "Burpee completo com flexão e salto","Mountain climber velocidade máxima",
-                        "Skater lateral com salto e agachamento","Boxe em alta intensidade",
-                        "Corrida estacionária em sprint","Salto de corda sem corda em velocidade",
-                        "Agachamento com salto e giro 180°","Prancha com elevação de pernas e toque",
-                        "Corrida com obstáculos e desvios","Polichinelo em alta velocidade",
-                        "Burpee com flexão e salto","Mountain climber cruzado rápido",
-                        "Skater com salto e agachamento profundo","Boxe com deslocamento e agachamento",
-                        "Corrida com sprint e recuperação ativa","Salto vertical com agachamento",
-                        "Prancha dinâmica com rotação","Agachamento com salto e giro 360°",
-                        "Corrida lateral em alta velocidade","Circuito HIIT completo"
+                        "Burpee completo com flexão e salto", "Mountain climber velocidade máxima",
+                        "Skater lateral com salto e agachamento", "Boxe em alta intensidade",
+                        "Corrida estacionária em sprint", "Salto de corda sem corda em velocidade",
+                        "Agachamento com salto e giro 180°", "Prancha com elevação de pernas e toque",
+                        "Corrida com obstáculos e desvios", "Polichinelo em alta velocidade",
+                        "Burpee com flexão e salto", "Mountain climber cruzado rápido",
+                        "Skater com salto e agachamento profundo", "Boxe com deslocamento e agachamento",
+                        "Corrida com sprint e recuperação ativa", "Salto vertical com agachamento",
+                        "Prancha dinâmica com rotação", "Agachamento com salto e giro 360°",
+                        "Corrida lateral em alta velocidade", "Circuito HIIT completo"
                     ]
                 }
             },
@@ -496,44 +569,44 @@
                 defaultLevel: "Intermediário", defaultVolume: "2 a 3 séries",
                 exercisesByLevel: {
                     "inicio": [
-                        "Agachamento livre (sem peso)","Flexão de braços na parede","Prancha frontal (joelhos apoiados)",
-                        "Afundo alternado assistido","Ponte de glúteos","Remada com elástico leve",
-                        "Desenvolvimento de ombros sem peso","Rosca direta com elástico leve",
-                        "Tríceps no banco assistido","Elevação lateral sem peso",
-                        "Panturrilha em pé assistida","Abdominal curto",
-                        "Prancha lateral com joelho apoiado","Superman","Elevação de quadril",
-                        "Agachamento na cadeira","Flexão de braços inclinada","Remada com toalha",
-                        "Extensão de joelho sentado","Elevação de pernas sentado"
+                        "Agachamento livre (sem peso)", "Flexão de braços na parede", "Prancha frontal (joelhos apoiados)",
+                        "Afundo alternado assistido", "Ponte de glúteos", "Remada com elástico leve",
+                        "Desenvolvimento de ombros sem peso", "Rosca direta com elástico leve",
+                        "Tríceps no banco assistido", "Elevação lateral sem peso",
+                        "Panturrilha em pé assistida", "Abdominal curto",
+                        "Prancha lateral com joelho apoiado", "Superman", "Elevação de quadril",
+                        "Agachamento na cadeira", "Flexão de braços inclinada", "Remada com toalha",
+                        "Extensão de joelho sentado", "Elevação de pernas sentado"
                     ],
                     "intermediario": [
-                        "Agachamento livre","Flexão de braços","Prancha frontal",
-                        "Afundo alternado","Ponte de glúteos com elevação","Remada com elástico",
-                        "Desenvolvimento de ombros com halteres leves","Rosca direta com halteres",
-                        "Tríceps no banco","Elevação lateral com halteres leves",
-                        "Levantamento terra romeno leve","Panturrilha em pé",
-                        "Abdominal curto com elevação","Prancha lateral","Superman com pausa",
-                        "Puxada na frente com elástico","Supino com halteres leves","Leg press leve",
-                        "Barra fixa assistida","Elevação de quadril unilateral"
+                        "Agachamento livre", "Flexão de braços", "Prancha frontal",
+                        "Afundo alternado", "Ponte de glúteos com elevação", "Remada com elástico",
+                        "Desenvolvimento de ombros com halteres leves", "Rosca direta com halteres",
+                        "Tríceps no banco", "Elevação lateral com halteres leves",
+                        "Levantamento terra romeno leve", "Panturrilha em pé",
+                        "Abdominal curto com elevação", "Prancha lateral", "Superman com pausa",
+                        "Puxada na frente com elástico", "Supino com halteres leves", "Leg press leve",
+                        "Barra fixa assistida", "Elevação de quadril unilateral"
                     ],
                     "pre-avançado": [
-                        "Agachamento livre profundo","Flexão de braços declinada","Prancha frontal com elevação",
-                        "Afundo com salto","Ponte de glúteos unilateral","Remada com barra",
-                        "Desenvolvimento de ombros com barra","Rosca direta com barra",
-                        "Tríceps testa","Elevação lateral com barra",
-                        "Levantamento terra romeno","Panturrilha em pé com peso",
-                        "Abdominal com peso","Prancha lateral com elevação","Superman com halteres",
-                        "Puxada na frente com barra","Supino com barra","Leg press",
-                        "Barra fixa","Elevação de quadril unilateral com peso"
+                        "Agachamento livre profundo", "Flexão de braços declinada", "Prancha frontal com elevação",
+                        "Afundo com salto", "Ponte de glúteos unilateral", "Remada com barra",
+                        "Desenvolvimento de ombros com barra", "Rosca direta com barra",
+                        "Tríceps testa", "Elevação lateral com barra",
+                        "Levantamento terra romeno", "Panturrilha em pé com peso",
+                        "Abdominal com peso", "Prancha lateral com elevação", "Superman com halteres",
+                        "Puxada na frente com barra", "Supino com barra", "Leg press",
+                        "Barra fixa", "Elevação de quadril unilateral com peso"
                     ],
                     "avançado": [
-                        "Agachamento livre com barra","Flexão de braços explosiva","Prancha frontal com peso",
-                        "Afundo com salto e peso","Ponte de glúteos unilateral com barra",
-                        "Remada curvada com barra","Desenvolvimento militar","Rosca direta com barra pesada",
-                        "Tríceps testa com barra","Elevação lateral com barra pesada",
-                        "Levantamento terra","Panturrilha em pé com barra",
-                        "Abdominal com peso e rotação","Prancha lateral com elevação e peso",
-                        "Superman com barra","Puxada na frente com barra pesada",
-                        "Supino reto com barra","Leg press pesado","Barra fixa com peso",
+                        "Agachamento livre com barra", "Flexão de braços explosiva", "Prancha frontal com peso",
+                        "Afundo com salto e peso", "Ponte de glúteos unilateral com barra",
+                        "Remada curvada com barra", "Desenvolvimento militar", "Rosca direta com barra pesada",
+                        "Tríceps testa com barra", "Elevação lateral com barra pesada",
+                        "Levantamento terra", "Panturrilha em pé com barra",
+                        "Abdominal com peso e rotação", "Prancha lateral com elevação e peso",
+                        "Superman com barra", "Puxada na frente com barra pesada",
+                        "Supino reto com barra", "Leg press pesado", "Barra fixa com peso",
                         "Elevação de quadril unilateral com barra pesada"
                     ]
                 }
@@ -543,7 +616,7 @@
                 iconImg: "icone-ciclismo.png",
                 description: "Outras modalidades esportivas para variar o treino.",
                 defaultLevel: "Todos os níveis", defaultVolume: "20 a 40 minutos",
-                exercises: ["Futebol recreativo","Vôlei","Basquete","Handebol","Natação","Corrida ao ar livre","Caminhada em trilha","Tênis","Beach tennis","Badminton","Ping-pong","Boxe recreativo","Muay thai iniciante","Judô adaptado","Dança esportiva","Pular corda","Escalada indoor","Patins","Skate recreativo","Circuito funcional esportivo"]
+                exercises: ["Futebol recreativo", "Vôlei", "Basquete", "Handebol", "Natação", "Corrida ao ar livre", "Caminhada em trilha", "Tênis", "Beach tennis", "Badminton", "Ping-pong", "Boxe recreativo", "Muay thai iniciante", "Judô adaptado", "Dança esportiva", "Pular corda", "Escalada indoor", "Patins", "Skate recreativo", "Circuito funcional esportivo"]
             },
             adaptado: {
                 label: "Treino Adaptado", icon: "♿",
@@ -551,7 +624,7 @@
                 description: "Movimentos inclusivos para todos os públicos: PCD, idosos, pessoas com lesões ou restrições.",
                 defaultLevel: "Adaptável", defaultVolume: "8 a 12 repetições leves",
                 exercises: [
-                    "Marcha sentada com apoio","Elevação frontal sentada","Remada com elástico sentada","Extensão de joelho sentada","Elevação alternada dos braços","Rotação leve do tronco","Inclinação lateral assistida","Abertura de braços com bastão","Flexão de cotovelos com halteres leves","Extensão de tríceps adaptada","Pressão de mãos contra a parede","Adução de pernas com bola","Flexão de tornozelo sentado","Elevação de calcanhares sentada","Transferência de peso com apoio","Agachamento assistido na cadeira","Flexão na parede (adaptada)","Equilíbrio com apoio unipodal","Alongamento ativo dos braços","Respiração diafragmática guiada","Caminhada guiada com apoio","Coordenação motora com cones","Alongamento de cadeia posterior sentado","Fortalecimento de punhos com bola","Rotação de ombros controlada","Elevação de pernas alternada sentado","Marcha estacionária com apoio","Exercício de pinça e preensão","Alongamento cervical suave","Postura e alinhamento sentado","Circuito sensorial com texturas","Trabalho de core sentado","Mobilidade de quadril assistida","Fortalecimento de panturrilha sentado","Exercício de respiração com contagem","Relaxamento muscular progressivo","Adaptação de AVDs (atividades do dia a dia)","Treino de marcha assistida com andador","Fortalecimento de mãos com massa de modelar","Circuito lúdico para autismo"
+                    "Marcha sentada com apoio", "Elevação frontal sentada", "Remada com elástico sentada", "Extensão de joelho sentada", "Elevação alternada dos braços", "Rotação leve do tronco", "Inclinação lateral assistida", "Abertura de braços com bastão", "Flexão de cotovelos com halteres leves", "Extensão de tríceps adaptada", "Pressão de mãos contra a parede", "Adução de pernas com bola", "Flexão de tornozelo sentado", "Elevação de calcanhares sentada", "Transferência de peso com apoio", "Agachamento assistido na cadeira", "Flexão na parede (adaptada)", "Equilíbrio com apoio unipodal", "Alongamento ativo dos braços", "Respiração diafragmática guiada", "Caminhada guiada com apoio", "Coordenação motora com cones", "Alongamento de cadeia posterior sentado", "Fortalecimento de punhos com bola", "Rotação de ombros controlada", "Elevação de pernas alternada sentado", "Marcha estacionária com apoio", "Exercício de pinça e preensão", "Alongamento cervical suave", "Postura e alinhamento sentado", "Circuito sensorial com texturas", "Trabalho de core sentado", "Mobilidade de quadril assistida", "Fortalecimento de panturrilha sentado", "Exercício de respiração com contagem", "Relaxamento muscular progressivo", "Adaptação de AVDs (atividades do dia a dia)", "Treino de marcha assistida com andador", "Fortalecimento de mãos com massa de modelar", "Circuito lúdico para autismo"
                 ]
             }
         };
@@ -574,7 +647,6 @@
         const modal = document.querySelector("#exerciseModal");
         const closeModalButton = document.querySelector("#closeModal");
 
-        // Se tiver nível → filtra. Se não tiver → 5 de cada nível (20 no total)
         function buildExerciseList() {
             const items = [];
             const nivelUsuario = getNivelUsuario();
@@ -584,14 +656,12 @@
                     let exerciciosComNivel = [];
 
                     if (nivelUsuario) {
-                        // Nível específico do usuário
                         const lista = category.exercisesByLevel[nivelUsuario] || [];
                         exerciciosComNivel = lista.map(nome => ({
                             nome,
                             nivelLabel: getNivelLabel(nivelUsuario)
                         }));
                     } else {
-                        // Modo livre: 5 exercícios de cada nível (total 20)
                         const ordem = ["inicio", "intermediario", "pre-avançado", "avançado"];
                         ordem.forEach(nv => {
                             const lista = category.exercisesByLevel[nv] || [];
@@ -693,7 +763,7 @@
             document.querySelector("#personal-ia").scrollIntoView({ behavior: "smooth" });
         }
 
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const modalityBtn = e.target.closest('[data-filter-button]');
             if (modalityBtn) {
                 e.preventDefault();
@@ -737,11 +807,87 @@
         });
 
         // ========================================
-        // PERSONAL IA
+        // PERSONAL IA — com histórico por usuário
         // ========================================
         const PRO_API_URL = "https://aero-chat.matheus-martins-oliveira09.workers.dev";
 
-        const PRO_STORAGE_KEY = "aero_chat_history_v1";
+        function proUserKey() {
+            try {
+                const raw = localStorage.getItem('loggedInUser');
+                if (raw) {
+                    const u = JSON.parse(raw);
+                    if (u.loggedIn && u.email) return 'u_' + u.email.toLowerCase();
+                }
+            } catch { }
+            return 'guest';
+        }
+
+        function proStorageKey() {
+            return 'aero_chat_v2_' + proUserKey();
+        }
+
+        function proLoadStore() {
+            try {
+                const raw = localStorage.getItem(proStorageKey());
+                if (!raw) return { chats: [], currentId: null };
+                const parsed = JSON.parse(raw);
+                return {
+                    chats: Array.isArray(parsed.chats) ? parsed.chats : [],
+                    currentId: parsed.currentId || null
+                };
+            } catch {
+                return { chats: [], currentId: null };
+            }
+        }
+
+        function proSaveStore(store) {
+            try {
+                localStorage.setItem(proStorageKey(), JSON.stringify(store));
+            } catch { }
+        }
+
+        function proUid() {
+            return 'c_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+        }
+
+        function proNewChatObject() {
+            return {
+                id: proUid(),
+                title: 'Nova conversa',
+                createdAt: Date.now(),
+                updatedAt: Date.now(),
+                messages: []
+            };
+        }
+
+        function proTitleFromMessages(messages) {
+            const firstUser = messages.find(m => m.role === 'user');
+            if (!firstUser) return 'Nova conversa';
+            const t = firstUser.content.trim().replace(/\s+/g, ' ');
+            return t.length > 40 ? t.slice(0, 40) + '…' : t;
+        }
+
+        function proRelativeTime(ts) {
+            const diff = Math.floor((Date.now() - ts) / 1000);
+            if (diff < 60) return 'agora';
+            if (diff < 3600) return Math.floor(diff / 60) + 'min';
+            if (diff < 86400) return Math.floor(diff / 3600) + 'h';
+            if (diff < 604800) return Math.floor(diff / 86400) + 'd';
+            const d = new Date(ts);
+            return d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+        }
+
+        let proStore = proLoadStore();
+        let proCurrentChat = null;
+        let proBusy = false;
+
+        if (!proStore.currentId || !proStore.chats.find(c => c.id === proStore.currentId)) {
+            const novo = proNewChatObject();
+            proStore.chats.unshift(novo);
+            proStore.currentId = novo.id;
+            proSaveStore(proStore);
+        }
+        proCurrentChat = proStore.chats.find(c => c.id === proStore.currentId);
 
         const PRO_QUICK_ACTIONS = [
             { label: "Criar planilha de treino", prompt: "Quero uma planilha de treino. Me pergunte o que precisar." },
@@ -759,26 +905,13 @@
             send: document.getElementById("proSend"),
             note: document.getElementById("proNote"),
             newChat: document.getElementById("proNewChat"),
+            history: document.getElementById("proHistory"),
+            historyDrawer: document.getElementById("proHistoryDrawer"),
+            historyList: document.getElementById("proHistoryList"),
+            historyClose: document.getElementById("proHistoryClose"),
+            historyNew: document.getElementById("proHistoryNew"),
+            historyBackdrop: document.getElementById("proHistoryBackdrop"),
         };
-
-        let proMessages = proLoad();
-        let proBusy = false;
-
-        function proLoad() {
-            try {
-                const raw = localStorage.getItem(PRO_STORAGE_KEY);
-                const parsed = raw ? JSON.parse(raw) : [];
-                return Array.isArray(parsed) ? parsed : [];
-            } catch {
-                return [];
-            }
-        }
-
-        function proSave() {
-            try {
-                localStorage.setItem(PRO_STORAGE_KEY, JSON.stringify(proMessages));
-            } catch {}
-        }
 
         function proEsc(s) {
             return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -849,11 +982,12 @@
 
         function proRender() {
             proEl.transcript.innerHTML = "";
-            if (!proMessages.length) {
+            const msgs = proCurrentChat?.messages || [];
+            if (!msgs.length) {
                 proEl.transcript.appendChild(proEl.empty);
                 return;
             }
-            for (const m of proMessages) {
+            for (const m of msgs) {
                 const row = document.createElement("div");
                 row.className = "pro-msg " + m.role;
                 if (m.role === "user") {
@@ -890,22 +1024,110 @@
             if (!v) proEl.input.focus();
         }
 
+        function proRenderHistory() {
+            if (!proEl.historyList) return;
+            const chats = [...proStore.chats].sort((a, b) => b.updatedAt - a.updatedAt);
+
+            if (!chats.length) {
+                proEl.historyList.innerHTML = '<p class="pro-history-empty">Nenhuma conversa ainda.<br>Comece a falar com o Personal IA.</p>';
+                return;
+            }
+
+            proEl.historyList.innerHTML = chats.map(c => `
+                <div class="pro-history-item ${c.id === proStore.currentId ? 'active' : ''}" data-chat-id="${c.id}">
+                    <div class="pro-history-item__title">${proEsc(c.title)}</div>
+                    <div class="pro-history-item__meta">${proRelativeTime(c.updatedAt)}</div>
+                    <button type="button" class="pro-history-item__delete" data-delete-id="${c.id}" title="Apagar conversa">×</button>
+                </div>
+            `).join("");
+        }
+
+        function proOpenHistory() {
+            proRenderHistory();
+            proEl.historyDrawer.classList.add('open');
+            proEl.historyDrawer.setAttribute('aria-hidden', 'false');
+            proEl.historyBackdrop.classList.add('show');
+        }
+
+        function proCloseHistory() {
+            proEl.historyDrawer.classList.remove('open');
+            proEl.historyDrawer.setAttribute('aria-hidden', 'true');
+            proEl.historyBackdrop.classList.remove('show');
+        }
+
+        function proSelectChat(id) {
+            if (proBusy) return;
+            const chat = proStore.chats.find(c => c.id === id);
+            if (!chat) return;
+            proStore.currentId = id;
+            proCurrentChat = chat;
+            proSaveStore(proStore);
+            proRender();
+            proRenderHistory();
+            proCloseHistory();
+        }
+
+        function proDeleteChat(id) {
+            const chat = proStore.chats.find(c => c.id === id);
+            if (!chat) return;
+            if (!confirm('Apagar esta conversa? Não tem como desfazer.')) return;
+
+            proStore.chats = proStore.chats.filter(c => c.id !== id);
+
+            if (proStore.currentId === id) {
+                if (proStore.chats.length === 0) {
+                    const novo = proNewChatObject();
+                    proStore.chats.unshift(novo);
+                }
+                proStore.currentId = proStore.chats[0].id;
+                proCurrentChat = proStore.chats[0];
+            }
+
+            proSaveStore(proStore);
+            proRender();
+            proRenderHistory();
+        }
+
+        function proStartNewChat() {
+            if (proBusy) return;
+
+            if (proCurrentChat && proCurrentChat.messages.length === 0) {
+                proEl.input.focus();
+                return;
+            }
+
+            const novo = proNewChatObject();
+            proStore.chats.unshift(novo);
+            proStore.currentId = novo.id;
+            proCurrentChat = novo;
+            proSaveStore(proStore);
+
+            if (proEl.note) {
+                proEl.note.textContent = "Nova conversa iniciada · histórico salvo automaticamente";
+            }
+            proRender();
+            proRenderHistory();
+            proEl.input.focus();
+        }
+
         async function proSend(text) {
             const content = text.trim();
             if (!content || proBusy) return;
 
-            proMessages.push({ role: "user", content });
+            proCurrentChat.messages.push({ role: "user", content });
+            proCurrentChat.updatedAt = Date.now();
+            if (proCurrentChat.messages.filter(m => m.role === 'user').length === 1) {
+                proCurrentChat.title = proTitleFromMessages(proCurrentChat.messages);
+            }
+            proSaveStore(proStore);
             proRender();
-            proSave();
             proSetBusy(true);
             proShowTyping();
 
             try {
                 const res = await fetch(PRO_API_URL, {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         model: "openai/gpt-oss-120b",
                         stream: true,
@@ -916,7 +1138,7 @@
                                 role: "system",
                                 content: "Você é o PRÓ, um personal trainer IA da academia Aero Fitness. Você ajuda com planilhas de treino (cardio, musculação, esportes variados, treino adaptado para PCD/idosos/lesões), controle alimentar, metas e dicas de execução. Seja direto, motivador e profissional. Use português do Brasil. Quando fizer sentido, use listas, tabelas e negrito. Se o usuário pedir uma planilha, pergunte objetivo, nível e frequência antes. NUNCA recomende anabolizantes. Em caso de dor ou lesão, oriente procurar um profissional. Ao sugerir treinos adaptados, considere sempre as necessidades específicas (autismo, cegueira, surdez, cadeirantes, idosos, lesões). Se a pergunta não tiver relação com treino/saúde, responda educadamente e volte ao tema."
                             },
-                            ...proMessages.map((m) => ({
+                            ...proCurrentChat.messages.map((m) => ({
                                 role: m.role === "assistant" ? "assistant" : "user",
                                 content: m.content
                             }))
@@ -928,7 +1150,7 @@
 
                 proHideTyping();
                 const reply = { role: "assistant", content: "" };
-                proMessages.push(reply);
+                proCurrentChat.messages.push(reply);
                 proRender();
                 const bubble = proEl.transcript.querySelector(".pro-msg:last-child .pro-bubble-ai");
 
@@ -959,8 +1181,10 @@
                 }
 
                 if (!reply.content) reply.content = "_Sem resposta agora. Tente enviar de novo._";
+                proCurrentChat.updatedAt = Date.now();
+                proSaveStore(proStore);
                 proRender();
-                proSave();
+                proRenderHistory();
             } catch (err) {
                 proHideTyping();
                 if (proEl.note) {
@@ -999,23 +1223,53 @@
             proEl.input.style.height = Math.min(proEl.input.scrollHeight, 180) + "px";
         });
 
-        proEl.newChat.addEventListener("click", () => {
-            proMessages = [];
-            try { localStorage.removeItem(PRO_STORAGE_KEY); } catch {}
-            if (proEl.note) {
-                proEl.note.textContent =
-                    "Personal AEROFITNESS treina com você 24/7 · salvamos sua conversa neste navegador";
+        proEl.newChat.addEventListener("click", proStartNewChat);
+        proEl.historyNew.addEventListener("click", () => { proStartNewChat(); proCloseHistory(); });
+        proEl.history.addEventListener("click", proOpenHistory);
+        proEl.historyClose.addEventListener("click", proCloseHistory);
+        proEl.historyBackdrop.addEventListener("click", proCloseHistory);
+
+        proEl.historyList.addEventListener("click", (e) => {
+            const del = e.target.closest('[data-delete-id]');
+            if (del) {
+                e.stopPropagation();
+                proDeleteChat(del.getAttribute('data-delete-id'));
+                return;
             }
-            proRender();
-            proEl.input.focus();
+            const item = e.target.closest('[data-chat-id]');
+            if (item) {
+                proSelectChat(item.getAttribute('data-chat-id'));
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && proEl.historyDrawer.classList.contains('open')) {
+                proCloseHistory();
+            }
+        });
+
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'loggedInUser') {
+                proStore = proLoadStore();
+                if (!proStore.currentId || !proStore.chats.find(c => c.id === proStore.currentId)) {
+                    const novo = proNewChatObject();
+                    proStore.chats.unshift(novo);
+                    proStore.currentId = novo.id;
+                    proSaveStore(proStore);
+                }
+                proCurrentChat = proStore.chats.find(c => c.id === proStore.currentId);
+                proRender();
+                proRenderHistory();
+            }
         });
 
         proRender();
+        proRenderHistory();
 
         // ========================================
         // ACESSIBILIDADE (POJO A11Y)
         // ========================================
-        (function() {
+        (function () {
             'use strict';
 
             const toolbar = document.getElementById('pojo-a11y-toolbar');
@@ -1056,17 +1310,17 @@
                 utterance.rate = 0.9;
                 utterance.pitch = 1;
                 utterance.volume = 1;
-                utterance.onstart = function() {
+                utterance.onstart = function () {
                     isSpeaking = true;
                     narratorText.textContent = 'Parar Leitura';
                     narratorBtn.classList.add('active-tool');
                 };
-                utterance.onend = function() {
+                utterance.onend = function () {
                     isSpeaking = false;
                     narratorText.textContent = 'Ouvir Página';
                     narratorBtn.classList.remove('active-tool');
                 };
-                utterance.onerror = function() {
+                utterance.onerror = function () {
                     isSpeaking = false;
                     narratorText.textContent = 'Ouvir Página';
                     narratorBtn.classList.remove('active-tool');
@@ -1075,14 +1329,14 @@
             }
 
             if (narratorBtn) {
-                narratorBtn.addEventListener('click', function(e) {
+                narratorBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     toggleNarrator();
                 });
             }
 
             if (toggleBtn) {
-                toggleBtn.addEventListener('click', function(e) {
+                toggleBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     toolbar.classList.toggle('pojo-a11y-toolbar-open');
                 });
@@ -1141,7 +1395,7 @@
             }
 
             document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(tool => {
-                tool.addEventListener('click', function(e) {
+                tool.addEventListener('click', function (e) {
                     e.preventDefault();
                     const action = this.getAttribute('data-action');
                     if (action === 'narrator') return;
@@ -1150,7 +1404,7 @@
             });
 
             if (resetBtn) {
-                resetBtn.addEventListener('click', function(e) {
+                resetBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     const body = document.body;
                     if (isSpeaking && window.speechSynthesis) {
@@ -1181,36 +1435,57 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
- <footer>
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-section contact-section">
-                <h3>CONTATO</h3>
-                <ul class="contact-list">
-                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E" alt="email"> pngjosebonifacio@seed.pr.gov.b</li>
-                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E" alt="telefone"> (41) 3423-4131</li>
-                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E" alt="maps"> Alameda Cel. Elizio Pereira, Sn - 0 - Estradinha, Paranaguá - PR, 83206-000</li>
-                </ul>
-            </div>
-            <div class="footer-section partnerships-section">
-                <h3>PARCERIAS</h3>
-                <div class="logos-wrapper">
-                    <img src="1.png" alt="estadual">                   
-                    <img src="img.pr.colegio.integral.png" alt="integral">   
-                    <img src="icone.CECM.02.png" alt="integral">              
+    <footer>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section contact-section">
+                    <h3>CONTATO</h3>
+                    <ul class="contact-list">
+                        <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E"
+                                alt="email"> pngjosebonifacio@seed.pr.gov.b</li>
+                        <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E"
+                                alt="telefone"> (41) 3423-4131</li>
+                        <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E"
+                                alt="maps"> Alameda Cel. Elizio Pereira, Sn - 0 - Estradinha, Paranaguá - PR, 83206-000
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section partnerships-section">
+                    <h3>PARCERIAS</h3>
+                    <div class="logos-wrapper">
+                        <img src="1.png" alt="estadual">
+                        <img src="img.pr.colegio.integral.png" alt="integral">
+                        <img src="icone.CECM.02.png" alt="integral">
+                    </div>
+                </div>
+                <div class="footer-section social-section">
+                    <h3>REDES SOCIAIS</h3>
+                    <div class="social-icons-footer">
+                        <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png"
+                                alt="Instagram"></a>
+                        <a
+                            href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img
+                                src="facebook.png" alt="Facebook"></a>
+                        <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img
+                                src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-section social-section">
-                <h3>REDES SOCIAIS</h3>
-                <div class="social-icons-footer">
-                    <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png" alt="Instagram"></a>
-                    <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img src="facebook.png" alt="Facebook"></a>
-                    <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+            <div class="footer-bottom">
+                <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico
+                    Militar | Todos os direitos reservados</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico Militar | Todos os direitos reservados</p>
-        </div>
+        </footer>
     </footer>
+
+    <!-- BOTÃO VLIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
 </body>
+
 </html>

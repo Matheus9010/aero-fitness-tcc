@@ -9,9 +9,9 @@
 }
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)), 
-    url(natacao2.jpg) center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url(natacao2.jpg) center/cover no-repeat;
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
@@ -29,27 +29,27 @@ body {
     top: 20px;
     left: 20px;
     z-index: 1000;
-    
+
     display: flex;
     align-items: center;
     gap: 8px;
-    
+
     padding: 10px 18px;
-    
+
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    
+
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    
+
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 400;
-    
+
     transition: all 0.3s ease;
-    
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -156,14 +156,14 @@ body {
         top: 15px;
         right: 15px;
     }
-    
+
     .tradutor-wrapper #google_translate_element select {
         min-width: 120px !important;
         padding: 6px 35px 6px 12px !important;
         font-size: 12px !important;
         height: 36px !important;
     }
-    
+
     .tradutor-wrapper #google_translate_element::before {
         font-size: 17px !important;
         margin-right: 6px !important;
@@ -175,7 +175,7 @@ body {
         top: 10px;
         right: 10px;
     }
-    
+
     .tradutor-wrapper #google_translate_element select {
         min-width: 95px !important;
         padding: 5px 28px 5px 10px !important;
@@ -183,7 +183,7 @@ body {
         height: 32px !important;
         border-radius: 6px !important;
     }
-    
+
     .tradutor-wrapper #google_translate_element::before {
         font-size: 14px !important;
         margin-right: 4px !important;
@@ -204,7 +204,7 @@ body {
 .logo img {
     width: 280px;
     height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     margin-left: 0;
     margin-top: 0;
 }
@@ -267,7 +267,7 @@ form .input-field:first-child {
     transform-origin: left;
 }
 
-.input-field input:focus ~ .underline::after {
+.input-field input:focus~.underline::after {
     transform: scaleX(1);
 }
 
@@ -437,19 +437,19 @@ html body #pojo-a11y-toolbar {
         padding: 8px 14px;
         font-size: 0.75rem;
     }
-    
+
     .btn-voltar span {
         font-size: 0.7rem;
     }
-    
+
     .btn-voltar i {
         font-size: 0.8rem;
     }
-    
+
     .logo img {
         width: 200px;
     }
-    
+
     main.container {
         min-width: 280px;
         padding: 1.5rem;
@@ -471,24 +471,24 @@ html body #pojo-a11y-toolbar {
         font-size: 0.7rem;
         gap: 5px;
     }
-    
+
     .btn-voltar span {
         font-size: 0.65rem;
     }
-    
+
     .btn-voltar i {
         font-size: 0.7rem;
     }
-    
+
     .logo img {
         width: 160px;
     }
-    
+
     main.container {
         min-width: 260px;
         padding: 1.2rem;
     }
-    
+
     main h2 {
         font-size: 1.3rem;
     }
@@ -520,7 +520,7 @@ div[vw].enabled .vw-access-button {
         bottom: 15px !important;
         right: 15px !important;
     }
-    
+
     div[vw].enabled .vw-access-button {
         width: 48px !important;
         height: 48px !important;
@@ -532,7 +532,7 @@ div[vw].enabled .vw-access-button {
         bottom: 12px !important;
         right: 12px !important;
     }
-    
+
     div[vw].enabled .vw-access-button {
         width: 42px !important;
         height: 42px !important;
