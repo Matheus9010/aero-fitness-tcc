@@ -66,9 +66,11 @@ header {
 .prev {
     left: 0;
 }
+
 .next {
     right: 0;
 }
+
 .prev:hover,
 .next:hover {
     background: rgba(0, 0, 0, 0.8);
@@ -297,6 +299,7 @@ body {
         opacity: 0;
         transform: translateY(-5px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -315,7 +318,7 @@ body {
         height: 36px !important;
         border-radius: 8px !important;
     }
-    
+
     #google_translate_element::before {
         font-size: 17px !important;
         margin-right: 6px !important;
@@ -326,7 +329,7 @@ body {
     .tradutor-item {
         margin: 0 3px !important;
     }
-    
+
     #google_translate_element select {
         min-width: 100px !important;
         padding: 5px 28px 5px 10px !important;
@@ -335,7 +338,7 @@ body {
         border-radius: 6px !important;
         border-width: 1.5px !important;
     }
-    
+
     #google_translate_element::before {
         font-size: 14px !important;
         margin-right: 4px !important;
@@ -352,7 +355,7 @@ body {
         background-size: 8px !important;
         background-position: right 8px center !important;
     }
-    
+
     #google_translate_element::before {
         font-size: 12px !important;
         margin-right: 3px !important;
@@ -497,7 +500,7 @@ html body #pojo-a11y-toolbar {
 @media (max-width: 768px) {
     html body #pojo-a11y-toolbar {
         left: 0 !important;
-        bottom: 120px !important; 
+        bottom: 120px !important;
         top: auto !important;
         transform: none !important;
     }
@@ -575,7 +578,7 @@ html body #pojo-a11y-toolbar {
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -590,7 +593,7 @@ html body #pojo-a11y-toolbar {
 .social-icons-footer {
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -627,18 +630,31 @@ html body #pojo-a11y-toolbar {
 }
 
 @media (max-width: 992px) {
-    header { height: 380px; }
+    header {
+        height: 380px;
+    }
 }
 
 @media (max-width: 768px) {
-    header { height: 320px; }
+    header {
+        height: 320px;
+    }
 }
 
 @media (max-width: 600px) {
-    header { height: 260px; }
+    header {
+        height: 260px;
+    }
 }
 
 @media (max-width: 400px) {
-    header { height: 220px; }
-    .prev, .next { padding: 8px; font-size: 14px; }
+    header {
+        height: 220px;
+    }
+
+    .prev,
+    .next {
+        padding: 8px;
+        font-size: 14px;
+    }
 }

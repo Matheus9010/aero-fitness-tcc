@@ -60,7 +60,7 @@
                     <a href="sobrenos.html">SOBRE NÓS</a>
                 </li>
                 <li class="active"><a href="localizacao.html">LUGARES</a></li>
-                <li class="active"><a href="">TIPOS DE TREINO</a></li>
+                <li class="active"><a href="tiposdetreino.html">TIPOS DE TREINO</a></li>
                 <li class="active"><a href="contato.html">CONTATO</a></li>
                 <li class="usuario">
                     <a href="escolha.html" id="userLink"><img src="user.png" alt="Usuário"></a>
@@ -838,7 +838,57 @@
         function proSaveStore(store) {
             try {
                 localStorage.setItem(proStorageKey(), JSON.stringify(store));
+
+                const token = localStorage.getItem('aero_token');
+                if (token) {
+                    fetch(PRO_API_URL + '/history', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ token, conversas: store.chats })
+                    }).catch(() => { });
+                }
             } catch { }
+        }
+
+        async function proSyncFromCloud() {
+            const token = localStorage.getItem('aero_token');
+            if (!token) return;
+
+            try {
+                const res = await fetch(PRO_API_URL + '/history?token=' + encodeURIComponent(token));
+                if (!res.ok) return;
+
+                const data = await res.json();
+                if (!data.ok || !Array.isArray(data.conversas)) return;
+
+                if (data.conversas.length === 0 && proStore.chats.length > 0) {
+                    const temConteudo = proStore.chats.some(c => c.messages && c.messages.length > 0);
+                    if (temConteudo) {
+                        fetch(PRO_API_URL + '/history', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ token, conversas: proStore.chats })
+                        }).catch(() => { });
+                    }
+                    return;
+                }
+
+                proStore.chats = data.conversas;
+                if (!proStore.currentId || !proStore.chats.find(c => c.id === proStore.currentId)) {
+                    proStore.currentId = proStore.chats[0]?.id || null;
+                }
+                if (!proStore.currentId) {
+                    const novo = proNewChatObject();
+                    proStore.chats.unshift(novo);
+                    proStore.currentId = novo.id;
+                }
+                proCurrentChat = proStore.chats.find(c => c.id === proStore.currentId);
+                localStorage.setItem(proStorageKey(), JSON.stringify(proStore));
+                proRender();
+                proRenderHistory();
+            } catch (e) {
+                console.warn('Sync com a nuvem falhou:', e);
+            }
         }
 
         function proUid() {
@@ -1313,6 +1363,7 @@
 
         proRender();
         proRenderHistory();
+        proSyncFromCloud();
 
         (function () {
             'use strict';
@@ -1480,47 +1531,36 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <footer>
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="footer-section contact-section">
-                    <h3>CONTATO</h3>
-                    <ul class="contact-list">
-                        <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E"
-                                alt="email"> pngjosebonifacio@seed.pr.gov.b</li>
-                        <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E"
-                                alt="telefone"> (41) 3423-4131</li>
-                        <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E"
-                                alt="maps"> Alameda Cel. Elizio Pereira, Sn - 0 - Estradinha, Paranaguá - PR, 83206-000
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-section partnerships-section">
-                    <h3>PARCERIAS</h3>
-                    <div class="logos-wrapper">
-                        <img src="1.png" alt="estadual">
-                        <img src="img.pr.colegio.integral.png" alt="integral">
-                        <img src="icone.CECM.02.png" alt="integral">
-                    </div>
-                </div>
-                <div class="footer-section social-section">
-                    <h3>REDES SOCIAIS</h3>
-                    <div class="social-icons-footer">
-                        <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png"
-                                alt="Instagram"></a>
-                        <a
-                            href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img
-                                src="facebook.png" alt="Facebook"></a>
-                        <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img
-                                src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
-                    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section contact-section">
+                <h3>CONTATO</h3>
+                <ul class="contact-list">
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E" alt="email"> pngjosebonifacio@seed.pr.gov.b</li>
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E" alt="telefone"> (41) 3423-4131</li>
+                    <li><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232c2a1e' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E" alt="maps"> Alameda Cel. Elizio Pereira, Sn - 0 - Estradinha, Paranaguá - PR, 83206-000</li>
+                </ul>
+            </div>
+            <div class="footer-section partnerships-section">
+                <h3>PARCERIAS</h3>
+                <div class="logos-wrapper">
+                    <img src="1.png" alt="estadual">                   
+                    <img src="img.pr.colegio.integral.png" alt="integral">   
+                    <img src="icone.CECM.02.png" alt="integral">              
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico
-                    Militar | Todos os direitos reservados</p>
+            <div class="footer-section social-section">
+                <h3>REDES SOCIAIS</h3>
+                <div class="social-icons-footer">
+                    <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+                </div>
             </div>
-        </footer>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico Militar | Todos os direitos reservados</p>
+        </div>
     </footer>
 
     <div vw class="enabled">

@@ -597,7 +597,7 @@ html body #pojo-a11y-toolbar {
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -612,7 +612,7 @@ html body #pojo-a11y-toolbar {
 .social-icons-footer {
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 

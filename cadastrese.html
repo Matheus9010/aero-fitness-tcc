@@ -56,7 +56,7 @@
                             </div>
                             <div class="campo">
                                 <label for="genero">Gênero</label>
-                                <select id="genero" name="genero">
+                                <select id="genero" name="genero" required>
                                     <option value="" disabled selected>Selecione</option>
                                     <option value="Feminino">Feminino</option>
                                     <option value="Masculino">Masculino</option>
@@ -85,7 +85,8 @@
                             </div>
                             <div class="campo">
                                 <label for="email">E-mail pessoal</label>
-                                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                                <input type="email" id="email" name="email" placeholder="exemplo@email.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                             </div>
                         </div>
 
@@ -161,7 +162,8 @@
                         <div class="linha-dupla">
                             <div class="campo">
                                 <label for="nivel_treino">Seu nível de treino</label>
-                                <select id="nivel_treino" name="nivel_treino">
+                                <select id="nivel_treino" name="nivel_treino" required>
+                                    <option value="" disabled selected>Selecione seu nível</option>
                                     <option value="inicio">Iniciante</option>
                                     <option value="intermediario">Intermediário</option>
                                     <option value="pre-avançado">Pré-avançado</option>
@@ -170,7 +172,8 @@
                             </div>
                             <div class="campo">
                                 <label for="frequencia">Frequência Semanal</label>
-                                <select id="frequencia" name="frequencia">
+                                <select id="frequencia" name="frequencia" required>
+                                    <option value="" disabled selected>Selecione sua frequência</option>
                                     <option value="sedentario">Nunca pratiquei</option>
                                     <option value="recente">Comecei recentemente</option>
                                     <option value="regular">2 a 3 vezes por semana</option>
@@ -598,6 +601,17 @@
                 });
             }
 
+            const emailInput = document.getElementById('email');
+            const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+            emailInput.addEventListener('input', function () {
+                if (this.value && !emailPattern.test(this.value)) {
+                    this.setCustomValidity('Digite um email válido (ex: usuario@gmail.com)');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
             document.querySelectorAll('.toggle-senha').forEach(function (icone) {
                 icone.addEventListener('click', function () {
                     const inputId = this.getAttribute('data-target');
@@ -634,7 +648,6 @@
                     return;
                 }
 
-                // Coleta todos os dados do formulário
                 const userData = {
                     nome,
                     email,
@@ -694,7 +707,6 @@
                         console.warn('Não foi possível salvar a sessão local:', err);
                     }
 
-                    console.log('[CADASTRO] Sucesso. Token:', data.token);
                     console.log('[CADASTRO] Usuário:', data.user);
 
                     alertSuccess.classList.add('show');

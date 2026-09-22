@@ -1669,7 +1669,7 @@ main {
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -1683,7 +1683,7 @@ main {
 .social-icons-footer {
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 

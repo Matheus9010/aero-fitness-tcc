@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="contato.css">
     <link rel="stylesheet" href="pojo-a11y.css">
 </head>
+
 <body>
     <nav>
         <div class="barra">
@@ -17,7 +21,7 @@
                 </li>
                 <li class="active"><a href="localizacao.html">LUGARES</a></li>
                 <li class="active"><a href="tiposdetreino.html">TIPOS DE TREINO</a></li>
-                <li class="active"><a href="">CONTATO</a></li>
+                <li class="active"><a href="contato.html">CONTATO</a></li>
                 <li class="usuario">
                     <a href="escolha.html" id="userLink"><img src="user.png" alt="Usuário"></a>
                 </li>
@@ -38,7 +42,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <section class="content">
         <div class="contato-grid">
             <div class="form-box">
@@ -50,20 +54,23 @@
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(41) 9....-...." required>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(41) 9....-...." maxlength="15"
+                            required>
                     </div>
                     <div class="form-group">
-                        <label for="observacao">Feedback (Opcional)</label>
-                        <textarea id="observacao" name="observacao"></textarea>
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem"
+                            placeholder="Escreva sua dúvida, sugestão ou mensagem..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Enviar mensagem</button>
                     <p id="formStatus"></p>
                 </form>
-                
+
                 <a href="https://wa.me/554134234131" class="whats-btn" target="_blank">
                     Fale com a gente no WhatsApp
                 </a>
@@ -73,7 +80,8 @@
 
     <nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-right" aria-label="Barra de ferramentas de acessibilidade">
         <div class="pojo-a11y-toolbar-toggle">
-            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Ferramentas de Acessibilidade" role="link" tabindex="0">
+            <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);"
+                title="Ferramentas de Acessibilidade" role="link" tabindex="0">
                 <span class="pojo-sr-only sr-only">Abrir a barra de ferramentas</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" width="1em">
                     <title>Ferramentas de Acessibilidade</title>
@@ -86,7 +94,8 @@
                 <p class="pojo-a11y-toolbar-title">Ferramentas de Acessibilidade</p>
                 <ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus"
+                            data-action="resize-plus" data-action-group="resize" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
                                     <title>Aumentar o Texto</title>
@@ -97,7 +106,8 @@
                         </a>
                     </li>
                     <li class="pojo-a11y-toolbar-item">
-                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
+                        <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus"
+                            data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
                                     <title>Diminuir o Texto</title>
@@ -171,8 +181,89 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
 
-        document.addEventListener('DOMContentLoaded', function() {
+        const API_BASE = 'https://aero-chat.matheus-martins-oliveira09.workers.dev';
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwUwimkEY7l6KuNVpVepHCu52wZon-IghOC9pGu0nJ4pTQkKO-iq7rH_4g2-NiYrCWH-Q/exec';
+
+        document.addEventListener('DOMContentLoaded', function () {
             updateUserIcon();
+
+            const form = document.getElementById('contatoForm');
+            const status = document.getElementById('formStatus');
+
+            const emailInput = document.getElementById('email');
+            const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+            emailInput.addEventListener('input', function () {
+                if (this.value && !emailPattern.test(this.value)) {
+                    this.setCustomValidity('Digite um email válido (ex: usuario@gmail.com)');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
+            const inputTelefone = document.getElementById('telefone');
+
+            inputTelefone.addEventListener('input', function () {
+                let valor = this.value.replace(/\D/g, '');
+                valor = valor.substring(0, 11);
+
+                if (valor.length > 10) {
+                    valor = valor.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+                } else if (valor.length > 6) {
+                    valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+                } else if (valor.length > 2) {
+                    valor = valor.replace(/^(\d{2})(\d{0,5}).*/, '($1) $2');
+                } else if (valor.length > 0) {
+                    valor = valor.replace(/^(\d{0,2}).*/, '($1');
+                }
+
+                this.value = valor;
+            });
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                if (!emailPattern.test(emailInput.value)) {
+                    emailInput.setCustomValidity('Digite um email válido (ex: usuario@gmail.com)');
+                    emailInput.reportValidity();
+                    return;
+                }
+
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+                status.textContent = '';
+
+                const formData = new URLSearchParams();
+                formData.append('nome', document.getElementById('nome').value.trim());
+                formData.append('email', document.getElementById('email').value.trim());
+                formData.append('telefone', document.getElementById('telefone').value.trim());
+                formData.append('mensagem', document.getElementById('mensagem').value.trim());
+
+                try {
+                    await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+
+                    status.textContent = 'Mensagem enviada com sucesso! Responderemos em breve.';
+                    status.style.color = '#4ade80';
+                    form.reset();
+
+                    setTimeout(() => {
+                        status.textContent = '';
+                    }, 6000);
+
+                } catch (err) {
+                    status.textContent = 'Erro ao enviar. Tente novamente ou use o WhatsApp.';
+                    status.style.color = '#ff6b6b';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
         });
 
         function updateUserIcon() {
@@ -186,10 +277,19 @@
                         userLink.innerHTML = `<span class="user-initials">${user.initials}</span>`;
                         userLink.href = '#';
                         userLink.title = `Olá, ${user.email}`;
-                        userLink.onclick = function(e) {
+                        userLink.onclick = function (e) {
                             e.preventDefault();
                             if (confirm('Deseja fazer logout?')) {
+                                const token = localStorage.getItem('aero_token');
+                                if (token) {
+                                    fetch(API_BASE + '/logout', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({ token })
+                                    }).catch(() => { });
+                                }
                                 localStorage.removeItem('loggedInUser');
+                                localStorage.removeItem('aero_token');
                                 location.reload();
                             }
                         };
@@ -200,13 +300,13 @@
             }
         }
 
-        (function() {
+        (function () {
             'use strict';
 
             const toolbar = document.getElementById('pojo-a11y-toolbar');
             const toggleBtn = document.querySelector('.pojo-a11y-toolbar-toggle-link');
             const resetBtn = document.querySelector('.pojo-a11y-btn-reset');
-            
+
             let isSpeaking = false;
             let currentUtterance = null;
             const narratorBtn = document.querySelector('.pojo-a11y-btn-narrator');
@@ -241,17 +341,17 @@
                 utterance.rate = 0.9;
                 utterance.pitch = 1;
                 utterance.volume = 1;
-                utterance.onstart = function() {
+                utterance.onstart = function () {
                     isSpeaking = true;
                     narratorText.textContent = 'Parar Leitura';
                     narratorBtn.classList.add('active-tool');
                 };
-                utterance.onend = function() {
+                utterance.onend = function () {
                     isSpeaking = false;
                     narratorText.textContent = 'Ouvir Página';
                     narratorBtn.classList.remove('active-tool');
                 };
-                utterance.onerror = function() {
+                utterance.onerror = function () {
                     isSpeaking = false;
                     narratorText.textContent = 'Ouvir Página';
                     narratorBtn.classList.remove('active-tool');
@@ -261,14 +361,14 @@
             }
 
             if (narratorBtn) {
-                narratorBtn.addEventListener('click', function(e) {
+                narratorBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     toggleNarrator();
                 });
             }
 
             if (toggleBtn) {
-                toggleBtn.addEventListener('click', function(e) {
+                toggleBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     toolbar.classList.toggle('pojo-a11y-toolbar-open');
                 });
@@ -326,7 +426,7 @@
             }
 
             document.querySelectorAll('.pojo-a11y-toolbar-link[data-action]').forEach(tool => {
-                tool.addEventListener('click', function(e) {
+                tool.addEventListener('click', function (e) {
                     e.preventDefault();
                     const action = this.getAttribute('data-action');
                     if (action === 'narrator') return;
@@ -335,7 +435,7 @@
             });
 
             if (resetBtn) {
-                resetBtn.addEventListener('click', function(e) {
+                resetBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     const body = document.body;
                     if (isSpeaking && window.speechSynthesis) {
@@ -364,7 +464,6 @@
         })();
     </script>
 
-     <footer>
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-section contact-section">
@@ -378,22 +477,32 @@
             <div class="footer-section partnerships-section">
                 <h3>PARCERIAS</h3>
                 <div class="logos-wrapper">
-                    <img src="1.png" alt="estadual">                   
-                    <img src="img.pr.colegio.integral.png" alt="integral">   
-                    <img src="icone.CECM.02.png" alt="integral">              
+                    <img src="1.png" alt="estadual">
+                    <img src="img.pr.colegio.integral.png" alt="integral">
+                    <img src="icone.CECM.02.png" alt="integral">
                 </div>
-            </div>  
+            </div>
             <div class="footer-section social-section">
                 <h3>REDES SOCIAIS</h3>
                 <div class="social-icons-footer">
                     <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png" alt="Instagram"></a>
                     <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img src="facebook.png" alt="Facebook"></a>
                     <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico Militar | Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
 </body>
+
 </html>
