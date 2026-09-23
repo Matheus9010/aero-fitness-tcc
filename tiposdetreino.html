@@ -73,13 +73,9 @@
                     <div class="sub-conf">
                         <ul>
                             <li><a href="projetossociais.html">PROJETOS SOCIAIS</a></li>
-                            <li><a
-                                    href="https://docs.google.com/document/d/1PD6Y0QL3gowv31_g5Vb6kIAoV6rIKhTdSsrQmaEiGf0/edit?usp=sharing">DOCS
-                                    TCC</a></li>
-                            <li><a
-                                    href="https://docs.google.com/spreadsheets/d/1QhTQDWZTRaVbUBLRb6qJSl4oTR2jjS21C1pIS6TOrAs/edit?usp=sharing">CRONOGRAMA</a>
-                            </li>
-                            <li><a href="https://canva.link/prototipo-tcc">PROTÓTIPO AERO FITNESS</a></li>
+                            <li><a href="https://docs.google.com/document/d/1PD6Y0QL3gowv31_g5Vb6kIAoV6rIKhTdSsrQmaEiGf0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">DOCS TCC</a></li>
+                            <li><a href="https://docs.google.com/spreadsheets/d/1QhTQDWZTRaVbUBLRb6qJSl4oTR2jjS21C1pIS6TOrAs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">CRONOGRAMA</a></li>
+                            <li><a href="https://canva.link/prototipo-tcc" target="_blank" rel="noopener noreferrer">PROTÓTIPO AERO FITNESS</a></li>
                         </ul>
                     </div>
                 </li>
@@ -133,7 +129,7 @@
                     <h3>Esportes Variados</h3>
                     <p>Outras modalidades esportivas para variar o treino e desenvolver novas habilidades.</p>
                     <ul>
-                        <li>20 esportes</li>
+                        <li>21 esportes</li>
                         <li>Esportes coletivos e individuais</li>
                         <li>Opções para todas as idades</li>
                     </ul>
@@ -613,7 +609,7 @@
                 iconImg: "icone-ciclismo.png",
                 description: "Outras modalidades esportivas para variar o treino.",
                 defaultLevel: "Todos os níveis", defaultVolume: "20 a 40 minutos",
-                exercises: ["Futebol recreativo", "Vôlei", "Basquete", "Handebol", "Natação", "Corrida ao ar livre", "Caminhada em trilha", "Tênis", "Beach tennis", "Badminton", "Ping-pong", "Boxe recreativo", "Muay thai iniciante", "Judô adaptado", "Dança esportiva", "Pular corda", "Escalada indoor", "Patins", "Skate recreativo", "Circuito funcional esportivo"]
+                exercises: ["Futebol recreativo", "Vôlei", "Basquete", "Handebol", "Natação", "Ciclismo", "Corrida ao ar livre", "Caminhada em trilha", "Tênis", "Beach tennis", "Badminton", "Ping-pong", "Boxe recreativo", "Muay thai iniciante", "Judô adaptado", "Dança esportiva", "Pular corda", "Escalada indoor", "Skate recreativo", "Circuito funcional esportivo"]
             },
             adaptado: {
                 label: "Treino Adaptado", icon: "♿",
@@ -704,6 +700,29 @@
             return items;
         }
 
+        const sportSvgs = {
+            "Futebol recreativo": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4.2H9.8L8.5 9.5 12 7z"/><path d="M3.5 9.5l4.5.5M20.5 9.5l-4.5.5M8.5 20l1.3-3.8M15.5 20l-1.3-3.8"/></svg>',
+            "Vôlei": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3 4 7 3 11M3.5 10c4-1 8 0 11 3M20 14c-3-2-7-2-10 1"/></svg>',
+            "Basquete": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.5 5.5c3 3 3 10 0 13M18.5 5.5c-3 3-3 10 0 13"/></svg>',
+            "Handebol": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 5c2 3 4 6 4 10M16 5c-2 3-4 6-4 10M6 14c3-1 9-1 12 0"/></svg>',
+            "Natação": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 5 1"/><path d="M2 14c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 5 1"/><circle cx="16" cy="7" r="2"/><path d="M8 11l4-2 3 2"/></svg>',
+            "Ciclismo": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5l4-8h5l4 8"/><path d="M9.5 9.5h5"/><path d="M12 9.5V6h-2.5"/><path d="M12 6h2.5"/><path d="M9.5 12.5l1.5 5"/></svg>',
+            "Corrida ao ar livre": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="4.5" r="2"/><path d="M13.5 8.5l-2.5 3.5 2 4"/><path d="M11 12l-3.5 1.5"/><path d="M11 12l4-1.5 3.5 3.5"/><path d="M13 16l-1.5 5"/><path d="M13 16l3 4.5"/><path d="M4 20l3-1.5"/></svg>',
+            "Caminhada em trilha": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13 8v5l-2.5 8"/><path d="M13 10l3.5 2 1.5 5"/><path d="M13 10l-3.5 3.5-1 4.5"/><path d="M8 5l-1.5 2.5 2 1.5 1-2"/><path d="M3 21l4-1"/></svg>',
+            "Tênis": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="14" cy="10" rx="6" ry="7" transform="rotate(45 14 10)"/><path d="M10 6l3 3M8 8l3 3M5 17l3-3"/></svg>',
+            "Beach tennis": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="9" r="5"/><path d="M10 5l4 4M9 8l4 4"/><path d="M6 18l3-3"/><path d="M3 21c2 0 3-1 5-1s3 1 5 1"/></svg>',
+            "Badminton": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-4 6 5 3 4-6-5-3z"/><path d="M10 10l-6 8 4 2 5-7"/><path d="M13 7l3 3M12 9l3 3"/></svg>',
+            "Ping-pong": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="9" rx="5" ry="6" transform="rotate(30 9 9)"/><circle cx="17" cy="17" r="2"/><path d="M12 4l2 2M8 5l2 2"/></svg>',
+            "Boxe recreativo": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h8a3 3 0 0 1 3 3v5a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4V7a3 3 0 0 1 0-3z"/><path d="M7 10H4a2 2 0 0 0-2 2v1a3 3 0 0 0 3 3h2"/></svg>',
+            "Muay thai iniciante": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a2 2 0 0 1 2-2h4l4 3v6a4 4 0 0 1-4 4H8a2 2 0 0 1-2-2V8z"/><path d="M12 6V4M9 5L8 3M15 5l1-2"/></svg>',
+            "Judô adaptado": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a2 2 0 0 1 2-2h4l4 3v6a4 4 0 0 1-4 4H8a2 2 0 0 1-2-2V8z"/><path d="M12 6V4M9 5L8 3M15 5l1-2"/></svg>',
+            "Dança esportiva": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="18" r="2"/><circle cx="17" cy="16" r="2"/><path d="M10 18V6l9-2v12"/><path d="M10 10l9-2"/></svg>',
+            "Pular corda": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c0 8 16 8 16 16"/><path d="M20 4c0 8-16 8-16 16"/><circle cx="12" cy="12" r="2"/></svg>',
+            "Escalada indoor": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l6-8 4 3 3-6 5 5"/><path d="M9 13l2-3 3 2"/></svg>',
+            "Skate recreativo": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16h18l-2 3H5l-2-3z"/><circle cx="7" cy="20" r="1"/><circle cx="17" cy="20" r="1"/><path d="M6 16V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>',
+            "Circuito funcional esportivo": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6M20 9v6M2 10v4M22 10v4M6 7v10M18 7v10M6 12h12"/></svg>'
+        };
+
         function renderExercises(filter) {
             const exercises = buildExerciseList();
             const filteredExercises = exercises.filter(ex => ex.category === filter);
@@ -730,19 +749,28 @@
 
             exerciseSubtitle.textContent = "Clique em um exercício para conversar com o Personal IA.";
 
-            exerciseGrid.innerHTML = filteredExercises.map(ex => `
-                <article class="exercise-card">
-                    <div class="exercise-card__top">
-                        <span class="exercise-card__icon"><img src="${ex.iconImg}" alt="${ex.name}"></span>
-                        <span class="exercise-card__level">${ex.level}</span>
-                    </div>
-                    <h3>${ex.name}</h3>
-                    <p>${ex.description}</p>
-                    <button type="button" data-exercise-id="${ex.id}" aria-label="Conversar com o Personal IA sobre ${ex.name}">
-                        Ver com Personal IA <span>→</span>
-                    </button>
-                </article>
-            `).join("");
+            exerciseGrid.innerHTML = filteredExercises.map(ex => {
+                let iconHTML;
+                if (filter === "ciclismo" && sportSvgs[ex.name]) {
+                    iconHTML = `<span class="sport-svg" style="display:inline-flex; width:38px; height:38px; color:#7ddf64;">${sportSvgs[ex.name]}</span>`;
+                } else {
+                    iconHTML = `<img src="${ex.iconImg}" alt="${ex.name}">`;
+                }
+
+                return `
+                    <article class="exercise-card">
+                        <div class="exercise-card__top">
+                            <span class="exercise-card__icon">${iconHTML}</span>
+                            <span class="exercise-card__level">${ex.level}</span>
+                        </div>
+                        <h3>${ex.name}</h3>
+                        <p>${ex.description}</p>
+                        <button type="button" data-exercise-id="${ex.id}" aria-label="Conversar com o Personal IA sobre ${ex.name}">
+                            Ver com Personal IA <span>→</span>
+                        </button>
+                    </article>
+                `;
+            }).join("");
         }
 
         function openExercise(exerciseId) {
@@ -1552,9 +1580,9 @@
             <div class="footer-section social-section">
                 <h3>REDES SOCIAIS</h3>
                 <div class="social-icons-footer">
-                    <a href="https://www.instagram.com/png_cejosebonifacio/"><img src="instagram.png" alt="Instagram"></a>
-                    <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr"><img src="facebook.png" alt="Facebook"></a>
-                    <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
+                    <a href="https://www.instagram.com/png_cejosebonatificio/" target="_blank" rel="noopener noreferrer"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>

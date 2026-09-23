@@ -6,6 +6,11 @@
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.pojo-a11y-toolbar.pojo-a11y-toolbar-open {
+    pointer-events: auto;
 }
 
 .pojo-a11y-toolbar-right {
@@ -28,6 +33,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     flex-shrink: 0;
+    pointer-events: auto;
 }
 
 .pojo-a11y-toolbar-toggle-link {
@@ -184,6 +190,18 @@
 .pojo-a11y-toolbar-link.active-tool:hover {
     background: #005a87;
     color: #fff;
+}
+
+#pojo-a11y-toolbar {
+    pointer-events: none !important;
+}
+
+#pojo-a11y-toolbar.pojo-a11y-toolbar-open {
+    pointer-events: auto !important;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle {
+    pointer-events: auto !important;
 }
 
 @media (max-width: 768px) {
