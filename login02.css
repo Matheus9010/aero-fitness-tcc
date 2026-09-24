@@ -207,11 +207,14 @@ main.container {
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 main h2 {
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     position: relative;
     color: white;
 }
@@ -225,149 +228,50 @@ main h2::before {
     left: 0;
     border-radius: 8px;
     background: linear-gradient(45deg, #03109f, #4a00e0);
-    color: transparent;
 }
 
-.input-field {
-    position: relative;
-}
-
-form .input-field:first-child {
-    margin-bottom: 1.5rem;
-}
-
-.input-field .underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-}
-
-.input-field .underline::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: linear-gradient(45deg, #0e05af, #4a00e0);
-    transform: scaleX(0);
-    transition: all .3s ease-in-out;
-    transform-origin: left;
-}
-
-.input-field input:focus~.underline::after {
-    transform: scaleX(1);
-}
-
-.input-field input {
-    outline: none;
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    padding: 10px 5px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.9);
-    transition: 0.3s;
-}
-
-.input-field input:focus {
-    border-color: #4776E6;
-    box-shadow: 0 0 5px rgba(71, 118, 230, 0.3);
-}
-
-.input-field input::placeholder {
-    color: black;
-}
-
-.password-field {
-    position: relative;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #666;
-    font-size: 1rem;
-    transition: color 0.3s;
-    z-index: 5;
-}
-
-.toggle-password:hover {
-    color: #4776E6;
-}
-
-form input[type="submit"] {
-    margin-top: 2rem;
-    padding: 0.4rem;
-    width: 100%;
-    background: linear-gradient(to left, #4776E6, #1e0998);
-    cursor: pointer;
+.descricao {
     color: white;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.botao {
+    width: 100%;
+    padding: 0.7rem;
+    background: linear-gradient(to left, #4776E6, #1e0998);
+    color: white;
+    text-decoration: none;
     font-size: 0.9rem;
     font-weight: 300;
     border-radius: 4px;
+    text-align: center;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-form input[type="submit"]:hover {
+.botao:hover {
     letter-spacing: 0.5px;
     background: linear-gradient(to right, #4776E6, #1e0998);
 }
 
-.footer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-}
-
-.footer .barra-recuperar-senha {
-    padding: 0.4rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    width: 100%;
-    cursor: pointer;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.footer .barra-recuperar-senha a i {
-    margin: 0 0.5rem;
-    width: 15px;
-}
-
-.footer .barra-recuperar-senha a {
-    text-decoration: none;
-    color: white;
-}
-
-.footer .barra-recuperar-senha {
-    background: linear-gradient(to left, #4776E6, #1e0998);
-}
-
-.footer .barra-recuperar-senha:hover {
-    background: linear-gradient(to right, #4776E6, #1e0998);
+.botao i {
+    font-size: 0.9rem;
 }
 
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid #ffd700;
     outline-offset: 3px;
-}
-
-#pojo-a11y-toolbar {
-    position: fixed !important;
-    left: 20px !important;
-    bottom: 130px !important;
-    top: auto !important;
-    right: auto !important;
-    z-index: 1001 !important;
 }
 
 body.pojo-links-underline a,
@@ -393,14 +297,23 @@ body.pojo-readable-font h3 {
     line-height: 1.6 !important;
 }
 
+#pojo-a11y-toolbar,
 html body #pojo-a11y-toolbar {
     position: fixed !important;
-    left: 0 !important;
+    right: 10px !important;
     bottom: 10px !important;
+    left: auto !important;
     top: auto !important;
     transform: none !important;
     margin: 0 !important;
-    z-index: 2147483647 !important;
+    z-index: 9998 !important;
+    pointer-events: none !important;
+}
+
+#pojo-a11y-toolbar.pojo-a11y-toolbar-open,
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle,
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle-link {
+    pointer-events: auto !important;
 }
 
 #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle-link,
@@ -436,13 +349,6 @@ html body #pojo-a11y-toolbar {
         min-width: 280px;
         padding: 1.5rem;
     }
-
-    html body #pojo-a11y-toolbar {
-        left: 0 !important;
-        bottom: 120px !important;
-        top: auto !important;
-        transform: none !important;
-    }
 }
 
 @media (max-width: 480px) {
@@ -475,8 +381,13 @@ html body #pojo-a11y-toolbar {
         font-size: 1.3rem;
     }
 
-    html body #pojo-a11y-toolbar {
-        bottom: 100px !important;
+    .descricao {
+        font-size: 0.8rem;
+    }
+
+    .botao {
+        font-size: 0.8rem;
+        padding: 0.6rem;
     }
 }
 

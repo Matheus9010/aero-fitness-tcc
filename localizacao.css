@@ -41,6 +41,7 @@ button:hover {
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .barra ul {
@@ -64,6 +65,43 @@ button:hover {
 .barra ul li a {
     text-decoration: none;
     color: inherit;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 15px;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .sub-menu {
@@ -297,43 +335,6 @@ body {
     #google_translate_element::before {
         font-size: 17px !important;
         margin-right: 6px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .tradutor-item {
-        margin: 0 3px !important;
-    }
-    
-    #google_translate_element select {
-        min-width: 100px !important;
-        padding: 5px 28px 5px 10px !important;
-        font-size: 11px !important;
-        height: 32px !important;
-        border-radius: 6px !important;
-        border-width: 1.5px !important;
-    }
-    
-    #google_translate_element::before {
-        font-size: 14px !important;
-        margin-right: 4px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    #google_translate_element select {
-        min-width: 80px !important;
-        padding: 4px 22px 4px 8px !important;
-        font-size: 10px !important;
-        height: 28px !important;
-        border-radius: 4px !important;
-        background-size: 8px !important;
-        background-position: right 8px center !important;
-    }
-    
-    #google_translate_element::before {
-        font-size: 12px !important;
-        margin-right: 3px !important;
     }
 }
 
@@ -591,19 +592,146 @@ html body #pojo-a11y-toolbar {
     }
 }
 
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .barra {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .barra ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+        gap: 0;
+    }
+
+    .barra ul.menu-open {
+        display: flex;
+    }
+
+    .barra ul li {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        justify-content: flex-start;
+    }
+
+    .barra ul li a {
+        width: 100%;
+    }
+
+    .barra ul li.usuario,
+    .barra ul li.tradutor-item,
+    .barra ul li.config {
+        justify-content: center;
+    }
+
+    .barra ul li.tradutor-item {
+        padding: 8px 10px;
+    }
+
+    .tradutor-item {
+        margin: 0 !important;
+    }
+
+    #google_translate_element select {
+        min-width: 100% !important;
+        width: 100% !important;
+        font-size: 13px !important;
+        height: 40px !important;
+        padding: 8px 40px 8px 16px !important;
+    }
+
+    #google_translate_element::before {
+        font-size: 18px !important;
+        margin-right: 6px !important;
+    }
+
+    .sub-conf {
+        position: static;
+        display: none;
+        width: 100%;
+        background-color: rgba(255, 165, 0, 0.95);
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 5px;
+    }
+
+    .config.config-open .sub-conf {
+        display: block;
+    }
+
+    .sub-conf ul li {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .sub-conf ul li a {
+        text-align: left;
+    }
+
+    .barra ul li:hover .sub-conf {
+        display: none;
+    }
+
+    .config.config-open .sub-conf {
+        display: block;
+    }
+}
+
 @media (max-width: 768px) {
     .barra ul li {
         font-size: 14px;
-        padding: 3px 6px;
-    }
-    
-    .barra ul {
-        gap: 5px;
-        flex-wrap: wrap;
     }
     
     html body #pojo-a11y-toolbar {
         bottom: 120px !important;
+    }
+
+    .site-footer {
+        padding: 10px 15px 8px 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .footer-section {
+        min-width: 100%;
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+
+    .logos-wrapper,
+    .social-icons-footer {
+        justify-content: center;
+    }
+
+    .partnerships-section {
+        order: 2;
+    }
+
+    .social-section {
+        order: 1;
+    }
+
+    .contact-section {
+        order: 3;
     }
 }
 
@@ -628,8 +756,8 @@ html body #pojo-a11y-toolbar {
     }
     
     .barra ul li {
-        font-size: 11px;
-        padding: 2px 4px;
+        font-size: 14px;
+        padding: 10px 8px;
     }
     
     #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {

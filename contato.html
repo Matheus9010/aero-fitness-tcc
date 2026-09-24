@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +9,15 @@
     <link rel="stylesheet" href="contato.css">
     <link rel="stylesheet" href="pojo-a11y.css">
 </head>
-
 <body>
     <nav>
         <div class="barra">
-            <ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="menuList">
                 <li class="active"><a href="index.html">INÍCIO</a></li>
                 <li class="has-submenu">
                     <a href="sobrenos.html">SOBRE NÓS</a>
@@ -180,6 +183,34 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.getElementById('menuList');
+
+        menuToggle.addEventListener('click', function() {
+            menuList.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+        });
+
+        document.querySelectorAll('#menuList a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 850) {
+                    menuList.classList.remove('menu-open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.querySelectorAll('.config').forEach(function(config) {
+            config.addEventListener('click', function(e) {
+                if (window.innerWidth <= 850 && e.target.tagName !== 'A') {
+                    this.classList.toggle('config-open');
+                }
+            });
+        });
 
         const API_BASE = 'https://aero-chat.matheus-martins-oliveira09.workers.dev';
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwUwimkEY7l6KuNVpVepHCu52wZon-IghOC9pGu0nJ4pTQkKO-iq7rH_4g2-NiYrCWH-Q/exec';
@@ -495,14 +526,5 @@
             <p>&copy; Aero Fitness | Projeto TCC | Desenvolvimento de Sistema | Tempo integral do Paraná | Cívico Militar | Todos os direitos reservados</p>
         </div>
     </footer>
-
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-
 </body>
-
 </html>

@@ -54,7 +54,12 @@
 
     <nav>
         <div class="barra">
-            <ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="menuList">
                 <li class="active"><a href="index.html">INÍCIO</a></li>
                 <li class="has-submenu">
                     <a href="sobrenos.html">SOBRE NÓS</a>
@@ -328,7 +333,7 @@
                     </li>
                     <li class="pojo-a11y-toolbar-item">
                         <a href="#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus"
-                            data-action="resize-minus" data-action="resize-group" data-action-group="resize" tabindex="0" role="link">
+                            data-action="resize-minus" data-action-group="resize" tabindex="0" role="link">
                             <span class="pojo-a11y-toolbar-icon">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
                                     <title>Diminuir o Texto</title>
@@ -415,6 +420,34 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
     <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.getElementById('menuList');
+
+        menuToggle.addEventListener('click', function() {
+            menuList.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+        });
+
+        document.querySelectorAll('#menuList a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 850) {
+                    menuList.classList.remove('menu-open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.querySelectorAll('.config').forEach(function(config) {
+            config.addEventListener('click', function(e) {
+                if (window.innerWidth <= 850 && e.target.tagName !== 'A') {
+                    this.classList.toggle('config-open');
+                }
+            });
+        });
+
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
         const totalSlides = slides.length;
@@ -1572,15 +1605,15 @@
             <div class="footer-section partnerships-section">
                 <h3>PARCERIAS</h3>
                 <div class="logos-wrapper">
-                    <img src="1.png" alt="estadual">                   
-                    <img src="img.pr.colegio.integral.png" alt="integral">   
-                    <img src="icone.CECM.02.png" alt="integral">              
+                    <img src="1.png" alt="estadual">
+                    <img src="img.pr.colegio.integral.png" alt="integral">
+                    <img src="icone.CECM.02.png" alt="integral">
                 </div>
             </div>
             <div class="footer-section social-section">
                 <h3>REDES SOCIAIS</h3>
                 <div class="social-icons-footer">
-                    <a href="https://www.instagram.com/png_cejosebonatificio/" target="_blank" rel="noopener noreferrer"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="https://www.instagram.com/png_cejosebonifacio/" target="_blank" rel="noopener noreferrer"><img src="instagram.png" alt="Instagram"></a>
                     <a href="https://web.facebook.com/people/Estadual-Jos%C3%A9-Bonif%C3%A1cio/100092219353603/?rdid=fUCPTQsftdii2f7s&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F17qU9QBFdE%2F%3F_rdc%3D1%26_rdr" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Facebook"></a>
                     <a href="https://api.whatsapp.com/send/?phone=554134234131&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="icons8-whatsapp2-48.png" alt="WhatsApp"></a>
                 </div>

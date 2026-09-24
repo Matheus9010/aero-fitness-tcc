@@ -227,17 +227,6 @@ body {
     color: #0b1a2c;
 }
 
-@media (max-width: 600px) {
-    .linha-dupla {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .form-content {
-        padding: 25px;
-    }
-}
-
 .btn-salvar {
     background: #18467f;
     color: white;
@@ -441,125 +430,6 @@ html body #pojo-a11y-toolbar {
     transform: none !important;
 }
 
-@media (max-width: 768px) {
-    .btn-voltar {
-        top: 15px;
-        left: 15px;
-        padding: 8px 14px;
-        font-size: 0.75rem;
-    }
-
-    .btn-voltar span {
-        font-size: 0.7rem;
-    }
-
-    .btn-voltar i {
-        font-size: 0.8rem;
-    }
-
-    html body #pojo-a11y-toolbar {
-        bottom: 120px !important;
-    }
-
-    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
-        width: 40px;
-        height: 40px;
-        font-size: 22px;
-        padding: 4px 6px;
-    }
-
-    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a svg {
-        width: 26px;
-        height: 26px;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn-voltar {
-        top: 10px;
-        left: 10px;
-        padding: 6px 12px;
-        font-size: 0.7rem;
-        gap: 5px;
-    }
-
-    .btn-voltar span {
-        font-size: 0.65rem;
-    }
-
-    .btn-voltar i {
-        font-size: 0.7rem;
-    }
-
-    html body #pojo-a11y-toolbar {
-        bottom: 100px !important;
-    }
-
-    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-        padding: 3px 5px;
-    }
-
-    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .pojo-a11y-toolbar-overlay {
-        min-width: 160px;
-        padding: 8px 6px;
-    }
-
-    .pojo-a11y-toolbar-item a {
-        font-size: 11px;
-        padding: 4px 8px;
-    }
-
-    .pojo-a11y-toolbar-item a .pojo-a11y-toolbar-text {
-        font-size: 10px;
-    }
-}
-
-div[vw].enabled {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    left: auto !important;
-    top: auto !important;
-    z-index: 9998 !important;
-}
-
-div[vw].enabled .vw-access-button {
-    width: 55px !important;
-    height: 55px !important;
-}
-
-@media (max-width: 768px) {
-    div[vw].enabled {
-        bottom: 15px !important;
-        right: 15px !important;
-    }
-
-    div[vw].enabled .vw-access-button {
-        width: 48px !important;
-        height: 48px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    div[vw].enabled {
-        bottom: 12px !important;
-        right: 12px !important;
-    }
-
-    div[vw].enabled .vw-access-button {
-        width: 42px !important;
-        height: 42px !important;
-    }
-}
-
 .tradutor-wrapper {
     position: fixed;
     top: 20px;
@@ -634,7 +504,49 @@ div[vw].enabled .vw-access-button {
     margin: 0 !important;
 }
 
+@media (max-width: 600px) {
+    .linha-dupla {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-content {
+        padding: 25px;
+    }
+}
+
 @media (max-width: 768px) {
+    .btn-voltar {
+        top: 15px;
+        left: 15px;
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+
+    .btn-voltar span {
+        font-size: 0.7rem;
+    }
+
+    .btn-voltar i {
+        font-size: 0.8rem;
+    }
+
+    html body #pojo-a11y-toolbar {
+        bottom: 120px !important;
+    }
+
+    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        padding: 4px 6px;
+    }
+
+    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a svg {
+        width: 26px;
+        height: 26px;
+    }
+
     .tradutor-wrapper {
         top: 15px;
         right: 15px;
@@ -654,6 +566,52 @@ div[vw].enabled .vw-access-button {
 }
 
 @media (max-width: 480px) {
+    .btn-voltar {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        gap: 5px;
+    }
+
+    .btn-voltar span {
+        font-size: 0.65rem;
+    }
+
+    .btn-voltar i {
+        font-size: 0.7rem;
+    }
+
+    html body #pojo-a11y-toolbar {
+        bottom: 100px !important;
+    }
+
+    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        padding: 3px 5px;
+    }
+
+    #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .pojo-a11y-toolbar-overlay {
+        min-width: 160px;
+        padding: 8px 6px;
+    }
+
+    .pojo-a11y-toolbar-item a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .pojo-a11y-toolbar-item a .pojo-a11y-toolbar-text {
+        font-size: 10px;
+    }
+
     .tradutor-wrapper {
         top: 10px;
         right: 10px;
@@ -670,5 +628,43 @@ div[vw].enabled .vw-access-button {
     .tradutor-wrapper #google_translate_element::before {
         font-size: 14px !important;
         margin-right: 4px !important;
+    }
+}
+
+div[vw].enabled {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 9998 !important;
+}
+
+div[vw].enabled .vw-access-button {
+    width: 55px !important;
+    height: 55px !important;
+}
+
+@media (max-width: 768px) {
+    div[vw].enabled {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+
+    div[vw].enabled .vw-access-button {
+        width: 48px !important;
+        height: 48px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    div[vw].enabled {
+        bottom: 12px !important;
+        right: 12px !important;
+    }
+
+    div[vw].enabled .vw-access-button {
+        width: 42px !important;
+        height: 42px !important;
     }
 }
